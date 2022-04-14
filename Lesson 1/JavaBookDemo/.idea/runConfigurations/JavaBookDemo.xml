@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="JavaBookDemo" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.DemoOne.Main" />
+    <module name="JavaBookDemo" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

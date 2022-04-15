@@ -2,9 +2,9 @@ package ca.bcit.comp2501.lab1b;
 
 public class Date {
     // Properties
-    int year;
-    final int month;
-    final int day;
+    private int year;
+    private int month;
+    private int day;
 
     // constructor
     Date(int year, final int month, final int day)
@@ -14,16 +14,27 @@ public class Date {
         this.day = day;
     }
 
-    // Setter
+    // Setter for Year
     public void setYear(int year)
     {
         this.year = year;
     }
 
+    // Setter for Month
+    public void setMonth(int month)
+    {
+        this.month = month;
+    }
+
+    // Setter for Day
+    public void setDay(int day)
+    {
+        this.day = day;
+    }
+
     // Getter
     public String getYyMmDd()
     {
-        String yearStr = Integer.toString(year);
-        return yearStr;
+        return Integer.toString(year) + "-" + Integer.toString(month) + "-" + Integer.toString(day);
     }
 }

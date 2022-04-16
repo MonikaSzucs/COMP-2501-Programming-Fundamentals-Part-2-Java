@@ -1,36 +1,56 @@
 package ca.bcit.comp2501.lab1b;
 
+/**
+ * @ author Monika Szucs and Henry Young
+ */
+
 public class Name {
     // Properties
-    private final String name;
-
+    private String firstName;
+    private String lastName;
 
     // Constructor
-    public Name(String name)
+    public Name(String firstName, String lastName)
     {
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public String getInitials()
     {
-        String firstLetter;
-        String secondFirstLetter;
         String theName;
 
-        int intSpaceLocation = name.indexOf(" ");
-        // String strFirstName = name.substring(0,intSpaceLocation);
-        firstLetter = name.substring(0,1);
-        // System.out.println(strFirstName);
-        // String strLastName = name.substring(intSpaceLocation+1);
-        secondFirstLetter = name.substring(intSpaceLocation+1,intSpaceLocation+2);
-        // System.out.println(strLastName);
-        theName = firstLetter + "." +  secondFirstLetter + ".";
+        theName = firstName.toUpperCase().charAt(0)+"."+lastName.toUpperCase().charAt(0)+".";
         return theName;
     }
 
+    // Setter for First Name
+    public void setFirstName()
+    {
+        this.firstName = firstName;
+    }
+
+    // Getter for First Name
+    public String getFirstName()
+    {
+        return firstName;
+    }
+
+    // Setter for Last Name
+    public void setLastName()
+    {
+        this.lastName = lastName;
+    }
+
+    // Getter for Last Name
+    public String getLastName()
+    {
+        return lastName;
+    }
+
+    // Getter for Full Name
     public String getFullName()
     {
-        // e.g. Tiger Woods
-        return name;
+        return firstName + " " + lastName;
     }
 }

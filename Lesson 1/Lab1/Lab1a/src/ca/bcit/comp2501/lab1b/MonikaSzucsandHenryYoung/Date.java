@@ -77,7 +77,13 @@ public class Date {
     //Getter for Day
     public int getDay()
     {
-        return day;
+        if(day<=0 || day > 31){
+            System.out.println("day is less than or equal to zero or greater than 31");
+            return 0;
+        }
+        else {
+            return day;
+        }
     }
 
     // Setter for Year
@@ -89,12 +95,31 @@ public class Date {
     // Getter for Year
     public int getYear()
     {
-        return year;
+        if(year<0 || year > 2022){
+            System.out.println("Year is less than zero or greater than 2022");
+            return 0;
+        }
+        else {
+            return year;
+        }
     }
 
     // Getter for String containing Year, Month and Day
     public String getYyMmDd()
     {
-        return getYear() + "-" + getMonth() + "-" + getDay();
+        if (getYear()==0 )
+        {
+            return "ERROR FOR YEAR -" + getMonth() + "-" + Integer.toString(getDay());
+        }
+        else if (getMonth()=="0")
+        {
+            return Integer.toString(getYear()) + "- ERROR FOR MONTH -" + Integer.toString(getDay());
+        }
+        else if (getDay()==0){
+            return Integer.toString(getYear()) + "-" + getMonth() + "- ERROR FOR DAY";
+        }
+        else {
+            return Integer.toString(getYear()) + "-" + getMonth() + "-" + Integer.toString(getDay());
+        }
     }
 }

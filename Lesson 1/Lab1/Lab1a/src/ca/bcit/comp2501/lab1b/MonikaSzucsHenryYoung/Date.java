@@ -1,4 +1,4 @@
-package ca.bcit.comp2501.lab1b;
+package ca.bcit.comp2501.lab1b.MonikaSzucsHenryYoung;
 
 /**
  * @ author Monika Szucs and Henry Young
@@ -6,16 +6,16 @@ package ca.bcit.comp2501.lab1b;
 
 public class Date {
     // Properties
-    private int year;
-    private int month;
+    private String month;
     private int day;
+    private int year;
 
-    // constructor
-    public Date(int year, final int month, final int day)
+    // Constructor
+    public Date(final String month, final int day, int year)
     {
-        this.year = year;
         this.month = month;
         this.day = day;
+        this.year = year;
     }
 
     // Setter for Year
@@ -24,7 +24,7 @@ public class Date {
             this.year = year;
     }
 
-    // Getter for Year
+    // Getter for Year and checking to make sure it is between 0 and 2022
     public int getYear()
     {
         if(year<0 || year > 2022){
@@ -37,20 +37,40 @@ public class Date {
     }
 
     // Setter for Month
-    public void setMonth(int month)
+    public void setMonth(String month)
     {
             this.month = month;
     }
 
-    // Getter for Month
+    // Getter for Month is checking if the month is between 1 and 12 inclusive
     public int getMonth()
     {
-        if(month<=0 || month > 12){
-            System.out.println("Month is less than or equal to zero or greater than 12");
+        if(month=="January" || month=="january"){
+            return 1;
+        } else if (month=="February" || month=="february"){
+            return 2;
+        } else if (month=="March" || month=="march") {
+            return 3;
+        } else if (month=="April" || month=="april") {
+            return 4;
+        } else if (month=="May" || month=="may") {
+            return 5;
+        } else if (month=="June" || month=="june") {
+            return 6;
+        } else if (month=="July" || month=="jul") {
+            return 7;
+        } else if (month=="August" || month=="august") {
+            return 8;
+        } else if (month=="September" || month=="september") {
+            return 9;
+        } else if (month=="October" || month=="october") {
+            return 10;
+        } else if (month=="November" || month=="november") {
+            return 11;
+        } else if (month=="December" || month=="december") {
+            return 12;
+        } else {
             return 0;
-        }
-        else {
-            return month;
         }
     }
 
@@ -60,7 +80,7 @@ public class Date {
         this.day = day;
     }
 
-    // Getter for Day
+    // Getter for Day checking if it is between 0 and 31 inclusive
     public int getDay()
     {
         if(day<=0 || day > 31){
@@ -72,7 +92,7 @@ public class Date {
         }
     }
 
-    // Getter for the Year, Month and Day
+    // Getter for the Year, Month and Day and/or inserting an error if needed.
     public String getYyMmDd()
     {
         if (getYear()==0)

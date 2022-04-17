@@ -1,31 +1,23 @@
-package ca.bcit.comp2501.lab1b;
+package ca.bcit.comp2501.lab1b.MonikaSzucsandHenryYoung;
 
 /**
- * @ author Monika Szucs and Henry Young
+ * @ Authors Monika Szucs and Henry Young
  */
 
 public class Name {
-    // Properties
+    // Properties for Name
     private String firstName;
     private String lastName;
 
-    // Constructor
+    // Constructor for Name
     public Name(String firstName, String lastName)
     {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public String getInitials()
-    {
-        String theName;
-
-        theName = firstName.toUpperCase().charAt(0)+"."+lastName.toUpperCase().charAt(0)+".";
-        return theName;
-    }
-
     // Setter for First Name
-    public void setFirstName()
+    public void setFirstName(String firstName)
     {
         this.firstName = firstName;
     }
@@ -48,9 +40,22 @@ public class Name {
         return lastName;
     }
 
-    // Getter for Full Name
-    public String getFullName()
+    // Getter for First Initials
+    public char getFirstInitals()
     {
-        return firstName + " " + lastName;
+        return firstName.charAt(0);
     }
+
+    // Getter for Last Initials
+    public char getLastInitials()
+    {
+        return lastName.charAt(0);
+    }
+
+    // Getter for Combined Initials
+    public String getInitials()
+    {
+        return getFirstInitals() + "." + getLastInitials() + ".";
+    }
+
 }

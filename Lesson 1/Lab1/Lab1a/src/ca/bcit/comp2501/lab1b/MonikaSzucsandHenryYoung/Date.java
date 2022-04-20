@@ -11,7 +11,7 @@ public class Date {
     private int year;
 
     // Constructor for Date
-    public Date(String month, int day, int year)
+    public Date(final String month, final int day, final int year)
     {
         this.month = month;
         this.day = day;
@@ -19,7 +19,7 @@ public class Date {
     }
 
     // Setter for Month
-    public void setMonth(String month)
+    public void setMonth(final String month)
     {
         this.month = month;
     }
@@ -69,7 +69,7 @@ public class Date {
     }
 
     // Setter for Day
-    public void setDay(int day)
+    public void setDay(final int day)
     {
         this.day = day;
     }
@@ -87,7 +87,7 @@ public class Date {
     }
 
     // Setter for Year
-    public void setYear(int year)
+    public void setYear(final int year)
     {
         this.year = year;
     }

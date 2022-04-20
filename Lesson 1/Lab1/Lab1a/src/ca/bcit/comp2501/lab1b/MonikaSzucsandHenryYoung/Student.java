@@ -12,7 +12,7 @@ public class Student {
     private Boolean isGraduated;
 
     // Constructor
-    public Student(Name name, Date theDate, String studentNumber, Boolean isGraduated)
+    public Student(final Name name, final Date theDate, final String studentNumber, final Boolean isGraduated)
     {
         this.name = name;
         this.theDate = theDate;
@@ -21,7 +21,7 @@ public class Student {
     }
 
     // Setters
-    public void setName(Name name)
+    public void setName(final Name name)
     {
         this.name = name;
     }
@@ -33,7 +33,7 @@ public class Student {
     }
 
     // Setter for Date
-    public void setDate(Date theDate)
+    public void setDate(final Date theDate)
     {
         this.theDate = theDate;
     }
@@ -45,7 +45,7 @@ public class Student {
     }
 
     // Setter for Student Number
-    public void setStudentNumber(String studentNumber)
+    public void setStudentNumber(final String studentNumber)
     {
         this.studentNumber = studentNumber;
     }
@@ -56,7 +56,7 @@ public class Student {
     }
 
     // Setter for Graduation
-    public void setIsGraduated(Boolean isGraduated)
+    public void setIsGraduated(final Boolean isGraduated)
     {
         this.isGraduated = isGraduated;
     }

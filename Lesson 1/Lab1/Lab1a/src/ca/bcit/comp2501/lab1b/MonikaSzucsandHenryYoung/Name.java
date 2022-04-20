@@ -10,14 +10,14 @@ public class Name {
     private String lastName;
 
     // Constructor for Name
-    public Name(String firstName, String lastName)
+    public Name(final String firstName, final String lastName)
     {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
     // Setter for First Name
-    public void setFirstName(String firstName)
+    public void setFirstName(final String firstName)
     {
         this.firstName = firstName;
     }

@@ -1,10 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
-public class TikTok {
+class TikTok
+{
     private List<String> hashtags;
-
     private String[] tags;
 
     TikTok()
@@ -15,7 +14,7 @@ public class TikTok {
         tags[0] = "software";
         System.out.println(tags[0]);
         tags[0] = null;
-        System.out.println(tags.length);
+        System.out.println(tags.length); // 10
         hashtags.add("java");
         hashtags.add(null);
         hashtags.add("development");

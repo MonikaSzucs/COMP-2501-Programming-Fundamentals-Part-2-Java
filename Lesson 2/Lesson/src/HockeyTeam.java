@@ -1,6 +1,5 @@
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Locale;
 
 class HockeyTeam
 {
@@ -12,19 +11,19 @@ class HockeyTeam
 
         // methods we use for lists: RAGS
         players.add("crosby");
+
         System.out.println(players.get(0).toUpperCase());
         for(String player: players)
         {
             System.out.println(player);
         }
-
         System.out.println(players.size());
         players.remove(0);
-
+        System.out.println(players.size());
         for(String p: players)
         {
-            System.out.println(p);
+            System.out.println("player is " + p);
         }
-        System.out.println(players.size());
+
     }
 }

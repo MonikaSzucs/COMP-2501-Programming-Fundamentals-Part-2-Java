@@ -8,7 +8,7 @@ class BcitCourse
     BcitCourse()
     {
         names = new ArrayList<>();
-        // RAGS = remove, add, get, size
+        // RAGS
         names.add("jason");
         names.add("par");
         names.add("kayla");

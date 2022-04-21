@@ -1,18 +1,25 @@
-public class Notebook {
-    private Note[] notes;
+class Notebook
+{
+    private Quotation[] notes;
 
     Notebook()
     {
-        notes = new Note[10];
-        notes[2] = new Note("work hard", "goggins");
+        notes = new Quotation[7];
+        notes[2] = new Quotation("work hard", "goggins");
+        notes[6] = new Quotation("discipline equals freedom", "willink");
         System.out.println(notes.length);
 
-        for(Note n:notes)
+        for(Quotation q: notes)
         {
-            if(n != null)
+            if(q == null)
             {
-                System.out.println(n.getNote() + " by " + n.getAuthorLastName());
+                System.out.println("no quotation here");
+            }
+            else
+            {
+                System.out.println(q.getQuotation() + " by " + q.getAuthorLastName());
             }
         }
     }
 }
+

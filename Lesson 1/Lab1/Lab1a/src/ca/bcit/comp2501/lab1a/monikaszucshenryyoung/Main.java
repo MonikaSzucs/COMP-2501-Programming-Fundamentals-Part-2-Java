@@ -1,6 +1,5 @@
+// package name must all be lowercase
 package ca.bcit.comp2501.lab1a.monikaszucshenryyoung;
-
-import ca.bcit.comp2501.lab1a.monikaszucshenryyoung.BankAccount;
 
 /**
  * @author Monika Szucs and Henry Young
@@ -28,7 +27,7 @@ public class Main
         System.out.println("---");
 
         bank1.transfer(50.00, bank2);
-        System.out.println(bank1.balanceCDN);
-        System.out.println(bank2.balanceCDN);
+        System.out.println(bank1.balanceCdn);
+        System.out.println(bank2.balanceCdn);
     }
 }

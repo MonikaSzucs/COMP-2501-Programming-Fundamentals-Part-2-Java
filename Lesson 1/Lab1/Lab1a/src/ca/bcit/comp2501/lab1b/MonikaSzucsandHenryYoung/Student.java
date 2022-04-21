@@ -4,20 +4,21 @@ package ca.bcit.comp2501.lab1b.MonikaSzucsandHenryYoung;
  * @ Authors Monika Szucs and Henry Young
  */
 
-public class Student {
+public class Student
+{
     // Properties
-    private Name name;
-    private Date theDate;
-    private String studentNumber;
-    private Boolean isGraduated;
+    private final Name  name;
+    private Date        born;
+    private String      studentNumber;
+    private boolean     graduated;
 
     // Constructor
-    public Student(final Name name, final Date theDate, final String studentNumber, final Boolean isGraduated)
+    public Student(final Name name, final Date born, final String studentNumber, final boolean isGraduated)
     {
         this.name = name;
-        this.theDate = theDate;
+        this.born = born;
         this.studentNumber = studentNumber;
-        this.isGraduated = isGraduated;
+        this.graduated = graduated;
     }
 
     // Setters
@@ -33,15 +34,18 @@ public class Student {
     }
 
     // Setter for Date
-    public void setDate(final Date theDate)
+    public void setDate(final Date born)
     {
-        this.theDate = theDate;
+        this.born = born;
     }
 
-    // Getter of Date
-    public Date theDate()
+    /**
+     *
+     * @return the date on which the student was born
+     */
+    public Date getDateOfBirth()
     {
-        return theDate;
+        return born;
     }
 
     // Setter for Student Number
@@ -56,13 +60,13 @@ public class Student {
     }
 
     // Setter for Graduation
-    public void setIsGraduated(final Boolean isGraduated)
+    public void setIsGraduated(final boolean isGraduated)
     {
-        this.isGraduated = isGraduated;
+        this.graduated = graduated;
     }
     // Getter for Graduation
     public String getIsGraduated(){
-        if(isGraduated){
+        if(graduated){
             return "graduated";
         }
         else{

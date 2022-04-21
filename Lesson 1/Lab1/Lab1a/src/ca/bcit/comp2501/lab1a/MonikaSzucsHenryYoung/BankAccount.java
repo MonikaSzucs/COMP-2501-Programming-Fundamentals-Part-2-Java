@@ -7,34 +7,34 @@ package ca.bcit.comp2501.lab1a.MonikaSzucsHenryYoung;
 public class BankAccount
 {
     // Properties
-    double balanceCDN;
-    final String accountNumber;
-    final String memberLastName;
+    private double balanceCdn;
+    private final String accountNumber;
+    private final String memberLastName;
 
     // constructor
-    BankAccount(double balanceCDN, final String accountNumber, final String memberLastName)
+    BankAccount(final double balanceCdn, final String accountNumber, final String memberLastName)
     {
-        this.balanceCDN = balanceCDN;
-        this.accountNumber = accountNumber;
+        this.balanceCdn     = balanceCdn;
+        this.accountNumber  = accountNumber;
         this.memberLastName = memberLastName;
     }
 
     // Method to calculate withdrawal
-    public void withdraw(double withdrawAmount)
+    public void withdraw(final double withdrawAmountCdn)
     {
-        balanceCDN -= withdrawAmount;
+        balanceCdn -= withdrawAmountCdn;
     }
 
     // Method to calculate deposit
-    public void deposit(double depositAmount)
+    public void deposit(final double depositAmountCdn)
     {
-        balanceCDN += depositAmount;
+        balanceCdn += depositAmountCdn;
     }
 
     // Method to transfer funds from bank1 to bank2
     public void transfer(final double amountCDN, final BankAccount recipientAccount)
     {
-        balanceCDN -= amountCDN;
+        balanceCdn -= amountCDN;
         recipientAccount.deposit(amountCDN);
     }
 }

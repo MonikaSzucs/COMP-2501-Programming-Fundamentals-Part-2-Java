@@ -4,7 +4,8 @@ package ca.bcit.comp2501.lab1b.MonikaSzucsandHenryYoung;
  * @ Authors Monika Szucs and Henry Young
  */
 
-public class Main {
+public class Main
+{
     public static void main(final String[] args)
     {
         // Student #1

@@ -6,9 +6,9 @@ package ca.bcit.comp2501.lab1b.MonikaSzucsandHenryYoung;
 
 public class Date {
     // Properties for Date
-    private String month;
-    private int day;
-    private int year;
+    private final String month;
+    private final int day;
+    private final int year;
 
     // Constructor for Date
     public Date(final String month, final int day, final int year)
@@ -27,13 +27,13 @@ public class Date {
     // Getter for Month
     public String getMonth()
     {
-        if (month=="January" || month=="january"|| month =="1")
+        if(month.equals("January") || month.equals("january")|| month =="1")
         {
             return "1";
-        } else if (month=="February" || month=="february"|| month =="2")
+        } else if(month=="February" || month=="february"|| month =="2")
         {
             return "2";
-        } else if (month=="March" || month=="march"|| month =="3")
+        } else if(month=="March" || month=="march"|| month =="3")
         {
             return "3";
         } else if (month=="April" || month=="april"|| month =="4")

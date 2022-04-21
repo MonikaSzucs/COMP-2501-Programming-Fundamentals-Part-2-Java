@@ -4,12 +4,11 @@ package ca.bcit.comp2501.lab1b.MonikaSzucsandHenryYoung;
  * @ Authors Monika Szucs and Henry Young
  */
 
-public class Name {
-    // Properties for Name
+public class Name
+{
     private String firstName;
     private String lastName;
 
-    // Constructor for Name
     public Name(final String firstName, final String lastName)
     {
         this.firstName = firstName;
@@ -41,7 +40,7 @@ public class Name {
     }
 
     // Getter for First Initials
-    public char getFirstInitals()
+    public char getFirstInitials()
     {
         return firstName.charAt(0);
     }
@@ -55,7 +54,7 @@ public class Name {
     // Getter for Combined Initials
     public String getInitials()
     {
-        return getFirstInitals() + "." + getLastInitials() + ".";
+        return getFirstInitials() + "." + getLastInitials() + ".";
     }
 
 }

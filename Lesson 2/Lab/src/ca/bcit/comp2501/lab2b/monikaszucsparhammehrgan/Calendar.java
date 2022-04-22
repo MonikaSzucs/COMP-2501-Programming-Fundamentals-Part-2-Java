@@ -2,7 +2,8 @@ package ca.bcit.comp2501.lab2b.monikaszucsparhammehrgan;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import java.util.Iterator;
+import java.util.Set;
 
 
 public class Calendar {
@@ -10,13 +11,17 @@ public class Calendar {
     private ArrayList<Integer> years;
     private String[] months;
     private ArrayList<Integer> days;
-    HashMap<String, Date> dates;
+    private HashMap<String, Date> dates;
 
-    public Calendar(ArrayList<Integer> date)
+
+
+    public Calendar()
     {
         int yearStart = 1910;
         int yearEnd = 2026;
         years = new ArrayList<Integer>(yearStart);
+
+
         for(int i = yearStart; i < yearEnd; i++){
             years.add(i);
         }
@@ -56,6 +61,59 @@ public class Calendar {
         System.out.println(days);
 
 
+        if(years != null)
+        {
+            for(int year : years)
+            {
+                if(year >= yearStart && year <= yearEnd)
+                {
+                    System.out.println(year);
+                    int monthPos = 0;
+                    if(months != null)
+                    {
+                        for(int i = monthPos; i < months.length; i++ )
+                        {
+                            if(months[i] != null)
+                            {
+                                System.out.println(months[i]);
+
+                                if(days != null)
+                                {
+                                    Iterator<Integer> it = days.iterator();
+                                    int uniqueKey = 1;
+                                    while(it.hasNext())
+                                    {
+                                        Integer day = it.next();
+                                        if(day != null)
+                                        {
+                                            System.out.println(day);
+                                            Date dateAdded = new Date(year, months[i], day);
+                                            dates.put(String.valueOf(uniqueKey), dateAdded);
+                                            uniqueKey+=1;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        monthPos += 1;
+                    }
+                }
+            }
+        }
+        //System.out.println(dates);
+
+    }
+
+    public void printCalendar()
+    {
+        //System.out.println(getDate());
+
+        Set<String> keys = dates.keySet();
+        for(String key: keys)
+        {
+            Date date = dates.get(key);
+            System.out.println("st #" + date + " is " + date.getDate());
+        }
     }
 
 

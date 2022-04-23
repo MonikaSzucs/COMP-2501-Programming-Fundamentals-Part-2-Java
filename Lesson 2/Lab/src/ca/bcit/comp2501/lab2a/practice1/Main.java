@@ -16,5 +16,8 @@ public class Main {
         bank.addAccount(account4);
 
         bank.depositTo(22.22, "def222");
+        bank.getAccount("abc111").transfer(5.00, bank.getAccount("ghi333"));
+
+        bank.printAllCustomerData();
     }
 }

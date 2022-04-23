@@ -61,6 +61,10 @@ public class Bank {
 
     public void printAllCustomerData()
     {
-        
+        Set<String> account = bankAccounts.keySet();
+        for(String key: account) {
+            System.out.println(String.format("Customer %s has $%.2f in account #%s", bankAccounts.get(key).getCustomerLastName(), bankAccounts.get(key).getBalanceCdn(), bankAccounts.get(key).getAccountId()));
+        }
+        System.out.println(String.format("The total balance in all accounts for %s is %.2f", bankName, getTotalAccountsBalance()));
     }
 }

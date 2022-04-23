@@ -10,5 +10,11 @@ public class Main {
         BankAccount account3 = new BankAccount(300.0, "ghi333", "bezos");
         BankAccount account4 = new BankAccount(400.0, "jkl444", "zuckerberg");
 
+        bank.addAccount(account1);
+        bank.addAccount(account2);
+        bank.addAccount(account3);
+        bank.addAccount(account4);
+
+        bank.depositTo(22.22, "def222");
     }
 }

@@ -1,10 +1,14 @@
-package ca.bcit.comp2501.lab2b.practice1;
+package ca.bcit.comp2501.lab2b.monikaszucsandparhammehrgan;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
+/**
+ * @Authors Monika Szucs and Parham Mehrgan
+ * @version 1.0
+ */
 public class Calendar
 {
     private ArrayList<Integer> years;
@@ -12,8 +16,15 @@ public class Calendar
     private ArrayList<Integer> days;
     HashMap<Integer, Date> dates = new HashMap<>();
 
+    /**
+     * Creating an ArrayList that is called years with Integers from 1910 to 2025 (Integers)
+     * Creating an Array called months with all 12 month names (String)
+     * Creating an Array list called days with Integers from day 1 to 30 (Integers)
+     * Creating a HashMap called dates with keys that have an Integer and value is a Date
+     */
     public Calendar()
     {
+        // Years using the ArrayList
         int yearsStart = 1910;
         int yearsEnd = 2025;
         years = new ArrayList<>();
@@ -22,16 +33,14 @@ public class Calendar
             years.add(i);
         }
 
-        System.out.println(years);
-
+        // Months using the Array
         int monthStart = 0;
         int monthEnd = 12;
         months = new String[] {"January", "February", "March", "April",
                 "May", "June", "July", "August", "September", "October",
                 "November", "December"};
 
-        System.out.println(months);
-
+        // Days using ArrayList
         int dayStart = 1;
         int dayEnd = 30;
         days = new ArrayList<>();
@@ -39,8 +48,11 @@ public class Calendar
         {
             days.add(j);
         }
-        System.out.println(days);
 
+        // Creating a nested loop
+        // for-each loop to iterate through the years
+        // for loop to iterate though the months
+        // iterator to iterate through the days
         int count = 1;
         if(years != null)
         {
@@ -70,6 +82,9 @@ public class Calendar
         }
     }
 
+    /**
+     *  Printing out the calendar with the Month Day, Year format which loops though the keySet()
+     */
     public void printCalendar()
     {
         Set<Integer> keys = dates.keySet();

@@ -4,22 +4,21 @@ package ca.bcit.comp2501.lab2a.monikaszucsandparhammehrgan;
  * @Authors Monika Szucs and Parham Mehrgan
  * @version 1.0
  */
-public class BankAccount
-{
+public class BankAccount {
     private double balanceCdn;
-    private String accountId;
-    private String customerLastName;
+    private String accountNumber;
+    private String memberLastName;
 
     /**
      * @param balanceCdn getting the balance of a bank account in Canadian dollars and in a double format
-     * @param accountId getting the account id for the individual in String format
-     * @param customerLastName getting the customers last name in String format
+     * @param accountNumber getting the account id for the individual in String format
+     * @param memberLastName getting the customers last name in String format
      */
-    public BankAccount(final double balanceCdn, final String accountId, final String customerLastName)
+    public BankAccount(final double balanceCdn, final String accountNumber, final String memberLastName)
     {
         this.balanceCdn = balanceCdn;
-        this.accountId = accountId;
-        this.customerLastName = customerLastName;
+        this.accountNumber = accountNumber;
+        this.memberLastName = memberLastName;
     }
 
     /**
@@ -27,7 +26,7 @@ public class BankAccount
      */
     public void setBalanceCdn(double balanceCdn)
     {
-        this.balanceCdn = balanceCdn;
+        this. balanceCdn = balanceCdn;
     }
 
     /**
@@ -39,57 +38,57 @@ public class BankAccount
     }
 
     /**
-     * @param accountId setting that account ID
+     * @param accountNumber setting the account number
      */
-    public void setAccountId(String accountId)
+    public void setAccountNumber(String accountNumber)
     {
-        this.accountId = accountId;
+        this.accountNumber = accountNumber;
     }
 
     /**
-     * @return getting and then returning the account ID
+     * @return the account number
      */
-    public String getAccountId()
+    public String getAccountNumber()
     {
-        return accountId;
+        return accountNumber;
     }
 
     /**
-     * @param customerLastName setting the customers last name
+     * @param memberLastName is setting the members last name
      */
-    public void setCustomerLastName(String customerLastName)
+    public void setMemberLastName(String memberLastName)
     {
-        this.customerLastName = customerLastName;
+        this.memberLastName = memberLastName;
     }
 
     /**
-     * @return getting and then returning the customers last name
+     * @return the members last name
      */
-    public String getCustomerLastName()
+    public String getMemberLastName()
     {
-        return customerLastName;
+        return memberLastName;
     }
 
     /**
-     * @param withdrawAmount withdrawing (subtracting) an amount from an account in Canadian dollars
+     * @param amountCdn withdrawing the amount in canadian dollars from the individuals balance in Canadian dollars
      */
-    public void withdraw(final double withdrawAmount)
+    public void withdraw(final double amountCdn)
     {
-        balanceCdn -= withdrawAmount;
+        balanceCdn-=amountCdn;
     }
 
     /**
-     * @param depositAmount depositing (adding) an amount from an account in Canadian dollars
+     * @param amountCdn depositing a Canadian dollar amount in an individuals account balance
      */
-    public void deposit(final double depositAmount)
+    public void deposit(final double amountCdn)
     {
-        balanceCdn += depositAmount;
+        balanceCdn+=amountCdn;
     }
 
     /**
-     * @param amountCdn determining the amount in Canadian dollars that will be used to transfer over to the
-     *                  recipients account
-     * @param recipientAccount another account that a user wants to send the money to
+     * @param amountCdn getting the amount in Canadian that will be used to deposit in the recipients account and
+     *                  withdraw what was taken out of the senders account
+     * @param recipientAccount
      */
     public void transfer(final double amountCdn, final BankAccount recipientAccount)
     {

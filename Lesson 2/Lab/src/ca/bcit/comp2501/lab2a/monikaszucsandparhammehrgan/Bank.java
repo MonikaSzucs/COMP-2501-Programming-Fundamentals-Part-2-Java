@@ -1,14 +1,16 @@
 package ca.bcit.comp2501.lab2a.monikaszucsandparhammehrgan;
 
+
 import java.util.HashMap;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 /**
  * @Authors Monika Szucs and Parham Mehrgan
  * @version 1.0
  */
-public class Bank
-{
+public class Bank {
     private String bankName;
     private HashMap<String, BankAccount> bankAccounts;
 
@@ -42,12 +44,12 @@ public class Bank
      */
     public void addAccount(BankAccount accounts)
     {
-        bankAccounts.put(accounts.getAccountId(), accounts);
+        bankAccounts.put(accounts.getAccountNumber(), accounts);
     }
 
     /**
      * @param accountNumber is getting the account number
-     * @return is returninng the bank account based on the account number
+     * @return is returning the bank account based on the account number
      */
     public BankAccount getAccount(String accountNumber)
     {
@@ -76,10 +78,10 @@ public class Bank
     public double getTotalAccountsBalance()
     {
         double totalCdn = 0.0;
-        Set<String> keys = bankAccounts.keySet();
+        Set <String> keys = bankAccounts.keySet();
         for(String key: keys)
         {
-            totalCdn += bankAccounts.get(key).getBalanceCdn();
+            totalCdn+=bankAccounts.get(key).getBalanceCdn();
         }
         return totalCdn;
     }
@@ -87,11 +89,11 @@ public class Bank
     /**
      * @param amountCdn is getting the amount in Canadian dollars from one account then depositing it to another
      *                  account based on its account number
-     * @param accountNum is getting the account number that the user wants to deposit the amount in Canadian to
+     * @param accountNumber is getting the account number that the user wants to deposit the amount in Canadian to
      */
-    public void depositTo(double amountCdn, String accountNum)
+    public void depositTo(final double amountCdn, final String accountNumber)
     {
-        bankAccounts.get(accountNum).deposit(amountCdn);
+        bankAccounts.get(accountNumber).deposit(amountCdn);
     }
 
     /**
@@ -100,11 +102,15 @@ public class Bank
      */
     public void printAllCustomerData()
     {
-        Set<String> account = bankAccounts.keySet();
+        SortedSet<String> account = new TreeSet<String>(bankAccounts.keySet());
         for(String key: account)
         {
-            System.out.println(String.format("Customer %s has $%.2f in account #%s", bankAccounts.get(key).getCustomerLastName(), bankAccounts.get(key).getBalanceCdn(), bankAccounts.get(key).getAccountId()));
+            System.out.println(String.format("Customer %s%s has $%.2f in account #%s",
+                    bankAccounts.get(key).getMemberLastName().substring(0,1).toUpperCase(),
+                    bankAccounts.get(key).getMemberLastName().substring(1),
+                    bankAccounts.get(key).getBalanceCdn(),
+                    bankAccounts.get(key).getAccountNumber()));
         }
-        System.out.println(String.format("The total balance in all accounts for %s is %.2f", bankName, getTotalAccountsBalance()));
+        System.out.println(String.format("Total bank balance in all accounts for %s is %s", bankName, getTotalAccountsBalance()));
     }
 }

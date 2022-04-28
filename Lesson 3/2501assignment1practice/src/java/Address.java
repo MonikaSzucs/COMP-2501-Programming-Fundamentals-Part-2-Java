@@ -18,16 +18,7 @@ public class Address
 
     public void setUnitNumber(String unitNumber)
     {
-        if(unitNumber == null && unitNumber.isEmpty())
-        {
-            throw new IllegalArgumentException("Invalid unit number: ");
-        }
-        else if(unitNumber == null)
-        {
-            throw new NullPointerException("Invalid unit number: " + unitNumber);
-        }
-        else if(unitNumber.length() >= 1 && unitNumber.length() <=4)
-        {
+        if (unitNumber != null && unitNumber.length() > 1 && unitNumber.length() < 4) {
             this.unitNumber = unitNumber;
         }
         else {

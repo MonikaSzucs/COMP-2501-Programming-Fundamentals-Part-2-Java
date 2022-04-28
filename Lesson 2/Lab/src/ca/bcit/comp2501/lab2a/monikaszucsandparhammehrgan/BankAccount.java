@@ -1,8 +1,14 @@
 package ca.bcit.comp2501.lab2a.monikaszucsandparhammehrgan;
 
 /**
+ * BankAccount.java
+ * COMP 2501 - CRN 67139 - Wednesday Evenings, Sprint/Summer 2022
+ * Lab #2a
+ *
  * @Authors Monika Szucs and Parham Mehrgan
  * @version 1.0
+ *
+ * Define a bank account class with balance, account number, and member last name properties.
  */
 public class BankAccount {
     private double balanceCdn;
@@ -30,7 +36,9 @@ public class BankAccount {
     }
 
     /**
-     * @return getting and returning the balance of the account in Canadian dollars
+     * Get the account balance
+     *
+     * @return getting and returning the balance of the account in Canadian dollars (CAD)
      */
     public double getBalanceCdn()
     {
@@ -78,6 +86,8 @@ public class BankAccount {
     }
 
     /**
+     * Depositing an amount in Canadian dollars (CAD) to an account
+     *
      * @param amountCdn depositing a Canadian dollar amount in an individuals account balance
      */
     public void deposit(final double amountCdn)
@@ -86,9 +96,11 @@ public class BankAccount {
     }
 
     /**
-     * @param amountCdn getting the amount in Canadian that will be used to deposit in the recipients account and
-     *                  withdraw what was taken out of the senders account
-     * @param recipientAccount
+     * Working the transfer of funds to another account.
+     *
+     * @param amountCdn         getting the amount in Canadian dollars (CAD) that will be used to deposit in the recipients account and
+     *                          withdraw what was taken out of the senders account
+     * @param recipientAccount  The bank account that will receive the transfer amount in Canadian dollars (CAD)
      */
     public void transfer(final double amountCdn, final BankAccount recipientAccount)
     {

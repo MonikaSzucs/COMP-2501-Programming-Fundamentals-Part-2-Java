@@ -35,7 +35,19 @@ public class Address
 
     public String getUnitNumber()
     {
-        return unitNumber;
+        if(unitNumber == null)
+        {
+            return unitNumber;
+        }
+        else if(unitNumber.length() >= 1 && unitNumber.length() <=4)
+        {
+            return unitNumber;
+        }
+        else if(unitNumber == null)
+        {
+            throw new NullPointerException("Invalid unit number: " + unitNumber);
+        }
+        throw new IllegalArgumentException("Invalid unit number: " + unitNumber);
     }
 
     public int getStreetNumber()

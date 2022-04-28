@@ -1,8 +1,8 @@
 public class Address
 {
-    private final String unitNumber;
+    private String unitNumber;
     private final int streetNumber;
-    private final String streetName;
+    private String streetName;
     private final String postalCode;
     private final String cityName;
 
@@ -16,7 +16,24 @@ public class Address
         this.cityName = cityName;
     }
 
-    public Object getUnitNumber()
+    public void setUnitNumber(String unitNumber)
+    {
+        if(unitNumber == null)
+        {
+            this.unitNumber = unitNumber;
+        }
+        else if(unitNumber.length() >= 1 && unitNumber.length() <=4)
+        {
+            this.unitNumber = unitNumber;
+        }
+        else if(unitNumber == null)
+        {
+            throw new NullPointerException("Invalid unit number: " + unitNumber);
+        }
+        throw new IllegalArgumentException("Invalid unit number: " + unitNumber);
+    }
+
+    public String getUnitNumber()
     {
         return unitNumber;
     }
@@ -27,21 +44,57 @@ public class Address
         {
             return streetNumber;
         }
-        throw new IllegalArgumentException();
+        throw new IllegalArgumentException("Invalid street number: " + streetNumber);
+    }
+
+    public void setStreetName(String streetName)
+    {
+        if(streetName != null && !streetName.isEmpty())
+        {
+            if(streetName.length() >= 1 && streetName.length() <= 20)
+            {
+                this.streetName = streetName;
+            }
+        }
+        else if(streetName == null)
+        {
+            throw new NullPointerException("Invalid street name: " + streetName);
+        }
+        throw new IllegalArgumentException("Invalid street name: " + streetName);
     }
 
     public String getStreetName()
     {
-        return streetName;
+        if(streetName != null && !streetName.isEmpty())
+        {
+            if(streetName.length() >= 1 && streetName.length() <= 20)
+            {
+                return streetName;
+            }
+        }
+        else if(streetName == null)
+        {
+            throw new NullPointerException("Invalid street name: " + streetName);
+        }
+        throw new IllegalArgumentException("Invalid street name: " + streetName);
     }
 
     public String getPostalCode()
     {
-        return postalCode;
+        if(postalCode.length() == 5 || postalCode.length() == 6)
+        {
+            return postalCode;
+        }
+        throw new IllegalArgumentException("Invalid postal code: " + postalCode);
+
     }
 
     public String getCity()
     {
-        return cityName;
+        if(cityName.length() >= 1 && cityName.length() <= 30)
+        {
+            return cityName;
+        }
+        throw new IllegalArgumentException("Invalid street name: " + cityName);
     }
 }

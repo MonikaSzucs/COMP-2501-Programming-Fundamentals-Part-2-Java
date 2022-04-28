@@ -9,7 +9,7 @@ public class Address
     public Address(final String unit, final int streetNumber, final String streetName, final String postalCode,
                    final String cityName)
     {
-        this.unitNumber = unit;
+        this.setUnitNumber(unit);
         this.streetNumber = streetNumber;
         this.streetName = streetName;
         this.postalCode = postalCode;
@@ -18,19 +18,21 @@ public class Address
 
     public void setUnitNumber(String unitNumber)
     {
-        if(unitNumber == null)
+        if(unitNumber == null && unitNumber.isEmpty())
         {
-            this.unitNumber = unitNumber;
-        }
-        else if(unitNumber.length() >= 1 && unitNumber.length() <=4)
-        {
-            this.unitNumber = unitNumber;
+            throw new IllegalArgumentException("Invalid unit number: ");
         }
         else if(unitNumber == null)
         {
             throw new NullPointerException("Invalid unit number: " + unitNumber);
         }
-        throw new IllegalArgumentException("Invalid unit number: " + unitNumber);
+        else if(unitNumber.length() >= 1 && unitNumber.length() <=4)
+        {
+            this.unitNumber = unitNumber;
+        }
+        else {
+            throw new IllegalArgumentException("Invalid unit number: " + unitNumber);
+        }
     }
 
     public String getUnitNumber()

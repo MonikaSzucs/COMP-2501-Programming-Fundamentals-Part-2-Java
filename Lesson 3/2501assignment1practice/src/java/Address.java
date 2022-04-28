@@ -18,7 +18,7 @@ public class Address
 
     public void setUnitNumber(String unitNumber)
     {
-        if (unitNumber != null && unitNumber.length() > 1 && unitNumber.length() < 4) {
+        if (unitNumber.length() > 1 && unitNumber.length() < 4) {
             this.unitNumber = unitNumber;
         }
         else {

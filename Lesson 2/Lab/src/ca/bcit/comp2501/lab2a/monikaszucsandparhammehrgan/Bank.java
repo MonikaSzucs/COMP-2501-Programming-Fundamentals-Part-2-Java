@@ -1,37 +1,35 @@
 package ca.bcit.comp2501.lab2a.monikaszucsandparhammehrgan;
 
-
-import java.util.HashMap;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
+ *  BankAccount.java
+ *  COMP 2501 - CRN 67139 - Wednesday Evenings, Sprint/Summer 2022
+ *  Lab #2a
+ *
  * @Authors Monika Szucs and Parham Mehrgan
  * @version 1.0
+ *
+ * Define a bank class with the bank name and setting up a map for bank accounts
  */
-public class Bank {
-    private String bankName;
-    private HashMap<String, BankAccount> bankAccounts;
+class Bank {
+    private final String bankName;
+    private Map<String, BankAccount> bankAccounts;
 
     /**
+     * Bank for the object constructor
+     *
      * @param bankName the name of the bank and setting up a HashMap for the BankAccounts
      */
-    public Bank(final String bankName)
+    Bank(final String bankName)
     {
         this.bankName = bankName;
         bankAccounts = new HashMap<>();
     }
 
     /**
-     * @param bankName setting the name of the bank
-     */
-    public void setBankName(String bankName)
-    {
-        this.bankName = bankName;
-    }
-
-    /**
+     * Get the bank name
+     *
      * @return the getter of the bank name
      */
     public String getBankName()
@@ -40,31 +38,39 @@ public class Bank {
     }
 
     /**
+     * Adding the bank account numbers into the BankAccount object
+     *
      * @param accounts adding the account to the bank account
      */
-    public void addAccount(BankAccount accounts)
+    public void addAccount(final BankAccount accounts)
     {
         bankAccounts.put(accounts.getAccountNumber(), accounts);
     }
 
     /**
+     * Get the account number from the BankAccounts object
+     *
      * @param accountNumber is getting the account number
      * @return is returning the bank account based on the account number
      */
-    public BankAccount getAccount(String accountNumber)
+    public BankAccount getAccount(final String accountNumber)
     {
         return bankAccounts.get(accountNumber);
     }
 
     /**
+     * Removing the associate account number from the BankAccount object
+     *
      * @param accountNumber is removing the bank account based on the account number
      */
-    public void removeAccount(BankAccount accountNumber)
+    public void removeAccount(final BankAccount accountNumber)
     {
         bankAccounts.remove(accountNumber);
     }
 
     /**
+     * Get the number of accounts from bankAccounts
+     *
      * @return is getting the number of bank accounts that the bank has
      */
     public int getNumberOfAccounts()
@@ -73,6 +79,8 @@ public class Bank {
     }
 
     /**
+     * Get the total account balance from all accounts stored in the bank
+     *
      * @return is getting the total balance based on the total number of bank accounts the bank has
      */
     public double getTotalAccountsBalance()
@@ -87,6 +95,8 @@ public class Bank {
     }
 
     /**
+     * Depositing a Canadian amount to a designated account number
+     *
      * @param amountCdn is getting the amount in Canadian dollars from one account then depositing it to another
      *                  account based on its account number
      * @param accountNumber is getting the account number that the user wants to deposit the amount in Canadian to
@@ -97,6 +107,8 @@ public class Bank {
     }
 
     /**
+     * Printing all the customer's data from the stored BankAccount object
+     *
      * printing out the bank account information based on each bank account and another sentence based on the
      * total account balances
      */

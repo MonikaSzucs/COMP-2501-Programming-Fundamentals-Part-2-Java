@@ -8,19 +8,21 @@ package ca.bcit.comp2501.lab2a.monikaszucsandparhammehrgan;
  * @Authors Monika Szucs and Parham Mehrgan
  * @version 1.0
  *
- * Define a bank account class with balance, account number, and member last name properties.
+ * Define a bank account class with balance (Canadian dollars), account number, and member last name properties.
  */
-public class BankAccount {
+class BankAccount {
     private double balanceCdn;
-    private String accountNumber;
-    private String memberLastName;
+    private final String accountNumber;
+    private final String memberLastName;
 
     /**
+     * Bank account for the object constructor
+     *
      * @param balanceCdn getting the balance of a bank account in Canadian dollars and in a double format
      * @param accountNumber getting the account id for the individual in String format
      * @param memberLastName getting the customers last name in String format
      */
-    public BankAccount(final double balanceCdn, final String accountNumber, final String memberLastName)
+    BankAccount(final double balanceCdn, final String accountNumber, final String memberLastName)
     {
         this.balanceCdn = balanceCdn;
         this.accountNumber = accountNumber;
@@ -28,15 +30,17 @@ public class BankAccount {
     }
 
     /**
-     * @param balanceCdn setting the balance of the account in Canadian dollars
+     * Set the account balance in Canadian dollars (CAD)
+     *
+     * @param balanceCdn setting the balance of the account in Canadian dollars (CAD)
      */
-    public void setBalanceCdn(double balanceCdn)
+    public void setBalanceCdn(final double balanceCdn)
     {
         this. balanceCdn = balanceCdn;
     }
 
     /**
-     * Get the account balance
+     * Get the account balance in Canadian dollars
      *
      * @return getting and returning the balance of the account in Canadian dollars (CAD)
      */
@@ -46,14 +50,8 @@ public class BankAccount {
     }
 
     /**
-     * @param accountNumber setting the account number
-     */
-    public void setAccountNumber(String accountNumber)
-    {
-        this.accountNumber = accountNumber;
-    }
-
-    /**
+     * get the Account Number
+     *
      * @return the account number
      */
     public String getAccountNumber()
@@ -62,14 +60,8 @@ public class BankAccount {
     }
 
     /**
-     * @param memberLastName is setting the members last name
-     */
-    public void setMemberLastName(String memberLastName)
-    {
-        this.memberLastName = memberLastName;
-    }
-
-    /**
+     * Get the member last name
+     *
      * @return the members last name
      */
     public String getMemberLastName()
@@ -78,6 +70,7 @@ public class BankAccount {
     }
 
     /**
+     *
      * @param amountCdn withdrawing the amount in canadian dollars from the individuals balance in Canadian dollars
      */
     public void withdraw(final double amountCdn)

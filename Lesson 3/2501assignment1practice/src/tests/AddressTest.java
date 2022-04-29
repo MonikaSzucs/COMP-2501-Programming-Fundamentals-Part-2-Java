@@ -64,6 +64,7 @@ class AddressTest
         IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, ()->{
             address1 = new Address("",777, "56th avenue", "v7n2m8", "surrey");
         });
+        System.out.println(ex.getMessage());
         assertTrue(ex.getMessage().equals("Invalid unit number: "));
 
         ex = assertThrows(IllegalArgumentException.class, ()->{

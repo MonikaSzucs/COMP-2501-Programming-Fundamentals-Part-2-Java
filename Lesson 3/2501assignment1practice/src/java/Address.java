@@ -1,46 +1,47 @@
 public class Address
 {
-    private String unitNumber;
+    private final String unitNumber;
     private final int streetNumber;
-    private String streetName;
+    private final String streetName;
     private final String postalCode;
     private final String cityName;
 
     public Address(final String unit, final int streetNumber, final String streetName, final String postalCode,
                    final String cityName)
     {
-        this.setUnitNumber(unit);
         this.streetNumber = streetNumber;
         this.streetName = streetName;
         this.postalCode = postalCode;
         this.cityName = cityName;
-    }
 
-    public void setUnitNumber(String unitNumber)
-    {
-        if (unitNumber.length() > 1 && unitNumber.length() < 4) {
-            this.unitNumber = unitNumber;
+        if(unit == null) {
+            this.unitNumber = unit;
+        }
+        else if(unit == null || unit.isEmpty()){
+            this.unitNumber = unit;
+            throw new IllegalArgumentException("Invalid unit number: ");
+        }
+        else if (unit.length() > 1 && unit.length() < 4) {
+            this.unitNumber = unit;
         }
         else {
-            throw new IllegalArgumentException("Invalid unit number: " + unitNumber);
+            throw new IllegalArgumentException("Invalid unit number: " + unit);
         }
+
     }
 
     public String getUnitNumber()
     {
-        if(unitNumber == null)
+        if(unitNumber == null || unitNumber.isEmpty())
         {
             return unitNumber;
         }
-        else if(unitNumber.length() >= 1 && unitNumber.length() <=4)
-        {
+        else if (unitNumber.length() > 1 && unitNumber.length() < 4) {
             return unitNumber;
         }
-        else if(unitNumber == null)
-        {
-            throw new NullPointerException("Invalid unit number: " + unitNumber);
+        else {
+            throw new IllegalArgumentException("Invalid unit number: " + unitNumber);
         }
-        throw new IllegalArgumentException("Invalid unit number: " + unitNumber);
     }
 
     public int getStreetNumber()
@@ -50,22 +51,6 @@ public class Address
             return streetNumber;
         }
         throw new IllegalArgumentException("Invalid street number: " + streetNumber);
-    }
-
-    public void setStreetName(String streetName)
-    {
-        if(streetName != null && !streetName.isEmpty())
-        {
-            if(streetName.length() >= 1 && streetName.length() <= 20)
-            {
-                this.streetName = streetName;
-            }
-        }
-        else if(streetName == null)
-        {
-            throw new NullPointerException("Invalid street name: " + streetName);
-        }
-        throw new IllegalArgumentException("Invalid street name: " + streetName);
     }
 
     public String getStreetName()

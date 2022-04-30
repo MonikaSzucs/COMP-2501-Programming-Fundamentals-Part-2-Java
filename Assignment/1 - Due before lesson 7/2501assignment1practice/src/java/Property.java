@@ -1,14 +1,12 @@
-import java.util.Locale;
-
 public class Property {
     private double priceInUsd;
-    private final Address address;
+    private Object address;
     private final int numberOfBedrooms;
     private final boolean swimmingPool;
     private final String type;
     private final String propertyId;
 
-    public Property(final double priceInUsd, final Address address, final int numberOfBedrooms, final boolean swimmingPool, final String type, final String propertyId)
+    public Property(final double priceInUsd, final Object address, final int numberOfBedrooms, final boolean swimmingPool, final String type, final String propertyId)
     {
 
         if (priceInUsd >= 0.00) {
@@ -75,10 +73,10 @@ public class Property {
         }
     }
 
-    public Address getAddress()
-    {
-        return address;
-    }
+    //public Address getAddress()
+    //{
+       // return address;
+    //}
 
     public int getNumberOfBedrooms()
     {

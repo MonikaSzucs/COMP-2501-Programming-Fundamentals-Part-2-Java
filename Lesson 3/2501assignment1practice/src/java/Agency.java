@@ -1,20 +1,78 @@
+import java.util.*;
+
 public class Agency {
-    Object property;
-    Object agency;
+    private final String name;
+    private final Map<String, Property> properties;
 
-    public Agency(final Object property, final Object agency)
+    public Agency(final String name)
     {
-        this.property = property;
-        this.agency = agency;
+        this.name = name;
+        properties = new HashMap<>();
     }
 
-    public Object getProperty()
+    /**
+     * Adding the Property into the Hashmap
+     *
+     * @param property
+     */
+    public void addProperty(Property property)
     {
-        return property;
+
+        properties.put(property.getPropertyId(), property);
     }
 
-    public void addProperty(Object property)
+    /**
+     * Getting the property from the Hashmap with a specific property ID
+     *
+     * @param propertyId
+     * @return
+     */
+    public Property getProperty(String propertyId)
     {
-        this.property.property;
+        return properties.get(propertyId);
+    }
+
+    /**
+     * Removing the property from the Hashmap with a specific property ID
+     *
+     * @param propertyId
+     */
+    public void removeProperty(String propertyId) {
+        properties.remove(propertyId);
+    }
+
+    /**
+     *
+     *
+     * @return
+     */
+    public double getTotalPropertyValues() {
+
+        Set<String> propertiesPropertyId;
+        propertiesPropertyId = properties.keySet();
+        double total = 0.0;
+        for(String propertyId: propertiesPropertyId)
+        {
+            total += getProperty(propertyId).getPriceUsd();
+        }
+        return total;
+    }
+
+    public ArrayList<Property> getPropertiesWithPools() {
+        ArrayList<Property> propertiesWithPools;
+        propertiesWithPools = new ArrayList<>();
+
+        Set<String> setOfPropertyIds;
+        setOfPropertyIds = properties.keySet();
+
+        for(String propertyId: setOfPropertyIds)
+        {
+            getProperty(propertyId).hasSwimmingPool();
+            if(getProperty(propertyId).hasSwimmingPool())
+            {
+                propertiesWithPools.add(getProperty(propertyId));
+            }
+        }
+        return propertiesWithPools;
     }
 }

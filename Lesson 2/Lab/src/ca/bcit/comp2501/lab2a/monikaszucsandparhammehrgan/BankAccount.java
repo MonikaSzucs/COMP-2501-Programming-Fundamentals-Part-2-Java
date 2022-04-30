@@ -5,7 +5,8 @@ package ca.bcit.comp2501.lab2a.monikaszucsandparhammehrgan;
  * COMP 2501 - CRN 67139 - Wednesday Evenings, Sprint/Summer 2022
  * Lab #2a
  *
- * @Authors Monika Szucs and Parham Mehrgan
+ * @authors Monika Szucs
+ * @author Parham Mehrgan
  * @version 1.0
  *
  * Define a bank account class with balance (Canadian dollars), account number, and member last name properties.

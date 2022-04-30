@@ -7,7 +7,8 @@ import java.util.*;
  *  COMP 2501 - CRN 67139 - Wednesday Evenings, Sprint/Summer 2022
  *  Lab #2a
  *
- * @Authors Monika Szucs and Parham Mehrgan
+ * @authors Monika Szucs
+ * @author Parham Mehrgan
  * @version 1.0
  *
  * Define a bank class with the bank name and setting up a map for bank accounts

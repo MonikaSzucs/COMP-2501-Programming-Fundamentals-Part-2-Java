@@ -43,7 +43,7 @@ public class Property {
             this.type = type;
         }
         else {
-            throw new IllegalArgumentException("Invalid property id: " + type);
+            throw new IllegalArgumentException("Invalid property type: " + type.substring(0,4) + type.substring(4, 5).toUpperCase() + type.substring(5));
         }
 
         if(propertyId == null)

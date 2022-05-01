@@ -76,7 +76,7 @@ class BankAccount {
      */
     public void withdraw(final double amountCdn)
     {
-        balanceCdn-=amountCdn;
+        balanceCdn -= amountCdn;
     }
 
     /**
@@ -86,7 +86,7 @@ class BankAccount {
      */
     public void deposit(final double amountCdn)
     {
-        balanceCdn+=amountCdn;
+        balanceCdn += amountCdn;
     }
 
     /**

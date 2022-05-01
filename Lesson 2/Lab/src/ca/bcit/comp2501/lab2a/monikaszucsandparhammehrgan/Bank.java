@@ -70,7 +70,7 @@ class Bank {
     }
 
     /**
-     * Get the number of accounts from bankAccounts
+     * Get the number of accounts from bankAccounts Hashmap
      *
      * @return is getting the number of bank accounts that the bank has
      */
@@ -80,17 +80,17 @@ class Bank {
     }
 
     /**
-     * Get the total account balance from all accounts stored in the bank
+     * Get the total account balance from all accounts stored in the bankAccounts Hashmap
      *
      * @return is getting the total balance based on the total number of bank accounts the bank has
      */
     public double getTotalAccountsBalance()
     {
         double totalCdn = 0.0;
-        Set <String> keys = bankAccounts.keySet();
-        for(String key: keys)
+        Set<String> allBankAccounts = bankAccounts.keySet();
+        for(String singleBankAccount: allBankAccounts)
         {
-            totalCdn+=bankAccounts.get(key).getBalanceCdn();
+            totalCdn += bankAccounts.get(singleBankAccount).getBalanceCdn();
         }
         return totalCdn;
     }
@@ -115,14 +115,15 @@ class Bank {
      */
     public void printAllCustomerData()
     {
-        SortedSet<String> account = new TreeSet<String>(bankAccounts.keySet());
-        for(String key: account)
+        SortedSet<String> accounts = new TreeSet<String>(bankAccounts.keySet());
+        for(String account: accounts)
         {
             System.out.println(String.format("Customer %s%s has $%.2f in account #%s",
-                    bankAccounts.get(key).getMemberLastName().substring(0,1).toUpperCase(),
-                    bankAccounts.get(key).getMemberLastName().substring(1),
-                    bankAccounts.get(key).getBalanceCdn(),
-                    bankAccounts.get(key).getAccountNumber()));
+                    bankAccounts.get(account).getMemberLastName().substring(0,1).toUpperCase(),
+                    bankAccounts.get(account).getMemberLastName().substring(1),
+                    bankAccounts.get(account).getBalanceCdn(),
+                    bankAccounts.get(account).getAccountNumber())
+            );
         }
         System.out.println(String.format("Total bank balance in all accounts for %s is %s", bankName, getTotalAccountsBalance()));
     }

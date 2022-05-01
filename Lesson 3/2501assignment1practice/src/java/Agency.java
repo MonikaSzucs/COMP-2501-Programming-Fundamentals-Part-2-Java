@@ -75,4 +75,20 @@ public class Agency {
         }
         return propertiesWithPools;
     }
+
+    public Property[] getPropertiesBetween(int minUsd, int maxUsd) {
+        Property[] propertiesBetween;
+        propertiesBetween = new Property[5];
+        int num = 0;
+        for(Property propertyId: propertiesBetween)
+        {
+            if(propertyId.getPriceUsd() >= minUsd && propertyId.getPriceUsd() <= maxUsd)
+            {
+                propertiesBetween[num] = propertyId.getPriceUsd();
+            }
+            num++;
+        }
+
+        return propertiesBetween;
+    }
 }

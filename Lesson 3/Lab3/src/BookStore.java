@@ -200,7 +200,6 @@ class BookStore {
 
     public void printNameStartsEndsWith(String substring)
     {
-        System.out.println("SUBSTRINGG");
         for(Novel novel: novels) {
             if (novel != null) {
                 if (novel.getAuthorName() != null) {
@@ -215,9 +214,28 @@ class BookStore {
         }
     }
 
-    public void getLongest(String property)
+    public String getLongest(String property)
     {
+        Novel[] longest;
+        longest = new Novel[1];
+        if(property.toLowerCase() == "author")
+        {
+            for(Novel novel: novels)
+            {
+                if(novel.getAuthorName().length() > longest.length)
+                {
+                    longest[0] = novel.getAuthorName();
+                }
+            }
+        }
+        else if(property.toLowerCase() == "title")
+        {
 
+        }
+        else
+        {
+            return null;
+        }
     }
 
     public static void main(String[] args)
@@ -236,6 +254,15 @@ class BookStore {
 
         System.out.println("---");
         b.printNameStartsEndsWith("aN");
+
+        System.out.println("---");
+        b.getLongest("xyz");
+
+        System.out.println("---");
+        b.getLongest("AutHor");
+
+        System.out.println("---");
+        b.getLongest("titlE");
 
     }
 }

@@ -1,50 +1,94 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
+import java.util.*;
 
 public class Agency {
-    Object property;
-    Object agency;
+    private final String name;
+    private final Map<String, Property> properties;
 
-    public Agency(final Object property)
+    public Agency(final String name)
     {
-        this.property = property;
-        this.agency = agency;
-    }
-
-    public Object getProperty(String x)
-    {
-        return property;
-    }
-
-    public void addProperty(Object property)
-    {
-        //this.property.property;
-    }
-
-    public void removeProperty(String x) {
-        this.property = property;
-    }
-
-    public int getTotalPropertyValues() {
-        return 2;
+        this.name = name;
+        properties = new HashMap<>();
     }
 
     /**
-    public Collection<Object> getPropertiesWithPools() {
-
-    }
-
-    public Property[] getPropertiesBetween(int i, int i1) {
-    }
-
-    public Collection<Object> getPropertiesOn(String elm_street) {
-    }
-
-    public HashMap<String,Property> getPropertiesWithBedrooms(int i, int i1) {
-    }
-
-    public ArrayList<String> getPropertiesOfType(String commerCIAl) {
-    }
+     * Adding the Property into the Hashmap
+     *
+     * @param property
      */
+    public void addProperty(Property property)
+    {
+
+        properties.put(property.getPropertyId(), property);
+    }
+
+    /**
+     * Getting the property from the Hashmap with a specific property ID
+     *
+     * @param propertyId
+     * @return
+     */
+    public Property getProperty(String propertyId)
+    {
+        return properties.get(propertyId);
+    }
+
+    /**
+     * Removing the property from the Hashmap with a specific property ID
+     *
+     * @param propertyId
+     */
+    public void removeProperty(String propertyId) {
+        properties.remove(propertyId);
+    }
+
+    /**
+     *
+     *
+     * @return
+     */
+    public double getTotalPropertyValues() {
+
+        Set<String> propertiesPropertyId;
+        propertiesPropertyId = properties.keySet();
+        double total = 0.0;
+        for(String propertyId: propertiesPropertyId)
+        {
+            total += getProperty(propertyId).getPriceUsd();
+        }
+        return total;
+    }
+
+    public ArrayList<Property> getPropertiesWithPools() {
+        ArrayList<Property> propertiesWithPools;
+        propertiesWithPools = new ArrayList<>();
+
+        Set<String> setOfPropertyIds;
+        setOfPropertyIds = properties.keySet();
+
+        for(String propertyId: setOfPropertyIds)
+        {
+            getProperty(propertyId).hasSwimmingPool();
+            if(getProperty(propertyId).hasSwimmingPool())
+            {
+                propertiesWithPools.add(getProperty(propertyId));
+            }
+        }
+        return propertiesWithPools;
+    }
+
+    public Property[] getPropertiesBetween(int minUsd, int maxUsd) {
+        Property[] propertiesBetween;
+        propertiesBetween = new Property[5];
+        int num = 0;
+        for(Property propertyId: propertiesBetween)
+        {
+            if(propertyId.getPriceUsd() >= minUsd && propertyId.getPriceUsd() <= maxUsd)
+            {
+                propertiesBetween[num] = propertyId.getPriceUsd();
+            }
+            num++;
+        }
+
+        return propertiesBetween;
+    }
 }

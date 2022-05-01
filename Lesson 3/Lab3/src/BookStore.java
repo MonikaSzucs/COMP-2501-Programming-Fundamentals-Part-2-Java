@@ -219,7 +219,6 @@ class BookStore {
         Novel[] longest;
         longest = new Novel[1];
 
-
         if(property.toLowerCase() == "author")
         {
             for(Novel novel: novels)

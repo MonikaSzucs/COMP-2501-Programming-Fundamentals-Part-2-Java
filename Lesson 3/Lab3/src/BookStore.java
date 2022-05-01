@@ -218,6 +218,8 @@ class BookStore {
     {
         Novel[] longest;
         longest = new Novel[1];
+
+
         if(property.toLowerCase() == "author")
         {
             for(Novel novel: novels)
@@ -227,6 +229,7 @@ class BookStore {
                     longest[0] = novel.getAuthorName();
                 }
             }
+            return longest;
         }
         else if(property.toLowerCase() == "title")
         {

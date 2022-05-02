@@ -1,12 +1,12 @@
 public class Property {
     private double priceInUsd;
-    private Object address;
+    private Address address;
     private final int numberOfBedrooms;
     private final boolean swimmingPool;
     private final String type;
     private final String propertyId;
 
-    public Property(final double priceInUsd, final Object address, final int numberOfBedrooms, final boolean swimmingPool, final String type, final String propertyId)
+    public Property(final double priceInUsd, final Address address, final int numberOfBedrooms, final boolean swimmingPool, final String type, final String propertyId)
     {
 
         if (priceInUsd >= 0.00) {
@@ -18,7 +18,7 @@ public class Property {
 
         if(address == null)
         {
-            throw new NullPointerException("Invalid property id: " + address);
+            throw new NullPointerException("Invalid address: " + address);
         }
         else
         {
@@ -34,12 +34,16 @@ public class Property {
 
         this.swimmingPool = swimmingPool;
 
-        if (type.equalsIgnoreCase("residence") || type.equalsIgnoreCase("commercial") || type.equalsIgnoreCase("retail"))
+        if(type == null)
+        {
+            throw new NullPointerException("Invalid property type: " + type);
+        }
+        else if (type.equalsIgnoreCase("residence") || type.equalsIgnoreCase("commercial") || type.equalsIgnoreCase("retail"))
         {
             this.type = type;
         }
         else {
-            throw new IllegalArgumentException("Invalid property type: " + type.substring(0,4) + type.substring(4, 5).toUpperCase() + type.substring(5));
+            throw new IllegalArgumentException("Invalid property type: " + type.toLowerCase());
         }
 
         if(propertyId == null)
@@ -112,4 +116,8 @@ public class Property {
         }
     }
 
+    public Address getAddress()
+    {
+        return address;
+    }
 }

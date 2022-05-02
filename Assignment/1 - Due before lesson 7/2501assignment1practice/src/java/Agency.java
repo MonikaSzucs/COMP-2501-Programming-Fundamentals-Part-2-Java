@@ -78,17 +78,142 @@ public class Agency {
 
     public Property[] getPropertiesBetween(int minUsd, int maxUsd) {
         Property[] propertiesBetween;
-        propertiesBetween = new Property[5];
+        propertiesBetween = new Property[10];
         int num = 0;
-        for(Property propertyId: propertiesBetween)
+        for(String propertyId: properties.keySet())
         {
-            if(propertyId.getPriceUsd() >= minUsd && propertyId.getPriceUsd() <= maxUsd)
+            if(properties.get(propertyId).getPriceUsd() >= minUsd && properties.get(propertyId).getPriceUsd() <= maxUsd)
             {
-                propertiesBetween[num] = propertyId.getPriceUsd();
+                propertiesBetween[num] = properties.get(propertyId);
             }
             num++;
         }
-
+        if(propertiesBetween.length < 1)
+        {
+            return null;
+        }
         return propertiesBetween;
+    }
+
+    public ArrayList<Address> getPropertiesOn(String streetName) {
+        ArrayList<Address> sameStreet = new ArrayList<>();
+        for(String propertyId: properties.keySet())
+        {
+            if(properties.get(propertyId).getAddress().getStreetName().equalsIgnoreCase(streetName))
+            {
+                sameStreet.add(properties.get(propertyId).getAddress());
+            }
+        }
+        if(sameStreet.isEmpty())
+        {
+            return null;
+        }
+        return sameStreet;
+    }
+
+    public HashMap<String,Property> getPropertiesWithBedrooms(int minBedrooms, int maxBedrooms) {
+        HashMap<String, Property> bedroomMap = new HashMap<>();
+        for(String propertyId: properties.keySet())
+        {
+            if(properties.get(propertyId).getNumberOfBedrooms() >= minBedrooms && properties.get(propertyId).getNumberOfBedrooms() <= maxBedrooms)
+            {
+                bedroomMap.put(propertyId, properties.get(propertyId));
+            }
+        }
+        if(bedroomMap.isEmpty())
+        {
+            return null;
+        }
+        return bedroomMap;
+    }
+
+    public ArrayList<String> getPropertiesOfType(String propertyType) {
+        ArrayList<String> propertyTypes = new ArrayList<>();
+        String prop = "";
+        int counter = 1;
+        for(String propertyId: properties.keySet())
+        {
+            if(properties.get(propertyId).getType().equalsIgnoreCase(propertyType))
+            {
+                if(properties.get(propertyId).getAddress().getUnitNumber() != null)
+                {
+                    if(properties.get(propertyId).getNumberOfBedrooms() > 1)
+                    {
+                        if(properties.get(propertyId).hasSwimmingPool())
+                        {
+                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms plus pool): $%f.", counter,
+                                    propertyId,
+                                    properties.get(propertyId).getAddress().getUnitNumber(),
+                                    properties.get(propertyId).getAddress().getStreetNumber(),
+                                    properties.get(propertyId).getAddress().getStreetName(),
+                                    properties.get(propertyId).getAddress().getPostalCode(),
+                                    properties.get(propertyId).getAddress().getCity(),
+                                    properties.get(propertyId).getNumberOfBedrooms(),
+                                    properties.get(propertyId).getPriceUsd()
+                            );
+                        }
+                        else
+                        {
+                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms): $%f.", counter,
+                                    propertyId,
+                                    properties.get(propertyId).getAddress().getUnitNumber(),
+                                    properties.get(propertyId).getAddress().getStreetNumber(),
+                                    properties.get(propertyId).getAddress().getStreetName(),
+                                    properties.get(propertyId).getAddress().getPostalCode(),
+                                    properties.get(propertyId).getAddress().getCity(),
+                                    properties.get(propertyId).getNumberOfBedrooms(),
+                                    properties.get(propertyId).getPriceUsd()
+                            );
+                        }
+                    }
+                    else
+                    {
+                        prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedroom): $%f.", counter,
+                                propertyId,
+                                properties.get(propertyId).getAddress().getUnitNumber(),
+                                properties.get(propertyId).getAddress().getStreetNumber(),
+                                properties.get(propertyId).getAddress().getStreetName(),
+                                properties.get(propertyId).getAddress().getPostalCode(),
+                                properties.get(propertyId).getAddress().getCity(),
+                                properties.get(propertyId).getNumberOfBedrooms(),
+                                properties.get(propertyId).getPriceUsd()
+                        );
+                    }
+                }
+                else
+                {
+                    if(properties.get(propertyId).getNumberOfBedrooms() > 1)
+                    {
+                        if(properties.get(propertyId).hasSwimmingPool())
+                        {
+                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms plus pool): $%f.", counter,
+                                    propertyId,
+                                    properties.get(propertyId).getAddress().getUnitNumber(),
+                                    properties.get(propertyId).getAddress().getStreetNumber(),
+                                    properties.get(propertyId).getAddress().getStreetName(),
+                                    properties.get(propertyId).getAddress().getPostalCode(),
+                                    properties.get(propertyId).getAddress().getCity(),
+                                    properties.get(propertyId).getNumberOfBedrooms(),
+                                    properties.get(propertyId).getPriceUsd()
+                            );
+                        }
+                        else
+                        {
+                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms): $%f.", counter,
+                                    propertyId,
+                                    properties.get(propertyId).getAddress().getUnitNumber(),
+                                    properties.get(propertyId).getAddress().getStreetNumber(),
+                                    properties.get(propertyId).getAddress().getStreetName(),
+                                    properties.get(propertyId).getAddress().getPostalCode(),
+                                    properties.get(propertyId).getAddress().getCity(),
+                                    properties.get(propertyId).getNumberOfBedrooms(),
+                                    properties.get(propertyId).getPriceUsd()
+                            );
+                        }
+                    }
+                }
+            }
+        }
+        return null;
     }
 }

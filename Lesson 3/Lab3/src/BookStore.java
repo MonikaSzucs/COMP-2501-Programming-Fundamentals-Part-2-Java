@@ -216,28 +216,33 @@ class BookStore {
 
     public String getLongest(String property)
     {
-        Novel[] longest;
-        longest = new Novel[1];
+        String title;
+        String name;
+        int    maxLength = 0;
+        String longest = null;
 
-        if(property.toLowerCase() == "author")
-        {
-            for(Novel novel: novels)
-            {
-                if(novel.getAuthorName().length() > longest.length)
-                {
-                    longest[0] = novel.getAuthorName();
+        for (Novel novel : novels) {
+            if (novel != null) {
+                if (property.equalsIgnoreCase("title")) {
+                    title = novel.getTitle();
+                    if (title != null && !title.isBlank()) {
+                        if (title.length() > maxLength) {
+                            maxLength = title.length();
+                            longest = title;
+                        }
+                    }
+                } else if (property.equalsIgnoreCase("author")) {
+                    name = novel.getAuthorName();
+                    if (name != null && !name.isBlank()) {
+                        if (name.length() > maxLength) {
+                            maxLength = name.length();
+                            longest = name;
+                        }
+                    }
                 }
             }
-            return longest;
         }
-        else if(property.toLowerCase() == "title")
-        {
-
-        }
-        else
-        {
-            return null;
-        }
+        return longest;
     }
 
     public static void main(String[] args)

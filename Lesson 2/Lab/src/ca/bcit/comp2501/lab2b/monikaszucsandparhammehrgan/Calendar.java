@@ -6,27 +6,32 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * @Authors Monika Szucs and Parham Mehrgan
+ * Calendar.java
+ * COMP 2501 - CRN: 67139 - Wednesday Evenings, Spring/Summer 2022
+ * Lab #2b
+ *
+ * @authors Monika Szucs and Parham Mehrgan
  * @version 1.0
  */
 public class Calendar
 {
-    private ArrayList<Integer> years;
-    private String[] months;
-    private ArrayList<Integer> days;
-    HashMap<Integer, Date> dates = new HashMap<>();
+    private ArrayList<Integer>  years;
+    private String[]            months;
+    private ArrayList<Integer>  days;
+    HashMap<Integer, Date>      dates = new HashMap<>();
 
-    /**
+    /** Constructor
+     *
      * Creating an ArrayList that is called years with Integers from 1910 to 2025 (Integers)
      * Creating an Array called months with all 12 month names (String)
      * Creating an Array list called days with Integers from day 1 to 30 (Integers)
-     * Creating a HashMap called dates with keys that have an Integer and value is a Date
+     * Creating a HashMap called dates with keys that have an Integer and value (Date)
      */
     public Calendar()
     {
         // Years using the ArrayList
-        int yearsStart = 1910;
-        int yearsEnd = 2025;
+        int yearsStart  = 1910;
+        int yearsEnd    = 2025;
         years = new ArrayList<>();
         for(int i = yearsStart; i<=yearsEnd; i++)
         {
@@ -34,15 +39,15 @@ public class Calendar
         }
 
         // Months using the Array
-        int monthStart = 0;
-        int monthEnd = 12;
+        int monthStart  = 0;
+        int monthEnd    = 12;
         months = new String[] {"January", "February", "March", "April",
                 "May", "June", "July", "August", "September", "October",
                 "November", "December"};
 
         // Days using ArrayList
-        int dayStart = 1;
-        int dayEnd = 30;
+        int dayStart    = 1;
+        int dayEnd      = 30;
         days = new ArrayList<>();
         for(int j = dayStart; j <= dayEnd; j++)
         {

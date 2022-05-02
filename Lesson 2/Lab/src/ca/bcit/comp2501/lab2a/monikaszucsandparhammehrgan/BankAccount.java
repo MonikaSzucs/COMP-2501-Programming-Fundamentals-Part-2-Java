@@ -5,49 +5,47 @@ package ca.bcit.comp2501.lab2a.monikaszucsandparhammehrgan;
  * COMP 2501 - CRN 67139 - Wednesday Evenings, Sprint/Summer 2022
  * Lab #2a
  *
- * @authors Monika Szucs
- * @author Parham Mehrgan
+ * @authors Monika Szucs and Parham Mehrgan
  * @version 1.0
  *
  * Define a bank account class with balance (Canadian dollars), account number, and member last name properties.
  */
 class BankAccount {
-    private double balanceCdn;
-    private final String accountNumber;
-    private final String memberLastName;
+    private double          balanceCdn;
+    private final String    accountNumber;
+    private final String    memberLastName;
 
-    /**
-     * Bank account for the object constructor
+    /** Constructor
      *
-     * @param balanceCdn getting the balance of a bank account in Canadian dollars and in a double format
-     * @param accountNumber getting the account id for the individual in String format
-     * @param memberLastName getting the customers last name in String format
+     * @param balanceCdn getting the balance of a bank account in Canadian dollars (double)
+     * @param accountNumber the account number assigned to the customer (String)
+     * @param memberLastName the customer's last name (String)
      */
     BankAccount(final double balanceCdn, final String accountNumber, final String memberLastName)
     {
-        this.balanceCdn = balanceCdn;
-        this.accountNumber = accountNumber;
+        this.balanceCdn     = balanceCdn;
+        this.accountNumber  = accountNumber;
         this.memberLastName = memberLastName;
-    }
-
-    /**
-     * Set the account balance in Canadian dollars (CAD)
-     *
-     * @param balanceCdn setting the balance of the account in Canadian dollars (CAD)
-     */
-    public void setBalanceCdn(final double balanceCdn)
-    {
-        this. balanceCdn = balanceCdn;
     }
 
     /**
      * Get the account balance in Canadian dollars
      *
-     * @return getting and returning the balance of the account in Canadian dollars (CAD)
+     * @return the balance of the account in Canadian dollars
      */
     public double getBalanceCdn()
     {
         return balanceCdn;
+    }
+
+    /**
+     * Set the account balance in Canadian dollars
+     *
+     * @param balanceCdn setting the balance of the account in Canadian dollars
+     */
+    public void setBalanceCdn(final double balanceCdn)
+    {
+        this. balanceCdn = balanceCdn;
     }
 
     /**
@@ -72,7 +70,7 @@ class BankAccount {
 
     /**
      *
-     * @param amountCdn withdrawing the amount in canadian dollars from the individuals balance in Canadian dollars
+     * @param amountCdn withdrawing the amount in Canadian dollars
      */
     public void withdraw(final double amountCdn)
     {
@@ -80,9 +78,9 @@ class BankAccount {
     }
 
     /**
-     * Depositing an amount in Canadian dollars (CAD) to an account
+     * Depositing an amount in Canadian dollars to an account
      *
-     * @param amountCdn depositing a Canadian dollar amount in an individuals account balance
+     * @param amountCdn the amount in Canadian dollars
      */
     public void deposit(final double amountCdn)
     {
@@ -90,11 +88,11 @@ class BankAccount {
     }
 
     /**
-     * Working the transfer of funds to another account.
+     * Transferring funds to another account (recipient's account)
      *
-     * @param amountCdn         getting the amount in Canadian dollars (CAD) that will be used to deposit in the recipients account and
+     * @param amountCdn getting the amount in Canadian dollars that will be used to deposit in the recipients account and
      *                          withdraw what was taken out of the senders account
-     * @param recipientAccount  The bank account that will receive the transfer amount in Canadian dollars (CAD)
+     * @param recipientAccount The bank account that will receive the transfer amount in Canadian dollars
      */
     public void transfer(final double amountCdn, final BankAccount recipientAccount)
     {

@@ -1,27 +1,51 @@
+package ca.bcit.comp2501.crn67139.monikaszucs;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * BookStore.java
+ * COMP 2501 - CRN: 67139
+ * Wednesday evenings, Spring/Summer 2022
+ * Lab #3
+ *
+ * Define a book store class with name and novels properties.  Novels is a
+ * list of novel objects.
+ *
+ * @author Monika Szucs
+ * @author Tony Tateyama
+ *
+ * @version 1.0
+ *
+ * To run the BookStore you need to go to Run > Edit Configurations then under Build and Run program arguments type in "Amazon"
+ */
 class BookStore {
-    private final String name;
+    private final String bookStoreName;
     private final List<Novel> novels;
 
-    BookStore(final String name)
+    /**
+     * The Bookstore constructor
+     * Contains the number of novel data records and bookstore name
+     *
+     * @param bookStoreName
+     */
+    BookStore(final String bookStoreName)
     {
-        if(name == "Books-R-Us")
+        if(bookStoreName.equalsIgnoreCase("Books-R-Us"))
         {
-            this.name = name;
+            this.bookStoreName = bookStoreName;
         }
-        else if(name == "Amazon")
+        else if(bookStoreName.equalsIgnoreCase("Amazon"))
         {
-            this.name = "Chapters";
+            this.bookStoreName = "Chapters";
         }
         else
         {
-            this.name = "We do not accept the name of Amazon in any letter casing";
+            this.bookStoreName = "We do not accept the name of Amazon in any letter casing";
         }
 
-
+        // Populating the ArrayList with data
         novels = new ArrayList<>();
         novels.add(null);
         novels.add(new Novel("The Adventures of Augie March", "Saul Bellow", 1953));
@@ -134,9 +158,12 @@ class BookStore {
         novels.add(new Novel("Wide Sargasso Sea", "Jean Rhys", 1966));
 
         System.out.println(novels.size());
-        System.out.println(this.name);
+        System.out.println(this.bookStoreName);
     }
 
+    /**
+     * Displays the title names containing a substring
+     */
     public void printAllTitles()
     {
             for(Novel novel: novels)
@@ -151,6 +178,14 @@ class BookStore {
             }
     }
 
+    /**
+     * Printing all titles that contain the specified substring:
+     * if caseSensitive is false then the match is in any letter casing
+     * if caseSensitive is true then the match must include letter casing
+     *
+     * @param substring         The substring to search for
+     * @param caseSensitive     checking based on case-sensitivity
+     */
     public void printAllTitlesContaining(String substring, boolean caseSensitive)
     {
         for(Novel novel: novels)
@@ -185,6 +220,11 @@ class BookStore {
         }
     }
 
+    /**
+     * Printing all titles that are exactly the specified length
+     *
+     * @param lengthCheck   grabbing the length of the title that matches
+     */
     public void printTitlesOfLength(int lengthCheck)
     {
         for(Novel novel: novels) {
@@ -198,6 +238,11 @@ class BookStore {
         }
     }
 
+    /**
+     * Prints all author names that either start or end with substring, in lowercase
+     *
+     * @param substring the letters provided to check for
+     */
     public void printNameStartsEndsWith(String substring)
     {
         for(Novel novel: novels) {
@@ -214,7 +259,16 @@ class BookStore {
         }
     }
 
-    public String getLongest(String property)
+    /**
+     * If the property argument is “author” (in any letter casing) then return the longest author
+     * name (by finding it using a foreach loop); if the property argument is “title” (in any letter casing)
+     * then return the longest title (by finding it using a foreach loop);
+     * if the property argument is something else then return null
+     *
+     * @param property
+     * @return
+     */
+    public String getLongest(final String property)
     {
         String title;
         String name;
@@ -245,6 +299,13 @@ class BookStore {
         return longest;
     }
 
+    /**
+     * The main which created a BookStore object and passes args[0] to BookStore constructor as its name property
+     *
+     * To run the BookStore you need to go to Run > Edit Configurations then under Build and Run program arguments type in "Amazon"
+     *
+     * @param args is an argument passed
+     */
     public static void main(String[] args)
     {
         BookStore b = new BookStore( args[0] );
@@ -263,13 +324,13 @@ class BookStore {
         b.printNameStartsEndsWith("aN");
 
         System.out.println("---");
-        b.getLongest("xyz");
+        System.out.println(b.getLongest("xyz"));
 
         System.out.println("---");
-        b.getLongest("AutHor");
+        System.out.println(b.getLongest("AutHor"));
 
         System.out.println("---");
-        b.getLongest("titlE");
+        System.out.println(b.getLongest("titlE"));
 
     }
 }

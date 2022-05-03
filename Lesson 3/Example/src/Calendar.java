@@ -1,24 +1,23 @@
+import java.util.HashMap;
 import java.util.Map;
-import java.util.HasMap;
 import java.util.Set;
 
-class Calendar
-{
+class Calendar {
     private Map<Integer, String> months;
 
     Calendar()
     {
-        Set <Integers> keys;
-
-
-        month = new HashMap<>();
-        // REMOVE OUT GET SIZE
+        Set<Integer> keys;
+        months = new HashMap<>();
 
         months.put(1, "January");
         months.put(3, "March");
         months.put(11, "November");
         System.out.println(months.size());
-        //months.remove(7);
+        System.out.println("---");
+
+        // nothing will be removed because nothing is in key 7
+        months.remove(7);
 
         keys = months.keySet();
 
@@ -29,5 +28,7 @@ class Calendar
             value = months.get(key);
             System.out.println("value is " + value);
         }
+
+
     }
 }

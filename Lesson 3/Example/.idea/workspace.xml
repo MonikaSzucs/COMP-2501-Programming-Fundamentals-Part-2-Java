@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5352e677-69e8-46eb-b832-ed08c0df8ee3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Lesson 2/Lab/src/practice1/Bank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 2/Lab/src/practice1/BankAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 2/Lab/src/practice1/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ArgsPosition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cs/bcit/registration/Bookstore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cs/bcit/registration/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 2/Lab/out/production/Lab/ca/bcit/comp2501/lab2a/monikaszucsandparhammehrgan/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 2/Lab/out/production/Lab/ca/bcit/comp2501/lab2a/monikaszucsandparhammehrgan/Bank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 2/Lab/out/production/Lab/ca/bcit/comp2501/lab2a/monikaszucsandparhammehrgan/BankAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 2/Lab/out/production/Lab/ca/bcit/comp2501/lab2a/monikaszucsandparhammehrgan/BankAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 2/Lab/out/production/Lab/ca/bcit/comp2501/lab2a/monikaszucsandparhammehrgan/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 2/Lab/out/production/Lab/ca/bcit/comp2501/lab2a/monikaszucsandparhammehrgan/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 2/Lab/out/production/Lab/ca/bcit/comp2501/lab2b/monikaszucsandparhammehrgan/Calendar.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 2/Lab/out/production/Lab/ca/bcit/comp2501/lab2b/monikaszucsandparhammehrgan/Calendar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 2/Lab/out/production/Lab/ca/bcit/comp2501/lab2b/monikaszucsandparhammehrgan/Date.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 2/Lab/out/production/Lab/ca/bcit/comp2501/lab2b/monikaszucsandparhammehrgan/Date.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 2/Lab/out/production/Lab/ca/bcit/comp2501/lab2b/monikaszucsandparhammehrgan/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 2/Lab/out/production/Lab/ca/bcit/comp2501/lab2b/monikaszucsandparhammehrgan/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calendar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TechnicalThing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TechnicalThing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/bcit/registration/Bookstore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/bcit/registration/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 2/Lesson/out/production/Lesson/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 2/Lesson/out/production/Lesson/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 2/Lesson/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 2/Lesson/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +33,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Lesson 2/Lesson" />
   </component>
   <component name="RunManager" selected="Application.ArgsPosition">
     <configuration name="ArgsPosition" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

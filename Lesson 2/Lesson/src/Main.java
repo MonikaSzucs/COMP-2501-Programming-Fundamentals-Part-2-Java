@@ -7,9 +7,9 @@ public class Main
         // PetStore petStore = new PetStore();
         // HockeyTeam team = new HockeyTeam();
         // BcitCourse course = new BcitCourse();
-        // TikTok tikTok = new TikTok();
-        // Canada c = new Canada();
-        // Shopping shop = new Shopping();
-        Jobs jobType = new Jobs();
+        TikTok tikTok = new TikTok();
+        //Canada c = new Canada();
+        //Shopping shop = new Shopping();
+        // Jobs jobType = new Jobs();
     }
 }

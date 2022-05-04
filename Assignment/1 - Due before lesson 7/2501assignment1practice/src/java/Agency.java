@@ -78,21 +78,47 @@ public class Agency {
 
     public Property[] getPropertiesBetween(int minUsd, int maxUsd) {
         Property[] propertiesBetween;
-        propertiesBetween = new Property[10];
+        propertiesBetween = new Property[5];
         int num = 0;
-        for(String propertyId: properties.keySet())
-        {
-            if(properties.get(propertyId).getPriceUsd() >= minUsd && properties.get(propertyId).getPriceUsd() <= maxUsd)
-            {
-                propertiesBetween[num] = properties.get(propertyId);
+
+        System.out.println("For Loop:");
+        for (Map.Entry me : properties.entrySet()) {
+            System.out.println(me);
+            //if(num>=5)
+             //   {
+               //     return propertiesBetween;
+                //}
+            if(properties.get(me.getKey()).getPriceUsd() >= minUsd && properties.get(me.getKey()).getPriceUsd() <= maxUsd) {
+                System.out.println("Key: " + me.getKey() + " & Value: " + me.getValue());
+                propertiesBetween[num] = properties.get(me.getKey());
+                num++;
             }
-            num++;
-        }
-        if(propertiesBetween.length < 1)
-        {
-            return null;
         }
         return propertiesBetween;
+
+
+        //Property(700000.00, a10, 2, true, "retail", "y6yyy");
+        //System.out.println(properties.size());
+        //for(Map.Entry propertyId: properties.entrySet())
+        //{
+            //System.out.println(properties.get(propertyId.getKey()).getPropertyId());
+        //    if(num>=5)
+        //    {
+        //        return propertiesBetween;
+        //    }
+        //    if(properties.get(propertyId.getKey()).getPriceUsd() >= minUsd && properties.get(propertyId.getKey()).getPriceUsd() <= maxUsd)
+        //    {
+        //        propertiesBetween[num] = properties.get(propertyId.getKey());
+                //System.out.println(properties.get(propertyId.getKey()).getPropertyId());
+        //    }
+            //System.out.println(properties.get(propertyId).getPropertyId());
+        //    num++;
+        //}
+        //if(propertiesBetween.length < 1)
+        //{
+        //    return null;
+        //}
+        //return propertiesBetween;
     }
 
     public ArrayList<Address> getPropertiesOn(String streetName) {
@@ -131,8 +157,13 @@ public class Agency {
         ArrayList<String> propertyTypes = new ArrayList<>();
         String prop = "";
         int counter = 1;
+
+        if(propertyType.equalsIgnoreCase("commercial")){
+            propertyTypes.add("Type: COMMERCIAL\n");
+        }
         for(String propertyId: properties.keySet())
         {
+
             if(properties.get(propertyId).getType().equalsIgnoreCase(propertyType))
             {
                 if(properties.get(propertyId).getAddress().getUnitNumber() != null)
@@ -151,10 +182,13 @@ public class Agency {
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
                             );
+
+                            propertyTypes.add(prop);
                         }
                         else
                         {
-                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms): $%f.", counter,
+                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms): $%f.",
+                                    counter,
                                     propertyId,
                                     properties.get(propertyId).getAddress().getUnitNumber(),
                                     properties.get(propertyId).getAddress().getStreetNumber(),
@@ -164,11 +198,13 @@ public class Agency {
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
                             );
+                            propertyTypes.add(prop);
                         }
                     }
                     else
                     {
-                        prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedroom): $%f.", counter,
+                        prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedroom): $%f.",
+                                counter,
                                 propertyId,
                                 properties.get(propertyId).getAddress().getUnitNumber(),
                                 properties.get(propertyId).getAddress().getStreetNumber(),
@@ -178,6 +214,7 @@ public class Agency {
                                 properties.get(propertyId).getNumberOfBedrooms(),
                                 properties.get(propertyId).getPriceUsd()
                         );
+                        propertyTypes.add(prop);
                     }
                 }
                 else
@@ -186,9 +223,9 @@ public class Agency {
                     {
                         if(properties.get(propertyId).hasSwimmingPool())
                         {
-                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms plus pool): $%f.", counter,
+                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms plus pool): $%f.",
+                                    counter,
                                     propertyId,
-                                    properties.get(propertyId).getAddress().getUnitNumber(),
                                     properties.get(propertyId).getAddress().getStreetNumber(),
                                     properties.get(propertyId).getAddress().getStreetName(),
                                     properties.get(propertyId).getAddress().getPostalCode(),
@@ -196,12 +233,13 @@ public class Agency {
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
                             );
+                            propertyTypes.add(prop);
                         }
                         else
                         {
-                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms): $%f.", counter,
+                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms): $%f.",
+                                    counter,
                                     propertyId,
-                                    properties.get(propertyId).getAddress().getUnitNumber(),
                                     properties.get(propertyId).getAddress().getStreetNumber(),
                                     properties.get(propertyId).getAddress().getStreetName(),
                                     properties.get(propertyId).getAddress().getPostalCode(),
@@ -209,11 +247,14 @@ public class Agency {
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
                             );
+                            propertyTypes.add(prop);
                         }
                     }
                 }
             }
+
         }
-        return null;
+        System.out.println(propertyTypes);
+        return propertyTypes;
     }
 }

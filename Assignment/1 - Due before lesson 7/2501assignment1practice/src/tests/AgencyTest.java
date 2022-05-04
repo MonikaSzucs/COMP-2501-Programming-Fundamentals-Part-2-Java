@@ -3,6 +3,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -149,6 +150,7 @@ class AgencyTest
         Property[] agencyResults = agency.getPropertiesBetween(700001, 2500000);
 
         assertTrue(agencyResults.length == 5);
+        System.out.println(Arrays.toString(agencyResults));
 
         matches[0] = p3;
         matches[1] = p4;

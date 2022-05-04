@@ -172,12 +172,12 @@ public class Agency {
                     {
                         if(properties.get(propertyId).hasSwimmingPool())
                         {
-                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms plus pool): $%f.", counter,
+                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms plus pool): $%.0f.\n", counter,
                                     propertyId,
                                     properties.get(propertyId).getAddress().getUnitNumber(),
                                     properties.get(propertyId).getAddress().getStreetNumber(),
                                     properties.get(propertyId).getAddress().getStreetName(),
-                                    properties.get(propertyId).getAddress().getPostalCode(),
+                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
                                     properties.get(propertyId).getAddress().getCity(),
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
@@ -187,13 +187,13 @@ public class Agency {
                         }
                         else
                         {
-                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms): $%f.",
+                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms): $%.0f.\n",
                                     counter,
                                     propertyId,
                                     properties.get(propertyId).getAddress().getUnitNumber(),
                                     properties.get(propertyId).getAddress().getStreetNumber(),
                                     properties.get(propertyId).getAddress().getStreetName(),
-                                    properties.get(propertyId).getAddress().getPostalCode(),
+                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
                                     properties.get(propertyId).getAddress().getCity(),
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
@@ -203,13 +203,13 @@ public class Agency {
                     }
                     else
                     {
-                        prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedroom): $%f.",
+                        prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedroom): $%.0f.\n",
                                 counter,
                                 propertyId,
                                 properties.get(propertyId).getAddress().getUnitNumber(),
                                 properties.get(propertyId).getAddress().getStreetNumber(),
                                 properties.get(propertyId).getAddress().getStreetName(),
-                                properties.get(propertyId).getAddress().getPostalCode(),
+                                properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
                                 properties.get(propertyId).getAddress().getCity(),
                                 properties.get(propertyId).getNumberOfBedrooms(),
                                 properties.get(propertyId).getPriceUsd()
@@ -223,12 +223,12 @@ public class Agency {
                     {
                         if(properties.get(propertyId).hasSwimmingPool())
                         {
-                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms plus pool): $%f.",
+                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms plus pool): $%.0f.\n",
                                     counter,
                                     propertyId,
                                     properties.get(propertyId).getAddress().getStreetNumber(),
                                     properties.get(propertyId).getAddress().getStreetName(),
-                                    properties.get(propertyId).getAddress().getPostalCode(),
+                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
                                     properties.get(propertyId).getAddress().getCity(),
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
@@ -237,12 +237,12 @@ public class Agency {
                         }
                         else
                         {
-                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms): $%f.",
+                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms): $%.0f.\n",
                                     counter,
                                     propertyId,
                                     properties.get(propertyId).getAddress().getStreetNumber(),
                                     properties.get(propertyId).getAddress().getStreetName(),
-                                    properties.get(propertyId).getAddress().getPostalCode(),
+                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
                                     properties.get(propertyId).getAddress().getCity(),
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()

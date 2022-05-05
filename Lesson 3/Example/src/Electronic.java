@@ -20,12 +20,6 @@ class Electronic {
         {
             System.out.println("The key is: " + item + " and the value is " + products.get(item));
         }
-    }
-
-    public static void main(String[] args)
-    {
-        Electronic eletronics;
-        eletronics = new Electronic();
 
         List<List<String>> outer = new ArrayList<List<String>>();
         List<String> inner1 = new ArrayList<String>();
@@ -73,5 +67,14 @@ class Electronic {
                 }
             }
         }
+        // Array of Strings
+        
+
+    }
+
+    public static void main(String[] args)
+    {
+        Electronic eletronics;
+        eletronics = new Electronic();
     }
 }

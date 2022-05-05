@@ -3,9 +3,6 @@ public class TechnicalThing {
     // Then in program configurations you can type a bc def - without quotes
     public static void main(final String[] args)
     {
-        for(String s: args)
-        {
-            System.out.println(s);
-        }
+        System.out.println(args[0]);
     }
 }

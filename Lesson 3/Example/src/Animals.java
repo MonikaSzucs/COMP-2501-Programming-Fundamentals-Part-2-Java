@@ -37,7 +37,5 @@ public class Animals {
             System.out.println("Does not match");
         }
 
-
-
     }
 }

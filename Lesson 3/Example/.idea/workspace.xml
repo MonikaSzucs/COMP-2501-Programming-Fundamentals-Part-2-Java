@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5352e677-69e8-46eb-b832-ed08c0df8ee3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Lesson 2/Lesson/out/production/Lesson/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 2/Lesson/out/production/Lesson/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 2/Lesson/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 2/Lesson/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Example/ArgsPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Example/ArgsPosition.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +24,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="28fbRnmXopuz1n9GcBUu4tvhHr2" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -33,26 +34,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Lesson 2/Lesson" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Lesson 2/Lab" />
   </component>
-  <component name="RunManager" selected="Application.ArgsPosition">
-    <configuration name="ArgsPosition" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ArgsPosition" />
-      <module name="Example" />
-      <option name="PROGRAM_PARAMETERS" value="monik@hotmail.com" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Book" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Book" />
+  <component name="RunManager" selected="Application.Electronic (1)">
+    <configuration name="Animals (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Animals" />
       <module name="Example" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cs.bcit.registration.Main" />
+    <configuration name="Animals" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cs.bcit.registration.Animals" />
       <module name="Example" />
       <extension name="coverage">
         <pattern>
@@ -64,35 +57,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="ArgsPosition" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ArgsPosition" />
+      <module name="Example" />
+      <option name="PROGRAM_PARAMETERS" value="monik@hotmail.com" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Electronic (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Electronic" />
       <module name="Example" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TechnicalThing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TechnicalThing" />
+    <configuration name="Electronic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cs.bcit.registration.Electronic" />
       <module name="Example" />
-      <option name="PROGRAM_PARAMETERS" value="monika@hotmail.com" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs.bcit.registration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Book" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Main (1)" />
-      <item itemvalue="Application.TechnicalThing" />
       <item itemvalue="Application.ArgsPosition" />
+      <item itemvalue="Application.Animals" />
+      <item itemvalue="Application.Animals (1)" />
+      <item itemvalue="Application.Electronic" />
+      <item itemvalue="Application.Electronic (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Electronic (1)" />
+        <item itemvalue="Application.Electronic" />
+        <item itemvalue="Application.Animals (1)" />
+        <item itemvalue="Application.Animals" />
         <item itemvalue="Application.ArgsPosition" />
-        <item itemvalue="Application.TechnicalThing" />
-        <item itemvalue="Application.Book" />
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>

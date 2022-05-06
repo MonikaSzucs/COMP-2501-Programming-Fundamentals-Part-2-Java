@@ -15,7 +15,7 @@ package ca.bcit.comp2501.crn67139.monikaszucs;
  *
  * To run the BookStore you need to go to Run > Edit Configurations then under Build and Run program arguments type in "Amazon"
  */
-class Novel {
+public class Novel {
     private final String    title;
     private final String    authorName;
     private final int       yearPublished;
@@ -27,7 +27,7 @@ class Novel {
      * @param authorName        The novel's author name
      * @param yearPublished     The year the novel was published
      */
-    Novel(final String title, final String authorName, final int yearPublished)
+    public Novel(final String title, final String authorName, final int yearPublished)
     {
         this.title          = title;
         this.authorName     = authorName;

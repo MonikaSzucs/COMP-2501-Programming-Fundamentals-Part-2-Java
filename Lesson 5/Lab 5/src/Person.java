@@ -12,14 +12,26 @@ class Person {
     static int currentYear = currentDate.getYear();
     public static final int CURRENT_YEAR = currentYear;
 
+    public static final double POUNDS_TO_KILOGRAMS = 0.453592;
+    public static final double KILOGRAMS_TO_POUNDS = 2.20462;
+
     Person(final String firstName, final String lastName, final int birthYear, final String married, final double weightInPounds, final String highestEducationLevel)
     {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthYear = birthYear;
+
+        if(!isValidMarriageStatus(married)) {
+            throw new IllegalArgumentException("Must have a married status of yes, no, or divorced");
+        }
         this.married = married;
         this.weightInPounds = weightInPounds;
-        this.highestEducationLevel = highestEducationLevel;
+
+        if(isValidEducationLevel(highestEducationLevel)) {
+            this.highestEducationLevel = highestEducationLevel;
+        } else{
+            throw new IllegalArgumentException("Must be high school, undergraduate, or graduate level of education");
+        }
     }
 
     Person(final String firstName, final String lastName, final String married, final double weightInPounds, final String highestEducationLevel)
@@ -27,9 +39,18 @@ class Person {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthYear = CURRENT_YEAR;
+
+        if(!isValidMarriageStatus(married)) {
+            throw new IllegalArgumentException("Must have a married status of yes, no, or divorced");
+        }
         this.married = married;
         this.weightInPounds = weightInPounds;
-        this.highestEducationLevel = highestEducationLevel;
+
+        if(isValidEducationLevel(highestEducationLevel)) {
+            this.highestEducationLevel = highestEducationLevel;
+        } else{
+            throw new IllegalArgumentException("Must be high school, undergraduate, or graduate level of education");
+        }
     }
 
     Person(final String firstName, final String lastName, final double weightInPounds)
@@ -72,49 +93,26 @@ class Person {
         return highestEducationLevel;
     }
 
-    private boolean isValidEducationLevel(String educationLevelToVerify)
+   private boolean isValidMarriageStatus(String marriedStatus)
     {
-        if(educationLevelToVerify.equals("high school"))
-        {
+        if(marriedStatus.equals("yes") ||
+                marriedStatus.equals("no") ||
+                marriedStatus.equals("divorced")) {
             return true;
-        }
-        else if(educationLevelToVerify.equals("undergraduate"))
-        {
-            return true;
-        }
-        else if(educationLevelToVerify.equals("graduate"))
-        {
-            return true;
-        }
-        else
-        {
-            return true;
+        } else {
+            return false;
         }
     }
 
-    private String isValidMarriageStatus(String marriedStatus)
+    private boolean isValidEducationLevel(String educationLevelToVerify)
     {
-        if(marriedStatus.equals("yes"))
-        {
-            return "yes";
-        }
-        else if(marriedStatus.equals("no"))
-        {
-            return "no";
-        }
-        else if(marriedStatus.equals("divorced"))
-        {
-            return "divorced";
-        }
-        else
-        {
-            return "NA";
-        }
-
+        return true;
     }
 
     private void printDetails() {
-
+        //Tiger Woods (divorced) was born in 1975, weighs 200.0 pounds, and has an undergraduate degree!
+        System.out.println(firstName + " " + lastName + " (" + isMarried() + ") was born in " + birthYear + "," +
+                " weighs " + weightInPounds + ", and has an " + getHighestEducationLevel());
     }
 
     private void printDetails(boolean kilograms) {

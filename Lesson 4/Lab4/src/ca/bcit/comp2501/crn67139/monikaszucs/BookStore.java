@@ -22,7 +22,7 @@ import java.util.Locale;
  */
 class BookStore {
     private final String bookStoreName;
-    private final List<Novel> novels;
+    private List<Novel> novels;
 
     /**
      * The Bookstore constructor
@@ -299,10 +299,6 @@ class BookStore {
 
         if(property.equalsIgnoreCase("author") || property.equalsIgnoreCase("title"))
         {
-            throw new IllegalNovelPropertyException("bad property");
-        }
-        else
-        {
             for (Novel novel : novels) {
                 if (novel != null) {
                     if (property.equalsIgnoreCase("title")) {
@@ -328,9 +324,13 @@ class BookStore {
                     }
                 }
             }
-        }
 
         return longest;
+        }
+        else
+        {
+        throw new IllegalNovelPropertyException("bad property");
+        }
     }
 
     /**
@@ -356,13 +356,30 @@ class BookStore {
         System.out.println("---");
         b.printNameStartsEndsWith("aN");
 
-        System.out.println("---");
-        System.out.println(b.getLongest("xyz"));
+        System.out.println("--HERE-");
 
-        System.out.println("---");
-        System.out.println(b.getLongest("AutHor"));
+        try {
+            System.out.println(b.getLongest("xyz"));
+        } catch(IllegalNovelPropertyException e)
+        {
+            System.out.println("Illegal argument: " + e);
+        }
 
-        System.out.println(b.getLongest("titlE"));
+        try {
+            System.out.println(b.getLongest("AutHor"));
+        } catch(IllegalNovelPropertyException e)
+        {
+            System.out.println("Illegal argument: " + e);
+        }
+
+        try {
+            System.out.println(b.getLongest("titlE"));
+        } catch(IllegalNovelPropertyException e)
+        {
+            System.out.println("Illegal argument: " + e);
+        }
+
+        System.out.println("--ENDING --");
 
     }
 }

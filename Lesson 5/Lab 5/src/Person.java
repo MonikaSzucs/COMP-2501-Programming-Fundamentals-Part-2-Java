@@ -110,17 +110,100 @@ class Person {
     }
 
     private void printDetails() {
-        //Tiger Woods (divorced) was born in 1975, weighs 200.0 pounds, and has an undergraduate degree!
-        System.out.println(firstName + " " + lastName + " (" + isMarried() + ") was born in " + birthYear + "," +
-                " weighs " + weightInPounds + ", and has an " + getHighestEducationLevel());
+        if(isMarried().toLowerCase().equals("divorced"))
+        {
+            System.out.println(firstName + " " + lastName + " (divorced) was born in " + birthYear + "," +
+                    " weighs " + weightInPounds + " pounds, and has an " + getHighestEducationLevel() + " degree!");
+        } else if(isMarried().toLowerCase().equals("yes"))
+        {
+            System.out.println(firstName + " " + lastName + " (married) was born in " + birthYear + "," +
+                    " weighs " + weightInPounds + " pounds, and has an " + getHighestEducationLevel() + " degree!");
+        } else {
+            System.out.println(firstName + " " + lastName + " (single) was born in " + birthYear + "," +
+                    " weighs " + weightInPounds + " pounds, and has an " + getHighestEducationLevel() + " degree!");
+        }
     }
 
     private void printDetails(boolean kilograms) {
 
+        if(kilograms)
+        {
+            double converted = POUNDS_TO_KILOGRAMS * weightInPounds;
+            if(isMarried().toLowerCase().equals("divorced")) {
+                System.out.println(firstName + " " + lastName + " (divorced) was born in " + birthYear + "," +
+                        " weighs " + String.format("%.1f", converted) + " kilograms, and has an " +
+                        getHighestEducationLevel() + " degree!");
+            } else if(isMarried().toLowerCase().equals("yes"))
+            {
+                System.out.println(firstName + " " + lastName + " (married) was born in " + birthYear + "," +
+                        " weighs " + String.format("%.1f", converted) + " kilograms, and has an " +
+                        getHighestEducationLevel() + " degree!");
+            } else {
+                System.out.println(firstName + " " + lastName + " (single) was born in " + birthYear + "," +
+                        " weighs " + String.format("%.1f", converted) + " pounds, and has an " +
+                        getHighestEducationLevel() + " degree!");
+            }
+        }
+        else {
+
+        }
     }
 
     private void printDetails(boolean kilograms, boolean uppercase) {
-
+        double converted = POUNDS_TO_KILOGRAMS * weightInPounds;
+        if(uppercase && kilograms)
+        {
+            if(isMarried().toLowerCase().equals("divorced")) {
+                System.out.println(firstName.toUpperCase() + " " + lastName.toUpperCase() + " (divorced) was born in " + birthYear + "," +
+                        " weighs " + String.format("%.1f", converted) + " kilograms, and has an " +
+                        getHighestEducationLevel() + " degree!");
+            } else if(isMarried().toLowerCase().equals("yes")) {
+                System.out.println(firstName.toUpperCase() + " " + lastName.toUpperCase() + " (married) was born in " + birthYear + "," +
+                    " weighs " + String.format("%.1f", converted) + " kilograms, and has an " +
+                    getHighestEducationLevel() + " degree!");
+            } else {
+                System.out.println(firstName.toUpperCase() + " " + lastName.toUpperCase() + " (single) was born in " + birthYear + "," +
+                        " weighs " + String.format("%.1f", converted) + " kilograms, and has an " +
+                        getHighestEducationLevel() + " degree!");
+            }
+        } else if(!uppercase && kilograms)
+        {
+            if(isMarried().toLowerCase().equals("divorced")) {
+                System.out.println(firstName + " " + lastName + " (divorced) was born in " + birthYear + "," +
+                        " weighs " + String.format("%.1f", converted) + " kilograms, and has an " +
+                        getHighestEducationLevel() + " degree!");
+            } else if(isMarried().toLowerCase().equals("yes")) {
+                System.out.println(firstName + " " + lastName + " (married) was born in " + birthYear + "," +
+                        " weighs " + String.format("%.1f", converted) + " kilograms, and has an " +
+                        getHighestEducationLevel() + " degree!");
+            } else {
+                System.out.println(firstName + " " + lastName + " (single) was born in " + birthYear + "," +
+                        " weighs " + String.format("%.1f", converted) + " kilograms, and has an " +
+                        getHighestEducationLevel() + " degree!");
+            }
+        } else if(uppercase && !kilograms) {
+            if(isMarried().toLowerCase().equals("divorced")) {
+                System.out.println(firstName.toUpperCase() + " " + lastName.toUpperCase() + " (divorced) was born in " + birthYear + "," +
+                        " weighs " + getWeightInPounds() + " pounds, and has an " + getHighestEducationLevel() + " degree!");
+            } else if(isMarried().toLowerCase().equals("yes")) {
+                System.out.println(firstName.toUpperCase() + " " + lastName.toUpperCase() + " (married) was born in " + birthYear + "," +
+                        " weighs " + getWeightInPounds() + " pounds, and has an " + getHighestEducationLevel() + " degree!");
+            } else {
+                System.out.println(firstName.toUpperCase() + " " + lastName.toUpperCase() + " (single) was born in " + birthYear + "," +
+                        " weighs " + getWeightInPounds() + " pounds, and has an " + getHighestEducationLevel() + " degree!");
+            }
+        } else {
+            if(isMarried().toLowerCase().equals("divorced")) {
+                System.out.println(firstName + " " + lastName + " (divorced) was born in " + birthYear + "," +
+                        " weighs " + getWeightInPounds() + " pounds, and has an " + getHighestEducationLevel() + " degree!");
+            } else if(isMarried().toLowerCase().equals("yes")) {
+                System.out.println(firstName + " " + lastName + " (married) was born in " + birthYear + "," +
+                        " weighs " + getWeightInPounds() + " pounds, and has an " + getHighestEducationLevel() + " degree!");
+            } else {
+                System.out.println(firstName + " " + lastName + " (single) was born in " + birthYear + "," +
+                        " weighs " + getWeightInPounds() + " pounds, and has an " + getHighestEducationLevel() + " degree!");
+            }
+        }
     }
 
     public static void main(final String[] args)
@@ -133,7 +216,26 @@ class Person {
         p1.printDetails(true, false);
         p1.printDetails(false, true);
         p1.printDetails(false, false);
+
+        System.out.println("---");
+
+        Person p2 = new Person("Jason", "Harrison", 2000, "no", 180,
+                "graduate");
+        p2.printDetails();
+        p2.printDetails(true);
+        p2.printDetails(true,true);
+        p2.printDetails(true, false);
+        p2.printDetails(false, true);
+        p2.printDetails(false, false);
+
+        System.out.println("---");
+        Person p3 = new Person("Santa", "Claus", 1000, "yes",
+                280, "high school");
+        p3.printDetails();
+        p3.printDetails(true);
+        p3.printDetails(true,true);
+        p3.printDetails(true, false);
+        p3.printDetails(false, true);
+        p3.printDetails(false, false);
     }
-
-
 }

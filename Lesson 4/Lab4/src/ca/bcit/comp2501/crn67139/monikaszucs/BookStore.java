@@ -31,6 +31,11 @@ class BookStore {
      */
     BookStore(final String bookStoreName)
     {
+        if (bookStoreName == null || bookStoreName.isBlank())
+        {
+            throw new IllegalArgumentException("invalid book store's name");
+        }
+
         if(bookStoreName.equalsIgnoreCase("Books-R-Us"))
         {
             this.bookStoreName = bookStoreName;
@@ -167,12 +172,9 @@ class BookStore {
     {
             for(Novel novel: novels)
             {
-                if(novel != null)
+                if(novel != null && novel.getTitle() != null && !novel.getTitle().isBlank())
                 {
-                    if(novel.getTitle() != null)
-                    {
-                        System.out.println(novel.getTitle().toUpperCase());
-                    }
+                    System.out.println(novel.getTitle().toUpperCase());
                 }
             }
     }

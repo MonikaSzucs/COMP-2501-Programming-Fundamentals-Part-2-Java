@@ -7,7 +7,7 @@ import java.util.Locale;
  * Wednesday evenings, Spring/Summer 2022
  * Lab #5
  *
- * Define a Person class that will grab their first name, last name, birth year, marriage status, weight in pounts,
+ * Define a Person class that will grab their first name, last name, birth year, marriage status, weight in pounds,
  * and highest education level
  *
  * @author Monika Szucs
@@ -65,13 +65,16 @@ class Person {
     }
 
     /**
-     * The Person constructor that takes in five of the instance varaibles
+     * The Person constructor that takes in five of the instance variables
      *
-     * @param firstName
-     * @param lastName
-     * @param married
-     * @param weightInPounds
-     * @param highestEducationLevel
+     * @param firstName the persons first name (String)
+     * @param lastName the persons last name (String)
+     * @param married the marriage status of the person (String)
+     * @param weightInPounds the persons weight in pounds (double)
+     * @param highestEducationLevel the persons highest education level (String)
+     *
+     * @IllegalArgumentException throws an illegal argument if the marriage or high school education level
+     *      *                          is not set properly
      */
     Person(final String firstName, final String lastName, final String married, final double weightInPounds,
            final String highestEducationLevel) {
@@ -92,6 +95,13 @@ class Person {
         }
     }
 
+    /**
+     * The Person constructor that takes in three of the instance variables
+     *
+     * @param firstName the persons first name (String)
+     * @param lastName the persons last name (String)
+     * @param weightInPounds the persons weight in pounds (double)
+     */
     Person(final String firstName, final String lastName, final double weightInPounds) {
         this.firstName              = firstName;
         this.lastName               = lastName;
@@ -101,18 +111,38 @@ class Person {
         this.highestEducationLevel  = "high school";
     }
 
+    /**
+     * The getter for the persons first name
+     *
+     * @return the persons first name (String)
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * The getter for the persons last name
+     *
+     * @return the persons first name (String)
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * The getter for the persons birth year
+     *
+     * @return the persons birth year (int)
+     */
     public int getBirthYear() {
         return  birthYear;
     }
 
+    /**
+     * The getter for the person's marriage status
+     *
+     * @return the person's marriage status whether it is divorced, married or single (String)
+     */
     public String isMarried() {
         if(married.equalsIgnoreCase("divorced")) {
             return "divorced";
@@ -125,10 +155,20 @@ class Person {
         }
     }
 
+    /**
+     * The getter for the persons weight in pounds
+     *
+     * @return the persons weight in pounds (double)
+     */
     public double getWeightInPounds() {
         return weightInPounds;
     }
 
+    /**
+     * The getter that checks the persons highest education level
+     *
+     * @return the highest education as graduate/undergraduate degree or high school diploma
+     */
     public String getHighestEducationLevel() {
         if(highestEducationLevel.toLowerCase().equals("graduate"))
         {
@@ -144,6 +184,12 @@ class Person {
         }
     }
 
+    /**
+     * The method that is checking to see if the marriage status is valid
+     *
+     * @param marriedStatus checks to see if the marriage status is yes, no, or divorced (String)
+     * @return either true or false (boolean)
+     */
    private boolean isValidMarriageStatus(String marriedStatus) {
         if(     marriedStatus.equals("yes") ||
                 marriedStatus.equals("no") ||
@@ -154,6 +200,12 @@ class Person {
         }
     }
 
+    /**
+     * The method that is checking for a valid education level
+     *
+     * @param educationLevelToVerify gets the education level that is passed in the parameter (String)
+     * @return if the education level is true or false (boolean)
+     */
     private boolean isValidEducationLevel(String educationLevelToVerify) {
         if(     educationLevelToVerify.equalsIgnoreCase("undergraduate") ||
                 educationLevelToVerify.equalsIgnoreCase("graduate") ||
@@ -164,11 +216,19 @@ class Person {
         }
     }
 
+    /**
+     * The method ise used to print the Person detailed when there are no parameters passed
+     */
     private void printDetails() {
             System.out.println(firstName + " " + lastName + " (" + isMarried() +") was born in " + birthYear + "," +
                     " weighs " + weightInPounds + " pounds, and has an " + getHighestEducationLevel());
     }
 
+    /**
+     * The method is used to print the Person details when there is one parameter passed
+     *
+     * @param kilograms the weight of the person in kilgrams (double)
+     */
     private void printDetails(boolean kilograms) {
         if(kilograms) {
             double converted = POUNDS_TO_KILOGRAMS * weightInPounds;
@@ -183,6 +243,12 @@ class Person {
         }
     }
 
+    /**
+     * The method is used to print the Person details when there are two parameter passed
+     *
+     * @param kilograms  the weight of the Person in kilgrams (double)
+     * @param uppercase  used to check if the name should be in uppercase (boolean)
+     */
     private void printDetails(boolean kilograms, boolean uppercase) {
         double converted = POUNDS_TO_KILOGRAMS * weightInPounds;
         if(uppercase && kilograms)
@@ -206,6 +272,9 @@ class Person {
         }
     }
 
+    /**
+     * The main method used to create the Person's information and print different details
+     */
     public static void main(final String[] args)
     {
         Person p1;

@@ -8,13 +8,12 @@ import java.util.Locale;
  * BookStore.java
  * COMP 2501 - CRN: 67139
  * Wednesday evenings, Spring/Summer 2022
- * Lab #3
+ * Lab #4
  *
- * Define a book store class with name and novels properties.  Novels is a
- * list of novel objects.
+ * Define a novel class and novels properties using Exception handling
  *
  * @author Monika Szucs
- * @author Tony Tateyama
+ * @author Tram Le
  *
  * @version 1.0
  *
@@ -183,8 +182,10 @@ class BookStore {
      * if caseSensitive is false then the match is in any letter casing
      * if caseSensitive is true then the match must include letter casing
      *
-     * @param substring         The substring to search for
-     * @param caseSensitive     checking based on case-sensitivity
+     * @param substring             The substring to search for
+     * @param caseSensitive         checking based on case-sensitivity
+     * @IllegalArgumentException    This checks to see if the method that has been passed is an illegal argument
+     * @NullPointerException        This will check to see when a variable is accessed to make sure it is nothing or null
      */
     public void printAllTitlesContaining(String substring, boolean caseSensitive)
     {
@@ -196,7 +197,6 @@ class BookStore {
                 {
                     if(novel.getTitle() != null)
                     {
-
                         if(caseSensitive)
                         {
                             boolean val = novel.getTitle().contains(substring);
@@ -234,7 +234,8 @@ class BookStore {
     /**
      * Printing all titles that are exactly the specified length
      *
-     * @param lengthCheck   grabbing the length of the title that matches
+     * @param lengthCheck           grabbing the length of the title that matches
+     * @IllegalArgumentException    throws an Illegal Argument error if the length of the title is less than or equal to zero
      */
     public void printTitlesOfLength(int lengthCheck)
     {
@@ -260,13 +261,14 @@ class BookStore {
     /**
      * Prints all author names that either start or end with substring, in lowercase
      *
-     * @param substring the letters provided to check for
+     * @param substring         the letters provided to check for
+     * @IllegalNameException    Created a custom Exception with the message "bad name" if the parameter is null or blank
      */
-    public void printNameStartsEndsWith(String substring)
+    public void printNameStartsEndsWith(String substring) throws IllegalNameException
     {
         if(substring == null || substring.isBlank())
         {
-            throw new IllegalArgumentException("bad name");
+            throw new IllegalNameException("bad name");
         }
         for(Novel novel: novels) {
             if (novel != null) {
@@ -288,8 +290,10 @@ class BookStore {
      * then return the longest title (by finding it using a foreach loop);
      * if the property argument is something else then return null
      *
-     * @param property
-     * @return
+     * @param property                  the property of the author or title (String) that is passed into the method
+     * @return                          the longest title or author (String)
+     * @IllegalNovelPropertyException   Created a custom Exception with the message "bad property" if the parameter
+     *                                  does not contain the word author or title
      */
     public String getLongest(final String property) throws IllegalNovelPropertyException {
         String title;
@@ -329,7 +333,7 @@ class BookStore {
         }
         else
         {
-        throw new IllegalNovelPropertyException("bad property");
+            throw new IllegalNovelPropertyException("bad property");
         }
     }
 
@@ -338,9 +342,11 @@ class BookStore {
      *
      * To run the BookStore you need to go to Run > Edit Configurations then under Build and Run program arguments type in "Amazon"
      *
-     * @param args is an argument passed
+     * @param args                      is an argument passed
+     * @IllegalNameException            Created a custom Exception with the message "bad name" if the parameter is null or blank
+     * @IllegalNovelPropertyException   Created a custom Exception with the message "Illegal Argument" in the try/catch
      */
-    public static void main(String[] args) throws IllegalNovelPropertyException {
+    public static void main(String[] args) throws IllegalNovelPropertyException, IllegalNameException {
         BookStore b = new BookStore( args[0] );
         b.printAllTitles();
 
@@ -353,10 +359,14 @@ class BookStore {
         System.out.println("---");
         b.printTitlesOfLength(13);
 
-        System.out.println("---");
-        b.printNameStartsEndsWith("aN");
+        System.out.println("--NameStartsEndsWith--");
+        try {
+            b.printNameStartsEndsWith("aN");
+        } catch(IllegalNameException e) {
+            System.out.println("Illegal argument: " + e);
+        }
 
-        System.out.println("--HERE-");
+        System.out.println("--getLongest--");
 
         try {
             System.out.println(b.getLongest("xyz"));
@@ -378,8 +388,6 @@ class BookStore {
         {
             System.out.println("Illegal argument: " + e);
         }
-
         System.out.println("--ENDING --");
-
     }
 }

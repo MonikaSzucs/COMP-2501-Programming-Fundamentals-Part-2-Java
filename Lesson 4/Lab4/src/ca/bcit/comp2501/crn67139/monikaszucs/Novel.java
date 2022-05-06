@@ -4,12 +4,12 @@ package ca.bcit.comp2501.crn67139.monikaszucs;
  * Novel.java
  * COMP 2501 - CRN: 67139
  * Wednesday evenings, Spring/Summer 2022
- * Lab #3
+ * Lab #4
  *
- * Define a novel class and novels properties.
+ * Define a novel class and novels properties using Exception handling
  *
  * @author Monika Szucs
- * @author Tony Tateyama
+ * @author Tram Le
  *
  * @version 1.0
  *
@@ -37,7 +37,7 @@ public class Novel {
     /**
      * Getter for the title
      *
-     * @return the title
+     * @return the title for the novel (String)
      */
     public String getTitle()
     {
@@ -47,7 +47,7 @@ public class Novel {
     /**
      * The getter for the author name
      *
-     * @return author name
+     * @return author name containing the author name (String)
      */
     public String getAuthorName()
     {
@@ -57,7 +57,7 @@ public class Novel {
     /**
      * The getter for the year published
      *
-     * @return the year published
+     * @return the year published containing the year (Integer)
      */
     public int getYearPublished()
     {

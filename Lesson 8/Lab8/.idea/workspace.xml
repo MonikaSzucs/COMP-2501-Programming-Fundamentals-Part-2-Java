@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ad47de6-9dd9-494c-be6e-5ff0d5312dc8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Lesson 6/Lab6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 6/Lab6/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 6/Lab6/src/StarWarsName.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 6/Lab6/src/StarWarsName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 7/Lab 7.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 7/Lab 7.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab8Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab8Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

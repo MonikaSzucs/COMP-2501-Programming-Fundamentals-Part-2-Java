@@ -157,103 +157,155 @@ public class Agency {
         ArrayList<String> propertyTypes = new ArrayList<>();
         String prop = "";
         int counter = 1;
+        propertyTypes.add("Type: " + propertyType.toUpperCase() + "\n");
 
-        if(propertyType.equalsIgnoreCase("commercial")){
-            propertyTypes.add("Type: COMMERCIAL\n");
-        }
         for(String propertyId: properties.keySet())
         {
-
-            if(properties.get(propertyId).getType().equalsIgnoreCase(propertyType))
-            {
-                if(properties.get(propertyId).getAddress().getUnitNumber() != null)
+            String newPropertyId = propertyId.toUpperCase();
+            String[] slicedStreetName = properties.get(propertyId).getAddress().getStreetName().split(" ");
+            String newStreeName;
+            if(slicedStreetName.length > 1)
                 {
-                    if(properties.get(propertyId).getNumberOfBedrooms() > 1)
-                    {
-                        if(properties.get(propertyId).hasSwimmingPool())
-                        {
-                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms plus pool): $%.0f.\n", counter,
-                                    propertyId,
+                    newStreeName = slicedStreetName[0].substring(0, 1).toUpperCase() +
+                            slicedStreetName[0].substring(1) + " " +
+                            slicedStreetName[1].substring(0, 1).toUpperCase() +
+                            slicedStreetName[1].substring(1) ;
+                }
+                else{
+                    newStreeName = slicedStreetName[0].substring(0, 1).toUpperCase() +
+                        slicedStreetName[0].substring(1);
+            }
+            String[] slicedCity = properties.get(propertyId).getAddress().getCity().split(" ");
+            String newCity;
+            if(slicedCity.length > 1)
+            {
+                newCity = slicedCity[0].substring(0, 1).toUpperCase() +
+                        slicedCity[0].substring(1) + " " +
+                        slicedCity[1].substring(0, 1).toUpperCase() +
+                        slicedCity[1].substring(1) ;
+            }
+            else {
+                newCity = slicedCity[0].substring(0, 1).toUpperCase() +
+                        slicedCity[0].substring(1);
+            }
+            if(properties.get(propertyId).getType().equalsIgnoreCase(propertyType)) {
+
+                if (properties.get(propertyId).getAddress().getUnitNumber() != null) {
+                    if (properties.get(propertyId).getNumberOfBedrooms() > 1) {
+                        if (properties.get(propertyId).hasSwimmingPool()) {
+                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms plus pool): $%.0f.\n",
+                                    counter,
+                                    propertyId.toUpperCase(),
                                     properties.get(propertyId).getAddress().getUnitNumber(),
                                     properties.get(propertyId).getAddress().getStreetNumber(),
-                                    properties.get(propertyId).getAddress().getStreetName(),
+                                    newStreeName,
                                     properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
-                                    properties.get(propertyId).getAddress().getCity(),
+                                    newCity,
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
                             );
-
-                            propertyTypes.add(prop);
-                        }
-                        else
-                        {
+                        } else {
                             prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms): $%.0f.\n",
                                     counter,
-                                    propertyId,
+                                    propertyId.toUpperCase(),
                                     properties.get(propertyId).getAddress().getUnitNumber(),
                                     properties.get(propertyId).getAddress().getStreetNumber(),
-                                    properties.get(propertyId).getAddress().getStreetName(),
+                                    newStreeName,
                                     properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
-                                    properties.get(propertyId).getAddress().getCity(),
+                                    newCity,
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
                             );
-                            propertyTypes.add(prop);
+                        }
+                    } else {
+                        if (properties.get(propertyId).hasSwimmingPool()) {
+                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedroom plus pool): $%.0f.\n",
+                                    counter,
+                                    propertyId.toUpperCase(),
+                                    properties.get(propertyId).getAddress().getUnitNumber(),
+                                    properties.get(propertyId).getAddress().getStreetNumber(),
+                                    newStreeName,
+                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
+                                    newCity,
+                                    properties.get(propertyId).getNumberOfBedrooms(),
+                                    properties.get(propertyId).getPriceUsd()
+                            );
+                        } else {
+                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedroom): $%.0f.\n",
+                                    counter,
+                                    propertyId.toUpperCase(),
+                                    properties.get(propertyId).getAddress().getUnitNumber(),
+                                    properties.get(propertyId).getAddress().getStreetNumber(),
+                                    newStreeName,
+                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
+                                    newCity,
+                                    properties.get(propertyId).getNumberOfBedrooms(),
+                                    properties.get(propertyId).getPriceUsd()
+                            );
                         }
                     }
-                    else
-                    {
-                        prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedroom): $%.0f.\n",
-                                counter,
-                                propertyId,
-                                properties.get(propertyId).getAddress().getUnitNumber(),
-                                properties.get(propertyId).getAddress().getStreetNumber(),
-                                properties.get(propertyId).getAddress().getStreetName(),
-                                properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
-                                properties.get(propertyId).getAddress().getCity(),
-                                properties.get(propertyId).getNumberOfBedrooms(),
-                                properties.get(propertyId).getPriceUsd()
-                        );
-                        propertyTypes.add(prop);
-                    }
-                }
-                else
-                {
-                    if(properties.get(propertyId).getNumberOfBedrooms() > 1)
-                    {
-                        if(properties.get(propertyId).hasSwimmingPool())
-                        {
+                } else {
+                    if (properties.get(propertyId).getNumberOfBedrooms() > 1) {
+                        if (properties.get(propertyId).hasSwimmingPool()) {
                             prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms plus pool): $%.0f.\n",
                                     counter,
-                                    propertyId,
+                                    propertyId.toUpperCase(),
                                     properties.get(propertyId).getAddress().getStreetNumber(),
-                                    properties.get(propertyId).getAddress().getStreetName(),
+                                    newStreeName,
                                     properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
-                                    properties.get(propertyId).getAddress().getCity(),
+                                    newCity,
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
                             );
-                            propertyTypes.add(prop);
-                        }
-                        else
-                        {
+                        } else {
                             prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms): $%.0f.\n",
                                     counter,
-                                    propertyId,
+                                    propertyId.toUpperCase(),
                                     properties.get(propertyId).getAddress().getStreetNumber(),
-                                    properties.get(propertyId).getAddress().getStreetName(),
+                                    newStreeName,
+                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
+                                    newCity,
+                                    properties.get(propertyId).getNumberOfBedrooms(),
+                                    properties.get(propertyId).getPriceUsd()
+                            );
+                        }
+                    } else {
+                        if (properties.get(propertyId).hasSwimmingPool()) {
+                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedroom plus pool): $%.0f.\n",
+                                    counter,
+                                    propertyId.toUpperCase(),
+                                    properties.get(propertyId).getAddress().getStreetNumber(),
+                                    newStreeName,
+                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
+                                    newCity,
+                                    properties.get(propertyId).getNumberOfBedrooms(),
+                                    properties.get(propertyId).getPriceUsd()
+                            );
+                        } else {
+                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedroom): $%.0f.\n",
+                                    counter,
+                                    propertyId.toUpperCase(),
+                                    properties.get(propertyId).getAddress().getStreetNumber(),
+                                    newStreeName,
                                     properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
                                     properties.get(propertyId).getAddress().getCity(),
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
                             );
-                            propertyTypes.add(prop);
                         }
                     }
                 }
+                propertyTypes.add(prop);
+                prop = "";
+                counter++;
             }
-
         }
+        if(propertyTypes.size() < 2)
+        {
+            String empty = "<none found>";
+            propertyTypes.add(empty);
+        }
+
         System.out.println(propertyTypes);
         return propertyTypes;
     }

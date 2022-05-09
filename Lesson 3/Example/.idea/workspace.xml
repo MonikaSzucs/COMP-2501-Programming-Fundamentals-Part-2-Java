@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5352e677-69e8-46eb-b832-ed08c0df8ee3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Amazon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Hello.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MovieTheatre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Netflix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ProcessNotes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 4/Example/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 4/Example/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 4/Example/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 4/Example/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 4/Example/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 4/Example/Example.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 4/Example/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 4/Example/src/PizzaException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 4/Example/src/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assignment/1 - Due before lesson 7/2501assignment1practice/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assignment/1 - Due before lesson 7/2501assignment1practice/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assignment/1 - Due before lesson 7/2501assignment1practice/out/production/2501assignment1practice/Agency.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assignment/1 - Due before lesson 7/2501assignment1practice/out/production/2501assignment1practice/Agency.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assignment/1 - Due before lesson 7/2501assignment1practice/src/java/Agency.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assignment/1 - Due before lesson 7/2501assignment1practice/src/java/Agency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Example/Animals.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Example/Animals.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Example/Electronic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Example/Electronic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Example/TechnicalThing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Example/TechnicalThing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Animals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Electronic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Electronic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TechnicalThing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TechnicalThing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +97,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Electronic" />
       <item itemvalue="Application.ProcessNotes" />
       <item itemvalue="Application.Car" />
       <item itemvalue="Application.MovieTheatre" />

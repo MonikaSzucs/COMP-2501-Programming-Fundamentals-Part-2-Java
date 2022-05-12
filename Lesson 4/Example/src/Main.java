@@ -1,20 +1,15 @@
-public class Main
-{
-    public static void main(final String[] args)
-    {
+public class Main {
+    public static void main(final String[] args) {
         Restaurant r = new Restaurant();
 
-        try
-        {
+        try {
             r.order("pizza");
-            //r.order("salad");
+            r.order("salad");
         }
-        catch(final IllegalArgumentException e)
-        {
+        catch(final IllegalArgumentException e) {
             System.out.println("Oh no");
         }
-        finally
-        {
+        finally {
             System.out.println("Always done");
         }
     }

@@ -11,12 +11,11 @@ package ca.bcit.comp2501.crn67139.monikaszucs;
  * @author Monika Szucs
  * @author Tram Le
  *
- * @version 1.0
+ * @version 2.0
  *
  */
-public class IllegalNovelPropertyException extends Exception{
-    IllegalNovelPropertyException(final String novel)
-        {
-            super(novel);
-        }
+class IllegalNovelPropertyException extends RuntimeException {
+    IllegalNovelPropertyException(final String novel) {
+        super(novel);
+    }
 }

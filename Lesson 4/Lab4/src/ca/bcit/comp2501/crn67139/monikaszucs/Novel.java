@@ -11,7 +11,7 @@ package ca.bcit.comp2501.crn67139.monikaszucs;
  * @author Monika Szucs
  * @author Tram Le
  *
- * @version 1.0
+ * @version 2.0
  *
  * To run the BookStore you need to go to Run > Edit Configurations then under Build and Run program arguments type in "Amazon"
  */
@@ -27,8 +27,7 @@ public class Novel {
      * @param authorName        The novel's author name
      * @param yearPublished     The year the novel was published
      */
-    public Novel(final String title, final String authorName, final int yearPublished)
-    {
+    public Novel(final String title, final String authorName, final int yearPublished) {
         this.title          = title;
         this.authorName     = authorName;
         this.yearPublished  = yearPublished;
@@ -39,8 +38,7 @@ public class Novel {
      *
      * @return the title for the novel (String)
      */
-    public String getTitle()
-    {
+    public String getTitle() {
         return title;
     }
 
@@ -49,8 +47,7 @@ public class Novel {
      *
      * @return author name containing the author name (String)
      */
-    public String getAuthorName()
-    {
+    public String getAuthorName() {
         return authorName;
     }
 
@@ -59,8 +56,7 @@ public class Novel {
      *
      * @return the year published containing the year (Integer)
      */
-    public int getYearPublished()
-    {
+    public int getYearPublished() {
         return yearPublished;
     }
 }

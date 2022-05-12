@@ -1,50 +1,29 @@
-package ca.bcit.comp2501.crn67139.monikaszucs;
+package com.comp2501.crn.monikaszucs;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
-/**
- * BookStore.java
- * COMP 2501 - CRN: 67139
- * Wednesday evenings, Spring/Summer 2022
- * Lab #4
- *
- * Define a novel class and novels properties using Exception handling
- *
- * @author Monika Szucs
- * @author Tram Le
- *
- * @version 2.0
- *
- * To run the BookStore you need to go to Run > Edit Configurations then under Build and Run program arguments type in "Amazon"
- */
 class BookStore {
     private final String bookStoreName;
     private final List<Novel> novels;
 
-    /**
-     * The Bookstore constructor
-     * Contains the number of novel data records and bookstore name
-     *
-     * @param                       bookStoreName is the name of the bookstore (String)
-     * @IllegalArgumentException    Will throw an IllegalArgumentException if there is an invalid book name that is null or blank
-     */
     BookStore(final String bookStoreName) {
-        if (bookStoreName == null || bookStoreName.isBlank()) {
-            throw new IllegalArgumentException("invalid book store's name");
-        }
-
-        if(bookStoreName.equalsIgnoreCase("Books-R-Us")) {
-            this.bookStoreName = bookStoreName;
-        } else if(bookStoreName.equals("Amazon")) {
-            this.bookStoreName = "Chapters";
-        } else {
-            this.bookStoreName = "We do not accept the name of Amazon in any letter casing";
-        }
-
-        // Populating the ArrayList with data
         novels = new ArrayList<>();
+
+        if (bookStoreName == null || bookStoreName.isBlank()) {
+            throw new IllegalArgumentException("Cannot be null or blank");
+        }
+
+        if (bookStoreName.equals("Amazon")) {
+            this.bookStoreName = "Chapters";
+        } else if (bookStoreName.equalsIgnoreCase("Books-R-Us")) {
+            this.bookStoreName = bookStoreName;
+        } else {
+            this.bookStoreName = "we do not accepted the name of amazon in any letter casing";
+        }
+
         novels.add(null);
         novels.add(new Novel("The Adventures of Augie March", "Saul Bellow", 1953));
         novels.add(new Novel("All the King's Men", "Robert Penn Warren", 1946));
@@ -155,185 +134,116 @@ class BookStore {
         novels.add(new Novel("White Teeth", "Zadie Smith", 2000));
         novels.add(new Novel("Wide Sargasso Sea", "Jean Rhys", 1966));
 
-        System.out.println(novels.size());
+        System.out.println(bookStoreName);
         System.out.println(this.bookStoreName);
     }
 
-    /**
-     * Displays the title names containing a substring
-     */
     public void printAllTitles() {
         for(Novel novel: novels) {
-            if(novel != null && novel.getTitle() != null && !novel.getTitle().isBlank()) {
+            if(novel != null && novel.getTitle() != null && !novel.getTitle().isBlank() ) {
                 System.out.println(novel.getTitle().toUpperCase());
             }
         }
     }
 
-    /**
-     * Printing all titles that contain the specified substring:
-     * if caseSensitive is false then the match is in any letter casing
-     * if caseSensitive is true then the match must include letter casing
-     *
-     * @param substring             The substring to search for
-     * @param caseSensitive         checking based on case-sensitivity
-     * @IllegalArgumentException    This checks to see if the method that has been passed is an illegal argument
-     * @NullPointerException        This will check to see when a variable is accessed to make sure it is nothing or null
-     */
     public void printTitlesContaining(final String substring, final boolean caseSensitive) {
-        try {
-            for(Novel novel: novels) {
-                if(novel != null) {
-                    if(novel.getTitle() != null) {
-                        if(caseSensitive) {
-                            boolean val = novel.getTitle().contains(substring);
-                            if(val) {
-                                if(novel.getTitle().toLowerCase().contains(substring.toLowerCase())) {
-                                    System.out.println(novel.getTitle());
-                                }
-                            }
-                        }
-                        else {
-                            boolean val = novel.getTitle().toLowerCase().contains(substring.toLowerCase());
-                            if(val) {
-                                System.out.println(novel.getTitle());
-                            }
-                        }
+        for(Novel novel: novels) {
+            if(novel != null && novel.getTitle() != null) {
+                if(caseSensitive) {
+                    if(novel.getTitle().contains(substring))
+                    {
+                        System.out.println(novel.getTitle());
                     }
-                }
-            }
-        } catch(IllegalArgumentException e) {
-            System.out.println("Illegal argument: " + e);
-        } catch(NullPointerException e) {
-            System.out.println("NullPointerException " + e);
-        }
-    }
-
-    /**
-     * Printing all titles that are exactly the specified length
-     *
-     * @param lengthCheck           grabbing the length of the title that matches
-     * @IllegalArgumentException    throws an Illegal Argument error if the length of the title is less than or equal to zero
-     */
-    public void printTitlesOfLength(final int lengthCheck) {
-        System.out.println(lengthCheck);
-        if(lengthCheck <= 0) {
-            throw new IllegalArgumentException("bad length");
-        } else {
-            for(Novel novel: novels) {
-                if (novel != null) {
-                    if (novel.getTitle() != null) {
-                        if (novel.getTitle().length() == lengthCheck) {
-                            System.out.println(novel.getTitle());
-                        }
+                } else {
+                    if(novel.getTitle().toLowerCase().contains(substring.toLowerCase())) {
+                        System.out.println(novel.getTitle());
                     }
                 }
             }
         }
     }
 
-    /**
-     * Prints all author names that either start or end with substring, in lowercase
-     *
-     * @param substring         the letters provided to check for
-     * @IllegalNameException    Created a custom Exception with the message "bad name" if the parameter is null or blank
-     */
-    public void printNameStartsEndsWith(final String substring) throws IllegalNameException {
-        if(substring == null || substring.isBlank()) {
-            throw new IllegalNameException("bad name");
-        } for(Novel novel: novels) {
-            if (novel != null) {
-                if (novel.getAuthorName() != null) {
-                    if (novel.getAuthorName().length() >= 2) {
-                        if (novel.getAuthorName().toLowerCase().substring(0, 2).contains(substring.toLowerCase()) ||
-                                novel.getAuthorName().toLowerCase().substring(novel.getAuthorName().length() - 2).contains(substring.toLowerCase())) {
-                            System.out.println(novel.getAuthorName());
-                        }
-                    }
+    public void printTitlesOfLength(int titleLength) {
+        for(Novel novel: novels)
+        {
+            if(novel != null && novel.getTitle() != null) {
+                if(novel.getTitle().length() == titleLength)
+                {
+                    System.out.println(novel.getTitle());
                 }
             }
         }
     }
 
-    /**
-     * If the property argument is “author” (in any letter casing) then return the longest author
-     * name (by finding it using a foreach loop); if the property argument is “title” (in any letter casing)
-     * then return the longest title (by finding it using a foreach loop);
-     * if the property argument is something else then return null
-     *
-     * @param property                  the property of the author or title (String) that is passed into the method
-     * @return                          the longest title or author (String)
-     * @IllegalNovelPropertyException   Created a custom Exception with the message "bad property" if the parameter
-     *                                  does not contain the word author or title
-     */
-    public String getLongest(final String property) {
+    public void printNameStartsEndsWith(final String substring) {
+        if(substring == null && substring.isBlank()) {
+            throw new IllegalArgumentException("bad name");
+        }
+        for(Novel novel: novels) {
+            if(novel != null && novel.getAuthorName() != null && novel.getAuthorName().length() >= 2) {
+                if(novel.getAuthorName().toLowerCase().substring(0,2).contains(substring.toLowerCase()) ||
+                novel.getAuthorName().toLowerCase().substring(novel.getAuthorName().length() - 2).contains(substring.toLowerCase())) {
+                    System.out.println(novel.getAuthorName());
+                }
+            }
+        }
+    }
+
+    public void getLongest(final String property) {
         String title;
-        String name;
-        int    maxLength = 0;
+        String author;
+        int maxlength = 0;
         String longest = null;
-
-        if (!property.equalsIgnoreCase("author") && !property.equalsIgnoreCase("title")) {
-            throw new IllegalNovelPropertyException("bad property");
-        }
-        for (Novel novel : novels) {
-            if (novel != null) {
-                if (property.equalsIgnoreCase("title")) {
+        for(Novel novel: novels) {
+            if(novel != null) {
+                if(property.equalsIgnoreCase("title")) {
                     title = novel.getTitle();
-                    if (title != null && !title.isBlank()) {
-                        if (title.length() > maxLength) {
-                            maxLength = title.length();
+                    if(title != null && !title.isBlank()) {
+                        if(title.length() > maxlength){
+                            maxlength = title.length();
                             longest = title;
                         }
                     }
-                } else if (property.equalsIgnoreCase("author")) {
-                    name = novel.getAuthorName();
-                    if (name != null && !name.isBlank()) {
-                        if (name.length() > maxLength) {
-                            maxLength = name.length();
-                            longest = name;
+                } else if( property.equalsIgnoreCase("autHor")) {
+                    author = novel.getAuthorName();
+                    if(author != null && !author.isBlank()) {
+                        if(author.length() > maxlength) {
+                            maxlength = author.length();
+                            longest = author;
                         }
                     }
                 } else {
-                    longest = "title or author cannot be found.";
+                    longest = null;
                 }
             }
         }
-        return longest;
+        System.out.println(longest);
     }
 
-    /**
-     * The main which created a BookStore object and passes args[0] to BookStore constructor as its name property
-     *
-     * To run the BookStore you need to go to Run > Edit Configurations then under Build and Run program arguments type in "Amazon"
-     *
-     * @param args                      is an argument passed
-     * @IllegalNameException            Created a custom Exception with the message "bad name" if the parameter is null or blank
-     * @IllegalNovelPropertyException   Created a custom Exception with the message "Illegal Argument" in the try/catch
-     * @IllegalArgumentException        Checks for an IllegalArgumentException
-     */
-    public static void main(String[] args) throws IllegalNameException {
-        try {
-            BookStore bookStore = new BookStore( args[0] );
-            bookStore.printAllTitles();
+    public static void main(final String[] args) {
+        BookStore bookstore = new BookStore(args[0]);
+        bookstore.printAllTitles();
 
-            System.out.println("---");
-            bookStore.printTitlesContaining("the", false);
-            System.out.println("---");
-            bookStore.printTitlesContaining("the", true);
+        System.out.println("---");
+        bookstore.printTitlesContaining("the", false);
 
-            System.out.println("---");
-            bookStore.printTitlesOfLength(13);
+        System.out.println("---");
+        bookstore.printTitlesContaining("the", true);
 
-            System.out.println("--NameStartsEndsWith--");
-            bookStore.printNameStartsEndsWith("aN");
+        System.out.println("---");
+        bookstore.printTitlesOfLength(13);
 
-            System.out.println("--getLongest--");
-            System.out.println(bookStore.getLongest("AutHor"));
-            System.out.println(bookStore.getLongest("titlE"));
-            System.out.println(bookStore.getLongest("xyz"));
-        } catch (IllegalNovelPropertyException | IllegalNameException | IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
-        System.out.println("--ENDING --");
+        System.out.println("---");
+        bookstore.printNameStartsEndsWith("aN");
+
+        System.out.println("---");
+        bookstore.getLongest("titlE");
+
+        System.out.println("---");
+        bookstore.getLongest("autHor");
+
+        System.out.println("---");
+        bookstore.getLongest("xyz");
     }
+
 }

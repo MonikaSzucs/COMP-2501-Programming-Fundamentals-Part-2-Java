@@ -11,12 +11,11 @@ package ca.bcit.comp2501.crn67139.monikaszucs;
  * @author Monika Szucs
  * @author Tram Le
  *
- * @version 1.0
+ * @version 2.0
  *
  */
-public class IllegalNameException extends Exception{
-    IllegalNameException(final String novel)
-    {
+public class IllegalNameException extends Exception {
+    IllegalNameException(final String novel) {
         super(novel);
     }
 }

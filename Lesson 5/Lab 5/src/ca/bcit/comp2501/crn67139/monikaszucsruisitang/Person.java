@@ -1,7 +1,6 @@
-package ca.bcit.comp2501.crn67139.monikaszucs;
+package ca.bcit.comp2501.crn67139.monikaszucsruisitang;
 
-import java.time.LocalDate;
-import java.util.Locale;
+import java.util.Calendar;
 
 /**
  * Person.java
@@ -13,7 +12,7 @@ import java.util.Locale;
  * and highest education level
  *
  * @author Monika Szucs
- * @author
+ * @author Ruisi Tang
  *
  * @version 1.0
  *
@@ -26,9 +25,14 @@ class Person {
     private final double    weightInPounds;
     private final String    highestEducationLevel;
 
-    static LocalDate currentDate            = LocalDate.now();
-    static int currentYear                  = currentDate.getYear();
-    public static final int CURRENT_YEAR    = currentYear;
+    //static LocalDate currentDate            = LocalDate.now();
+    //static int currentYear                  = currentDate.getYear();
+    //public static final int CURRENT_YEAR    = currentYear;
+
+    Calendar instance = Calendar.getInstance();
+    int CURRENT_YEAR = instance.get(Calendar.YEAR);
+
+
 
     public static final double POUNDS_TO_KILOGRAMS = 0.4545;
 
@@ -43,7 +47,7 @@ class Person {
      * @param weightInPounds the persons weight in pounds (double)
      * @param highestEducationLevel the persons highest level of education (String)
      *
-     * @IllegalArgumentException throws an illegal argument if the marriage or high school education level
+     * @throws IllegalArgumentException throws an illegal argument if the marriage or high school education level
      *                          is not set properly
      */
     Person(final String firstName, final String lastName, final int birthYear, final String married,
@@ -74,7 +78,7 @@ class Person {
      * @param weightInPounds the persons weight in pounds (double)
      * @param highestEducationLevel the persons highest education level (String)
      *
-     * @IllegalArgumentException throws an illegal argument if the marriage or high school education level
+     * @throws IllegalArgumentException throws an illegal argument if the marriage or high school education level
      *      *                          is not set properly
      */
     Person(final String firstName, final String lastName, final String married, final double weightInPounds,
@@ -281,6 +285,14 @@ class Person {
         p3 = new Person("Santa", "Claus", 1000, "yes",
                 280, "high school");
 
+        Person p4;
+        p4 = new Person("Monika", "Szucs","no", 180,
+                "graduate");
+
+        Person p5;
+        p5 = new Person("Ruisi", "Tang", 180);
+
+        System.out.println("--6 parameters given for Person 1--");
         p1.printDetails();
         p1.printDetails(true);
         p1.printDetails(true, true);
@@ -288,7 +300,7 @@ class Person {
         p1.printDetails(false, true);
         p1.printDetails(false, false);
 
-        System.out.println("---");
+        System.out.println("--6 parameters given for Person 2--");
         p2.printDetails();
         p2.printDetails(true);
         p2.printDetails(true,true);
@@ -296,12 +308,30 @@ class Person {
         p2.printDetails(false, true);
         p2.printDetails(false, false);
 
-        System.out.println("---");
+        System.out.println("--6 parameters given for Person 3--");
         p3.printDetails();
         p3.printDetails(true);
         p3.printDetails(true,true);
         p3.printDetails(true, false);
         p3.printDetails(false, true);
         p3.printDetails(false, false);
+
+
+        System.out.println("--5 parameters given for Person 4--");
+        p4.printDetails();
+        p4.printDetails(true);
+        p4.printDetails(true,true);
+        p4.printDetails(true, false);
+        p4.printDetails(false, true);
+        p4.printDetails(false, false);
+
+        System.out.println("--3 parameters given for Person 5--");
+        p5.printDetails();
+        p5.printDetails(true);
+        p5.printDetails(true,true);
+        p5.printDetails(true, false);
+        p5.printDetails(false, true);
+        p5.printDetails(false, false);
+        
     }
 }

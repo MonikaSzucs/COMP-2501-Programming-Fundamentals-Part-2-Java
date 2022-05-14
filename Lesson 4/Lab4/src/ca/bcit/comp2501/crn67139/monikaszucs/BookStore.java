@@ -180,7 +180,7 @@ public class BookStore {
      *
      * @param substring             The substring to search for
      * @param caseSensitive         checking based on case-sensitivity
-     * @IllegalArgumentException    This checks to see if the method that has been passed is an illegal argument
+     * @throws IllegalArgumentException    This checks to see if the method that has been passed is an illegal argument
      * @throws NullPointerException        This will check to see when a variable is accessed to make sure it is nothing or null
      */
     public void printTitlesContaining(final String substring,
@@ -216,8 +216,8 @@ public class BookStore {
     /**
      * Printing all titles that are exactly the specified length
      *
-     * @param lengthCheck           grabbing the length of the title that matches
-     * @throws IllegalArgumentException    throws an Illegal Argument error if the length of the title is less than or equal to TOOSHORT
+     * @param lengthCheck               grabbing the length of the title that matches
+     * @throws IllegalArgumentException throws an Illegal Argument error if the length of the title is less than or equal to TOOSHORT
      */
     public void printTitlesOfLength(final int lengthCheck) {
         System.out.println(lengthCheck);
@@ -266,10 +266,10 @@ public class BookStore {
      * then return the longest title (by finding it using a foreach loop);
      * if the property argument is something else then return null
      *
-     * @param property                  the property of the author or title (String) that is passed into the method
-     * @return                          the longest title or author (String)
-     * @throws IllegalNovelPropertyException   Created a custom Exception with the message "bad property" if the parameter
-     *                                  does not contain the word author or title
+     * @param property                          the property of the author or title (String) that is passed into the method
+     * @return                                  the longest title or author (String)
+     * @throws IllegalNovelPropertyException    Created a custom Exception with the message "bad property" if the parameter
+     *                                          does not contain the word author or title
      */
     public String getLongest(final String property) {
         String title;

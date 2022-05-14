@@ -332,6 +332,6 @@ class Person {
         p5.printDetails(true, false);
         p5.printDetails(false, true);
         p5.printDetails(false, false);
-        
+
     }
 }

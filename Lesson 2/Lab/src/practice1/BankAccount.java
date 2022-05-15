@@ -45,7 +45,7 @@ class BankAccount {
      */
     public void setBalanceCdn(final double balanceCdn)
     {
-        this. balanceCdn = balanceCdn;
+        this.balanceCdn = balanceCdn;
     }
 
     /**

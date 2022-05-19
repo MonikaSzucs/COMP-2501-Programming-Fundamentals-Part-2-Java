@@ -1,4 +1,4 @@
-package ca.bcit.comp2501.crn67139.monikaszucsruisitang;
+package ca.bcit.comp2501.crn67139.lab5.monikaszucsruisitang;
 
 import java.util.Calendar;
 
@@ -21,9 +21,10 @@ class Person {
     private final String    firstName;
     private final String    lastName;
     private final int       birthYear;
-    private final String    married;
-    private final double    weightInPounds;
-    private final String    highestEducationLevel;
+
+    private String    married;
+    private double    weightInPounds;
+    private String    highestEducationLevel;
 
     //static LocalDate currentDate            = LocalDate.now();
     //static int currentYear                  = currentDate.getYear();
@@ -31,8 +32,6 @@ class Person {
 
     Calendar instance = Calendar.getInstance();
     int CURRENT_YEAR = instance.get(Calendar.YEAR);
-
-
 
     public static final double POUNDS_TO_KILOGRAMS = 0.4545;
 
@@ -52,21 +51,21 @@ class Person {
      */
     Person(final String firstName, final String lastName, final int birthYear, final String married,
            final double weightInPounds, final String highestEducationLevel) {
-        this.firstName  = firstName;
-        this.lastName   = lastName;
-        this.birthYear  = birthYear;
 
         if(!isValidMarriageStatus(married)) {
             throw new IllegalArgumentException("Must have a married status of yes, no, or divorced");
         }
-        this.married        = married;
-        this.weightInPounds = weightInPounds;
 
-        if(isValidEducationLevel(highestEducationLevel)) {
-            this.highestEducationLevel = highestEducationLevel;
-        } else {
+        if(!isValidEducationLevel(highestEducationLevel)) {
             throw new IllegalArgumentException("Must be high school, undergraduate, or graduate level of education");
         }
+
+        this.highestEducationLevel  = highestEducationLevel;
+        this.weightInPounds         = weightInPounds;
+        this.married                = married;
+        this.firstName              = firstName;
+        this.lastName               = lastName;
+        this.birthYear              = birthYear;
     }
 
     /**
@@ -83,21 +82,21 @@ class Person {
      */
     Person(final String firstName, final String lastName, final String married, final double weightInPounds,
            final String highestEducationLevel) {
-        this.firstName  = firstName;
-        this.lastName   = lastName;
-        this.birthYear  = CURRENT_YEAR;
 
         if(!isValidMarriageStatus(married)) {
             throw new IllegalArgumentException("Must have a married status of yes, no, or divorced");
         }
-        this.married        = married;
-        this.weightInPounds = weightInPounds;
 
-        if(isValidEducationLevel(highestEducationLevel)) {
-            this.highestEducationLevel = highestEducationLevel;
-        } else {
+        if(!isValidEducationLevel(highestEducationLevel)) {
             throw new IllegalArgumentException("Must be high school, undergraduate, or graduate level of education");
         }
+
+        this.highestEducationLevel = highestEducationLevel;
+        this.married        = married;
+        this.weightInPounds = weightInPounds;
+        this.firstName  = firstName;
+        this.lastName   = lastName;
+        this.birthYear  = CURRENT_YEAR;
     }
 
     /**
@@ -192,7 +191,7 @@ class Person {
      * @param marriedStatus checks to see if the marriage status is yes, no, or divorced (String)
      * @return either true or false (boolean)
      */
-   private boolean isValidMarriageStatus(String marriedStatus) {
+   private boolean isValidMarriageStatus(final String marriedStatus) {
         if(     marriedStatus.equals("yes") ||
                 marriedStatus.equals("no") ||
                 marriedStatus.equals("divorced")) {
@@ -206,11 +205,11 @@ class Person {
      * The method that is checking for a valid education level
      *
      * @param educationLevelToVerify gets the education level that is passed in the parameter (String)
-     * @return if the education level is true or false (boolean)
+     * @return if the education level is true or false (boolean). Return true if the specified education is valid
      */
-    private boolean isValidEducationLevel(String educationLevelToVerify) {
-        if(     educationLevelToVerify.equalsIgnoreCase("undergraduate") ||
-                educationLevelToVerify.equalsIgnoreCase("graduate") ||
+    private boolean isValidEducationLevel(final String educationLevelToVerify) {
+        if(     educationLevelToVerify.equalsIgnoreCase("undergraduate")    ||
+                educationLevelToVerify.equalsIgnoreCase("graduate")         ||
                 educationLevelToVerify.equalsIgnoreCase("high school")) {
             return true;
         } else {
@@ -231,7 +230,7 @@ class Person {
      *
      * @param kilograms the weight of the person in kilgrams (double)
      */
-    private void printDetails(boolean kilograms) {
+    private void printDetails(final boolean kilograms) {
         if(kilograms) {
             double convertedWeightKg = POUNDS_TO_KILOGRAMS * weightInPounds;
                 System.out.println(firstName + " " + lastName + " (" + isMarried() + ") was born in " + birthYear + "," +
@@ -251,7 +250,7 @@ class Person {
      * @param kilograms  the weight of the Person in kilograms (double)
      * @param uppercase  used to check if the name should be in uppercase (boolean)
      */
-    private void printDetails(boolean kilograms, boolean uppercase) {
+    private void printDetails(final boolean kilograms, final boolean uppercase) {
         double convertedWeightKg = POUNDS_TO_KILOGRAMS * weightInPounds;
         if(uppercase && kilograms) {
                 System.out.println(firstName.toUpperCase() + " " + lastName.toUpperCase() + " (" + isMarried() + ") was born in "
@@ -276,20 +275,19 @@ class Person {
      */
     public static void main(final String[] args) {
         Person p1;
+        Person p2;
+        Person p3;
+        Person p4;
+        Person p5;
+
         p1 = new Person("Tiger", "Woods", 1975, "divorced", 200,
                 "undergraduate");
-        Person p2;
         p2 = new Person("Jason", "Harrison", 2000, "no", 180,
                 "graduate");
-        Person p3;
         p3 = new Person("Santa", "Claus", 1000, "yes",
                 280, "high school");
-
-        Person p4;
         p4 = new Person("Monika", "Szucs","no", 180,
                 "graduate");
-
-        Person p5;
         p5 = new Person("Ruisi", "Tang", 180);
 
         System.out.println("--6 parameters given for Person 1--");
@@ -332,6 +330,5 @@ class Person {
         p5.printDetails(true, false);
         p5.printDetails(false, true);
         p5.printDetails(false, false);
-
     }
 }

@@ -22,12 +22,12 @@ public class StarWarsName {
     // Magic Numbers:
     private static final int DATA_ARG = 0;
 
-    private final int COUNTER_ZERO    = 0;
-    private final int COUNTER_ONE     = 1;
-    private final int COUNTER_TWO     = 2;
-    private final int COUNTER_THREE   = 3;
-    private final int COUNTER_FOUR    = 4;
-    private final int COUNTER_FIVE    = 5;
+    public final int COUNTER_ZERO    = 0;
+    public final int COUNTER_ONE     = 1;
+    public final int COUNTER_TWO     = 2;
+    public final int COUNTER_THREE   = 3;
+    public final int COUNTER_FOUR    = 4;
+    public final int COUNTER_FIVE    = 5;
 
     /**
      * The constructor for the StarWarsName Class
@@ -56,10 +56,16 @@ public class StarWarsName {
      */
     public void getStarWarsName()
     {
-        String[] argContainingString = starWarsName.split("\\|", COUNTER_FOUR);
-        StringBuilder newFirstName = new StringBuilder();
-        StringBuilder newLastName = new StringBuilder();
-        int number = COUNTER_ONE;
+        String[] argContainingString;
+        StringBuilder newFirstName;
+        StringBuilder newLastName;
+        int number;
+
+        newFirstName = new StringBuilder();
+        newLastName = new StringBuilder();
+        argContainingString = starWarsName.split("\\|", COUNTER_FOUR);
+        number = COUNTER_ONE;
+
         for (String character : argContainingString) {
             if(number == COUNTER_ONE)
             {
@@ -92,20 +98,24 @@ public class StarWarsName {
     /**
      * The main for the StarWarsName Class
      *
+     * Add this to the run > Edit Configurations below:
+     * Brady|Mills|Shepherd|Chilliwack
+     *
      * @param args grabbing the arguments provided to create the Star Wars name
      * @ArrayIndexOutOfBoundsException this exception is used to check if the argument provided is out of bounds
      *                                  then it will display the error
      */
     public static void main(final String[] args)
     {
-        // Add this to the run > Edit Configurations below:
-        // Brady|Mills|Shepherd|Chilliwack
+        StarWarsName starWarsName;
+
         try {
-            StarWarsName starWarsName;
             starWarsName = new StarWarsName(args[DATA_ARG]);
             starWarsName.getStarWarsName();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            throw new IllegalArgumentException("missing data input");
+        } catch (final ArrayIndexOutOfBoundsException e) {
+            throw new IllegalArgumentException("missing data input: " + e.getMessage());
+        } catch (final StringIndexOutOfBoundsException e) {
+            throw new IllegalArgumentException("Missing data: " + e.getMessage());
         }
     }
 }

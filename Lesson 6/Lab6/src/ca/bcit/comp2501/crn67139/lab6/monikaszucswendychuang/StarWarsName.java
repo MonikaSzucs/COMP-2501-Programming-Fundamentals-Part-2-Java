@@ -1,4 +1,4 @@
-package ca.bcit.comp2501.crn67139.monikaszucs;
+package ca.bcit.comp2501.crn67139.lab6.monikaszucswendychuang;
 
 /**
  * StarWarsName.java
@@ -9,9 +9,9 @@ package ca.bcit.comp2501.crn67139.monikaszucs;
  * Define a novel class and novels properties.
  *
  * @author Monika Szucs
- * @author
+ * @author Wendy Chuang
  *
- * @version 1.0
+ * @version 1.2
  *
  * To run the StarWarsName you need to go to Run > Edit Configurations then under Build and Run program arguments
  * type in: Brady|Mills|Shepherd|Chilliwack
@@ -20,6 +20,8 @@ public class StarWarsName {
     private String starWarsName;
 
     // Magic Numbers:
+    private static final int DATA_ARG = 0;
+
     private final int COUNTER_ZERO    = 0;
     private final int COUNTER_ONE     = 1;
     private final int COUNTER_TWO     = 2;
@@ -42,7 +44,7 @@ public class StarWarsName {
      *
      * @param starWarsName the string provided from the argument to be converted to a Star Wars Name (String)
      */
-    public void setStarWarsName(String starWarsName)
+    public void setStarWarsName(final String starWarsName)
     {
         this.starWarsName = starWarsName;
     }
@@ -54,28 +56,28 @@ public class StarWarsName {
      */
     public void getStarWarsName()
     {
-        String[] arrOfStr = starWarsName.split("\\|", COUNTER_FOUR);
-        String newFirstName = "";
-        String newLastName = "";
+        String[] argContainingString = starWarsName.split("\\|", COUNTER_FOUR);
+        StringBuilder newFirstName = new StringBuilder();
+        StringBuilder newLastName = new StringBuilder();
         int number = COUNTER_ONE;
-        for (String a : arrOfStr) {
+        for (String character : argContainingString) {
             if(number == COUNTER_ONE)
             {
-                newFirstName += a.substring(COUNTER_ZERO,COUNTER_THREE);
+                newFirstName.append(character.substring(COUNTER_ZERO,COUNTER_THREE));
                 number++;
             } else if(number == COUNTER_TWO)
             {
-                newFirstName += a.substring(COUNTER_ZERO,COUNTER_TWO).toLowerCase();
+                newFirstName.append(character.substring(COUNTER_ZERO,COUNTER_TWO).toLowerCase());
                 number++;
             }
             else if(number == COUNTER_THREE)
             {
-                newLastName += a.substring(COUNTER_ZERO,COUNTER_TWO);
+                newLastName.append(character.substring(COUNTER_ZERO,COUNTER_TWO));
                 number++;
             }
             else if(number == COUNTER_FOUR)
             {
-                newLastName += a.substring(COUNTER_ZERO,COUNTER_THREE).toLowerCase();
+                newLastName.append(character.substring(COUNTER_ZERO,COUNTER_THREE).toLowerCase());
                 number++;
             }
         }
@@ -85,7 +87,6 @@ public class StarWarsName {
         } else {
             System.out.format("Your Star Wars name is: " + newFirstName + " " + newLastName);
         }
-
     }
 
     /**
@@ -101,7 +102,7 @@ public class StarWarsName {
         // Brady|Mills|Shepherd|Chilliwack
         try {
             StarWarsName starWarsName;
-            starWarsName = new StarWarsName(args[0]);
+            starWarsName = new StarWarsName(args[DATA_ARG]);
             starWarsName.getStarWarsName();
         } catch (ArrayIndexOutOfBoundsException e) {
             throw new IllegalArgumentException("missing data input");

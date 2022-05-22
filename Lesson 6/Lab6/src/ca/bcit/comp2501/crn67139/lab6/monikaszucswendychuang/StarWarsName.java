@@ -28,12 +28,10 @@ public class StarWarsName {
 
     public static final int NUM_OF_WORD_STRINGS = 4;
 
-    public final int COUNTER_ZERO    = 0;
-    public final int COUNTER_ONE     = 1;
-    public final int COUNTER_TWO     = 2;
-    public final int COUNTER_THREE   = 3;
-    public final int COUNTER_FOUR    = 4;
-    public final int COUNTER_FIVE    = 5;
+    public static final int INDEX_ZERO    = 0;
+    public static final int INDEX_ONE     = 1;
+    public static final int INDEX_TWO     = 2;
+    public static final int INDEX_THREE   = 3;
 
     public StarWarsName(final String starWarsName)
     {
@@ -51,27 +49,15 @@ public class StarWarsName {
         String nameSubstring2;
         String nameSubstring3;
         String nameSubstring4;
-
-        //StringBuilder nameBuilder;
         String generatedName;
 
-        //Brami Shchi
         arrayNames = starWarsName.split("\\|");
 
-        nameSubstring1 = String.valueOf(arrayNames[0].toUpperCase().charAt(0) + arrayNames[0].toLowerCase().substring(1,3));
-        nameSubstring2 = String.valueOf(arrayNames[1].toLowerCase().substring(0,2));
-        nameSubstring3 = String.valueOf(arrayNames[2].toUpperCase().charAt(0) + arrayNames[2].toLowerCase().substring(1,2));
-        nameSubstring4 = String.valueOf(arrayNames[3].toLowerCase().substring(0,3));
+        nameSubstring1 = String.valueOf(arrayNames[INDEX_ZERO].toUpperCase().charAt(INDEX_ZERO) + arrayNames[INDEX_ZERO].toLowerCase().substring(INDEX_ONE,INDEX_THREE));
+        nameSubstring2 = String.valueOf(arrayNames[INDEX_ONE].toLowerCase().substring(INDEX_ZERO,INDEX_TWO));
+        nameSubstring3 = String.valueOf(arrayNames[INDEX_TWO].toUpperCase().charAt(INDEX_ZERO) + arrayNames[INDEX_TWO].toLowerCase().substring(INDEX_ONE,INDEX_TWO));
+        nameSubstring4 = String.valueOf(arrayNames[INDEX_THREE].toLowerCase().substring(INDEX_ZERO,INDEX_THREE));
 
-        //nameBuilder = new StringBuilder();
-        //nameBuilder.append(nameSubstring1);
-        //nameBuilder.append(nameSubstring2);
-        //nameBuilder.append(" ");
-        //nameBuilder.append(nameSubstring3);
-        //nameBuilder.append(nameSubstring4);
-
-        //System.out.println(nameBuilder);
-        //generatedName = nameBuilder.toString();
         generatedName = nameSubstring1 + nameSubstring2 + " " + nameSubstring3 + nameSubstring4;
         System.out.format(generatedName);
     }

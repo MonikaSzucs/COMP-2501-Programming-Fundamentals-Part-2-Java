@@ -13,7 +13,8 @@ import java.util.*;
  * @version 1.3
  *
  */
-public class Agency {
+public class Agency
+{
     private final String name;
     private final Map<String, Property> properties;
 
@@ -33,7 +34,7 @@ public class Agency {
      *
      * @param property this contains the property class as the parameter
      */
-    public void addProperty(Property property)
+    public void addProperty(final Property property)
     {
 
         properties.put(property.getPropertyId(), property);
@@ -42,29 +43,31 @@ public class Agency {
     /**
      * Getting the property from the Hashmap with a specific property ID
      *
-     * @param propertyId this gets the propertyId value
+     * @param propertyId this gets the propertyId value from the Property Object
      * @return this will return the properties that contain the propertyId (String)
      */
-    public Property getProperty(String propertyId)
+    public Property getProperty(final String propertyId)
     {
         return properties.get(propertyId);
     }
 
     /**
-     * Removing the property from the Hashmap with a specific property ID
+     * Removing the property from the Hashmap with a specific property ID (String)
      *
      * @param propertyId this will remove the property based on the propertyId (String)
      */
-    public void removeProperty(String propertyId) {
+    public void removeProperty(final String propertyId)
+    {
         properties.remove(propertyId);
     }
 
     /**
-     *This method gets the total property values in USD price.
+     *This method gets the total property values in USD price (Double).
      *
      * @return this will return the total price USD  of all the properties combined.
      */
-    public double getTotalPropertyValues() {
+    public double getTotalPropertyValues()
+    {
 
         Set<String> propertiesPropertyId;
         propertiesPropertyId = properties.keySet();
@@ -76,7 +79,13 @@ public class Agency {
         return total;
     }
 
-    public ArrayList<Property> getPropertiesWithPools() {
+    /**
+     * This method get the properties that contain pool(s).
+     *
+     * @return this will return an ArrayList that contains properties with pools.
+     */
+    public ArrayList<Property> getPropertiesWithPools()
+    {
         ArrayList<Property> propertiesWithPools;
         propertiesWithPools = new ArrayList<>();
 
@@ -94,52 +103,47 @@ public class Agency {
         return propertiesWithPools;
     }
 
-    public Property[] getPropertiesBetween(int minUsd, int maxUsd) {
+    /**
+     * This is a method that looks for properties between the minimum and maximum USD price (int).
+     *
+     * @param minUsd the minimum value of the property in USD price (int)
+     * @param maxUsd the maximum values of the property in USD price (int)
+     *
+     * @return this will return the properties found between and including the minimum and maximum USD price of the
+     *          properties in a Property array format.
+     */
+    public Property[] getPropertiesBetween(final int minUsd, final int maxUsd)
+    {
         Property[] propertiesBetween;
         propertiesBetween = new Property[5];
         int num = 0;
 
         System.out.println("For Loop:");
-        for (Map.Entry me : properties.entrySet()) {
+        for (Map.Entry me : properties.entrySet())
+        {
             System.out.println(me);
             //if(num>=5)
              //   {
                //     return propertiesBetween;
                 //}
-            if(properties.get(me.getKey()).getPriceUsd() >= minUsd && properties.get(me.getKey()).getPriceUsd() <= maxUsd) {
+            if(properties.get(me.getKey()).getPriceUsd() >= minUsd && properties.get(me.getKey()).getPriceUsd() <= maxUsd)
+            {
                 System.out.println("Key: " + me.getKey() + " & Value: " + me.getValue());
                 propertiesBetween[num] = properties.get(me.getKey());
                 num++;
             }
         }
         return propertiesBetween;
-
-
-        //Property(700000.00, a10, 2, true, "retail", "y6yyy");
-        //System.out.println(properties.size());
-        //for(Map.Entry propertyId: properties.entrySet())
-        //{
-            //System.out.println(properties.get(propertyId.getKey()).getPropertyId());
-        //    if(num>=5)
-        //    {
-        //        return propertiesBetween;
-        //    }
-        //    if(properties.get(propertyId.getKey()).getPriceUsd() >= minUsd && properties.get(propertyId.getKey()).getPriceUsd() <= maxUsd)
-        //    {
-        //        propertiesBetween[num] = properties.get(propertyId.getKey());
-                //System.out.println(properties.get(propertyId.getKey()).getPropertyId());
-        //    }
-            //System.out.println(properties.get(propertyId).getPropertyId());
-        //    num++;
-        //}
-        //if(propertiesBetween.length < 1)
-        //{
-        //    return null;
-        //}
-        //return propertiesBetween;
     }
 
-    public ArrayList<Address> getPropertiesOn(String streetName) {
+    /**
+     * This is a method that is getting the properties on a (String) street name then will return a ArrayList.
+     *
+     * @param streetName this is the street name the property is located at (String)
+     * @return this will return an ArrayList containing the addresses of the properties.
+     */
+    public ArrayList<Address> getPropertiesOn(final String streetName)
+    {
         ArrayList<Address> sameStreet = new ArrayList<>();
         for(String propertyId: properties.keySet())
         {
@@ -155,7 +159,16 @@ public class Agency {
         return sameStreet;
     }
 
-    public HashMap<String,Property> getPropertiesWithBedrooms(int minBedrooms, int maxBedrooms) {
+    /**
+     * This is a method that is looking for the properties with a certain minimum and maximum amount of bedrooms then
+     * will return a HashMap.
+     *
+     * @param minBedrooms this is the minimum amount of bedrooms (int)
+     * @param maxBedrooms this is the maximum amount of bedrooms (int)
+     * @return this will return a HashMap containing the String and Property.
+     */
+    public HashMap<String,Property> getPropertiesWithBedrooms(final int minBedrooms, final int maxBedrooms)
+    {
         HashMap<String, Property> bedroomMap = new HashMap<>();
         for(String propertyId: properties.keySet())
         {
@@ -171,7 +184,15 @@ public class Agency {
         return bedroomMap;
     }
 
-    public ArrayList<String> getPropertiesOfType(String propertyType) {
+    /**
+     * This is a method that gets the properties of a certain type. It takes in a property of a certain type (String)
+     * then returns an ArrayList (String) of that property type.
+     *
+     * @param propertyType this is a parameter that takes in a String property type.
+     * @return this will return an ArrayList containing Strings.
+     */
+    public ArrayList<String> getPropertiesOfType(final String propertyType)
+    {
         ArrayList<String> propertyTypes = new ArrayList<>();
         String prop = "";
         int counter = 1;
@@ -189,7 +210,8 @@ public class Agency {
                             slicedStreetName[1].substring(0, 1).toUpperCase() +
                             slicedStreetName[1].substring(1) ;
                 }
-                else{
+                else
+                {
                     newStreeName = slicedStreetName[0].substring(0, 1).toUpperCase() +
                         slicedStreetName[0].substring(1);
             }
@@ -202,15 +224,19 @@ public class Agency {
                         slicedCity[1].substring(0, 1).toUpperCase() +
                         slicedCity[1].substring(1) ;
             }
-            else {
+            else
+            {
                 newCity = slicedCity[0].substring(0, 1).toUpperCase() +
                         slicedCity[0].substring(1);
             }
-            if(properties.get(propertyId).getType().equalsIgnoreCase(propertyType)) {
-
-                if (properties.get(propertyId).getAddress().getUnitNumber() != null) {
-                    if (properties.get(propertyId).getNumberOfBedrooms() > 1) {
-                        if (properties.get(propertyId).hasSwimmingPool()) {
+            if(properties.get(propertyId).getType().equalsIgnoreCase(propertyType))
+            {
+                if (properties.get(propertyId).getAddress().getUnitNumber() != null)
+                {
+                    if (properties.get(propertyId).getNumberOfBedrooms() > 1)
+                    {
+                        if (properties.get(propertyId).hasSwimmingPool())
+                        {
                             prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms plus pool): $%.0f.\n",
                                     counter,
                                     propertyId.toUpperCase(),
@@ -222,7 +248,9 @@ public class Agency {
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
                             );
-                        } else {
+                        }
+                        else
+                        {
                             prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms): $%.0f.\n",
                                     counter,
                                     propertyId.toUpperCase(),
@@ -235,8 +263,11 @@ public class Agency {
                                     properties.get(propertyId).getPriceUsd()
                             );
                         }
-                    } else {
-                        if (properties.get(propertyId).hasSwimmingPool()) {
+                    }
+                    else
+                    {
+                        if (properties.get(propertyId).hasSwimmingPool())
+                        {
                             prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedroom plus pool): $%.0f.\n",
                                     counter,
                                     propertyId.toUpperCase(),
@@ -248,7 +279,9 @@ public class Agency {
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
                             );
-                        } else {
+                        }
+                        else
+                        {
                             prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedroom): $%.0f.\n",
                                     counter,
                                     propertyId.toUpperCase(),
@@ -262,9 +295,13 @@ public class Agency {
                             );
                         }
                     }
-                } else {
-                    if (properties.get(propertyId).getNumberOfBedrooms() > 1) {
-                        if (properties.get(propertyId).hasSwimmingPool()) {
+                }
+                else
+                {
+                    if (properties.get(propertyId).getNumberOfBedrooms() > 1)
+                    {
+                        if (properties.get(propertyId).hasSwimmingPool())
+                        {
                             prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms plus pool): $%.0f.\n",
                                     counter,
                                     propertyId.toUpperCase(),
@@ -275,7 +312,9 @@ public class Agency {
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
                             );
-                        } else {
+                        }
+                        else
+                        {
                             prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms): $%.0f.\n",
                                     counter,
                                     propertyId.toUpperCase(),
@@ -287,8 +326,11 @@ public class Agency {
                                     properties.get(propertyId).getPriceUsd()
                             );
                         }
-                    } else {
-                        if (properties.get(propertyId).hasSwimmingPool()) {
+                    }
+                    else
+                    {
+                        if (properties.get(propertyId).hasSwimmingPool())
+                        {
                             prop = String.format("%d) Property %s: %d %s %s in %s (%d bedroom plus pool): $%.0f.\n",
                                     counter,
                                     propertyId.toUpperCase(),
@@ -299,7 +341,9 @@ public class Agency {
                                     properties.get(propertyId).getNumberOfBedrooms(),
                                     properties.get(propertyId).getPriceUsd()
                             );
-                        } else {
+                        }
+                        else
+                        {
                             prop = String.format("%d) Property %s: %d %s %s in %s (%d bedroom): $%.0f.\n",
                                     counter,
                                     propertyId.toUpperCase(),
@@ -323,7 +367,6 @@ public class Agency {
             String empty = "<none found>";
             propertyTypes.add(empty);
         }
-
         System.out.println(propertyTypes);
         return propertyTypes;
     }

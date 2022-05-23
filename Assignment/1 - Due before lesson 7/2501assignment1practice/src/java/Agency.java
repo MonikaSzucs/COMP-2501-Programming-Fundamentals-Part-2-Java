@@ -1,9 +1,27 @@
 import java.util.*;
 
+/**
+ * Agency.java
+ * COMP 2501 - CRN: 67139
+ * Wednesday evenings, Spring/Summer 2022
+ * Assignment 1
+ *
+ * Define an Agency class with methods and instance variables.
+ *
+ * @author Monika Szucs
+ *
+ * @version 1.3
+ *
+ */
 public class Agency {
     private final String name;
     private final Map<String, Property> properties;
 
+    /**
+     * This is the constructor for the Agency class
+     *
+     * @param name this contains the name of the agency (String) that is one to 30 characters long.
+     */
     public Agency(final String name)
     {
         this.name = name;
@@ -11,9 +29,9 @@ public class Agency {
     }
 
     /**
-     * Adding the Property into the Hashmap
+     * Adding the Property values into the Hashmap
      *
-     * @param property
+     * @param property this contains the property class as the parameter
      */
     public void addProperty(Property property)
     {
@@ -24,8 +42,8 @@ public class Agency {
     /**
      * Getting the property from the Hashmap with a specific property ID
      *
-     * @param propertyId
-     * @return
+     * @param propertyId this gets the propertyId value
+     * @return this will return the properties that contain the propertyId (String)
      */
     public Property getProperty(String propertyId)
     {
@@ -35,16 +53,16 @@ public class Agency {
     /**
      * Removing the property from the Hashmap with a specific property ID
      *
-     * @param propertyId
+     * @param propertyId this will remove the property based on the propertyId (String)
      */
     public void removeProperty(String propertyId) {
         properties.remove(propertyId);
     }
 
     /**
+     *This method gets the total property values in USD price.
      *
-     *
-     * @return
+     * @return this will return the total price USD  of all the properties combined.
      */
     public double getTotalPropertyValues() {
 

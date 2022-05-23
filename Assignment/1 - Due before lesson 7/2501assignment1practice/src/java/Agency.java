@@ -177,7 +177,7 @@ public class Agency
      * @param maxBedrooms this is the maximum amount of bedrooms (int)
      * @return this will return a HashMap containing the String and Property.
      */
-    public HashMap<String,Property> getPropertiesWithBedrooms(final int minBedrooms, final int maxBedrooms)
+    public HashMap<String, Property> getPropertiesWithBedrooms(final int minBedrooms, final int maxBedrooms)
     {
         HashMap<String, Property> bedroomMap = new HashMap<>();
         for(String propertyId: properties.keySet())

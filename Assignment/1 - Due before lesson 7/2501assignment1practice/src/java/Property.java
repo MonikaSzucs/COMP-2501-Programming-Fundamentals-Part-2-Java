@@ -25,8 +25,6 @@ public class Property
     private static final int NUMBER_OF_BEDROOMS_TWENTY = 20;
     private static final int PROPERTY_ID_LENGTH_SIX = 6;
     private static final int PROPERTY_ID_LENGTH_ONE = 1;
-    //propertyId.length()
-    //numberOfBedrooms
 
     /**
      * This is a Constructor for the Property Class that will check the values that are passed before assigning the

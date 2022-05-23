@@ -19,8 +19,19 @@ public class Address
     private final String    postalCode;
     private final String    cityName;
 
+    private static final int STREET_NAME_MIN_LENGTH = 1;
+    private static final int STREET_NAME_MAX_LENGTH = 20;
+    private static final int STREET_MIN_NUMBER = 0;
+    private static final int STREET_MAX_NUMBER = 999999;
+    private static final int POSTAL_CODE_LENGTH_FIVE = 5;
+    private static final int POSTAL_CODE_LENGTH_SIX = 6;
+    private static final int CITY_NAME_MIN_LENGTH = 1;
+    private static final int CITY_NAME_MAX_LENGTH = 30;
+    private static final int UNIT_MIN_LENGTH = 1;
+    private static final int UNIT_MAX_LENGTH = 4;
+
     /**
-     * This is the Constructor for teh Address class.
+     * This is the Constructor for the Address class.
      *
      * @param unit          This is the unit number of the place (String) which is one to four characters long.
      * @param streetNumber  This is the street number (Integer) that is between and equal to zero to 999999.
@@ -44,7 +55,7 @@ public class Address
             this.streetName = streetName;
             throw new IllegalArgumentException("Invalid street name: " + streetName);
         }
-        else if (streetName.length() >= 1 && streetName.length() <= 20)
+        else if (streetName.length() >= STREET_NAME_MIN_LENGTH && streetName.length() <= STREET_NAME_MAX_LENGTH)
         {
             this.streetName = streetName;
         }
@@ -53,7 +64,7 @@ public class Address
             throw new IllegalArgumentException("Invalid street name: " + streetName);
         }
 
-        if (streetNumber >= 0 && streetNumber <= 999999)
+        if (streetNumber >= STREET_MIN_NUMBER && streetNumber <= STREET_MAX_NUMBER)
         {
             this.streetNumber = streetNumber;
         }
@@ -72,18 +83,18 @@ public class Address
             this.postalCode = postalCode;
             throw new IllegalArgumentException("Invalid postal code: " + postalCode);
         }
-        else if (postalCode.length() == 5 || postalCode.length() == 6)
+        else if (postalCode.length() == POSTAL_CODE_LENGTH_FIVE || postalCode.length() == POSTAL_CODE_LENGTH_SIX)
         {
             this.postalCode = postalCode;
         }
-        else if(postalCode.length() < 5 || postalCode.length() > 6)
+        else if(postalCode.length() < POSTAL_CODE_LENGTH_FIVE || postalCode.length() > POSTAL_CODE_LENGTH_SIX)
         {
             this.postalCode = postalCode;
             throw new IllegalArgumentException("Invalid postal code: " + postalCode);
         }
         else
         {
-            throw new IllegalArgumentException("Invalid postal code: " + cityName);
+            throw new IllegalArgumentException("Invalid postal code: " + postalCode);
         }
 
         if(cityName == null)
@@ -96,7 +107,7 @@ public class Address
             this.cityName = cityName;
             throw new IllegalArgumentException("Invalid city: " + cityName);
         }
-        else if (cityName.length() >= 1 && cityName.length() <= 30)
+        else if (cityName.length() >= CITY_NAME_MIN_LENGTH && cityName.length() <= CITY_NAME_MAX_LENGTH)
         {
             this.cityName = cityName;
         }
@@ -114,7 +125,7 @@ public class Address
             this.unitNumber = unit;
             throw new IllegalArgumentException("Invalid unit number: ");
         }
-        else if (unit.length() >= 1 && unit.length() <= 4)
+        else if (unit.length() >= UNIT_MIN_LENGTH && unit.length() <= UNIT_MAX_LENGTH)
         {
             this.unitNumber = unit;
         }
@@ -125,10 +136,10 @@ public class Address
     }
 
     /**
-     * This method gets the unit number of the address
+     * This method gets the unit number of the address.
      *
-     * @return the unit number (String) if it is between or equal to one to four characters
-     * @throws IllegalArgumentException This will return an illegal argument exception if the unit number is not valid
+     * @return the unit number (String) if it is between or equal to one to four characters.
+     * @throws IllegalArgumentException This will return an illegal argument exception if the unit number is not valid.
      */
     public String getUnitNumber()
     {
@@ -136,7 +147,7 @@ public class Address
         {
             return unitNumber;
         }
-        else if (unitNumber.length() >= 1 && unitNumber.length() <= 4)
+        else if (unitNumber.length() >= UNIT_MIN_LENGTH && unitNumber.length() <= UNIT_MAX_LENGTH)
         {
             return unitNumber;
         }
@@ -154,7 +165,7 @@ public class Address
      */
     public int getStreetNumber()
     {
-        if (streetNumber >= 0 && streetNumber <= 999999)
+        if (streetNumber >= STREET_MIN_NUMBER && streetNumber <= STREET_MAX_NUMBER)
         {
             return streetNumber;
         }
@@ -177,7 +188,7 @@ public class Address
         {
             return streetName;
         }
-        else if (streetName.length() >= 1 && streetName.length() <= 20)
+        else if (streetName.length() >= STREET_NAME_MIN_LENGTH && streetName.length() <= STREET_NAME_MAX_LENGTH)
         {
             return streetName;
         }
@@ -199,7 +210,7 @@ public class Address
         {
             return postalCode;
         }
-        else if (postalCode.length() == 5 || postalCode.length() == 6)
+        else if (postalCode.length() == POSTAL_CODE_LENGTH_FIVE || postalCode.length() == POSTAL_CODE_LENGTH_SIX)
         {
             return postalCode;
         }
@@ -221,7 +232,7 @@ public class Address
         {
             return cityName;
         }
-        else if (cityName.length() >= 1 && cityName.length() <= 30)
+        else if (cityName.length() >= CITY_NAME_MIN_LENGTH && cityName.length() <= CITY_NAME_MAX_LENGTH)
         {
             return cityName;
         }

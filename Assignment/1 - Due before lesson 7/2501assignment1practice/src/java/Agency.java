@@ -18,6 +18,20 @@ public class Agency
     private final String name;
     private final Map<String, Property> properties;
 
+    private static final int PROPERTY_ARRAY_FIVE = 5;
+    private static final int SLICED_STREET_NAME_ONE = 1;
+    private static final int SLICED_STREET_NAME_POSITION_ZERO = 0;
+    private static final int SLICED_STREET_NAME_POSITION_ONE = 1;
+    private static final int SLICED_STREET_NAME_POSITION_SUBSTRING_ZERO = 0;
+    private static final int SLICED_STREET_NAME_POSITION_SUBSTRING_ONE = 1;
+    private static final int SLICED_CITY_LENGTH_ONE = 1;
+    private static final int SLICED_CITY_POSITION_ZERO = 0;
+    private static final int SLICED_CITY_POSITION_ONE = 1;
+    private static final int SLICED_CITY_SUBSTRING_ZERO = 0;
+    private static final int SLICED_CITY_SUBSTRING_ONE = 1;
+    private static final int NUMBER_OF_BEDROOMS_ONE = 1;
+    private static final int PROPERTY_TYPE_SIZE_TWO = 2;
+
     /**
      * This is the constructor for the Agency class
      *
@@ -115,17 +129,13 @@ public class Agency
     public Property[] getPropertiesBetween(final int minUsd, final int maxUsd)
     {
         Property[] propertiesBetween;
-        propertiesBetween = new Property[5];
+        propertiesBetween = new Property[PROPERTY_ARRAY_FIVE];
         int num = 0;
 
         System.out.println("For Loop:");
         for (Map.Entry me : properties.entrySet())
         {
             System.out.println(me);
-            //if(num>=5)
-             //   {
-               //     return propertiesBetween;
-                //}
             if(properties.get(me.getKey()).getPriceUsd() >= minUsd && properties.get(me.getKey()).getPriceUsd() <= maxUsd)
             {
                 System.out.println("Key: " + me.getKey() + " & Value: " + me.getValue());
@@ -203,37 +213,37 @@ public class Agency
             String newPropertyId = propertyId.toUpperCase();
             String[] slicedStreetName = properties.get(propertyId).getAddress().getStreetName().split(" ");
             String newStreeName;
-            if(slicedStreetName.length > 1)
+            if(slicedStreetName.length > SLICED_STREET_NAME_ONE)
                 {
-                    newStreeName = slicedStreetName[0].substring(0, 1).toUpperCase() +
-                            slicedStreetName[0].substring(1) + " " +
-                            slicedStreetName[1].substring(0, 1).toUpperCase() +
-                            slicedStreetName[1].substring(1) ;
+                    newStreeName = slicedStreetName[SLICED_STREET_NAME_POSITION_ZERO].substring(SLICED_STREET_NAME_POSITION_SUBSTRING_ZERO, SLICED_STREET_NAME_POSITION_SUBSTRING_ONE).toUpperCase() +
+                            slicedStreetName[SLICED_STREET_NAME_POSITION_ZERO].substring(SLICED_STREET_NAME_POSITION_SUBSTRING_ONE) + " " +
+                            slicedStreetName[SLICED_STREET_NAME_POSITION_ONE].substring(SLICED_STREET_NAME_POSITION_SUBSTRING_ZERO, SLICED_STREET_NAME_POSITION_SUBSTRING_ONE).toUpperCase() +
+                            slicedStreetName[SLICED_STREET_NAME_POSITION_ONE].substring(SLICED_STREET_NAME_POSITION_SUBSTRING_ONE) ;
                 }
                 else
                 {
-                    newStreeName = slicedStreetName[0].substring(0, 1).toUpperCase() +
-                        slicedStreetName[0].substring(1);
+                    newStreeName = slicedStreetName[SLICED_STREET_NAME_POSITION_ZERO].substring(SLICED_STREET_NAME_POSITION_SUBSTRING_ZERO, SLICED_STREET_NAME_POSITION_SUBSTRING_ONE).toUpperCase() +
+                        slicedStreetName[SLICED_STREET_NAME_POSITION_ZERO].substring(SLICED_STREET_NAME_POSITION_SUBSTRING_ONE);
             }
             String[] slicedCity = properties.get(propertyId).getAddress().getCity().split(" ");
             String newCity;
-            if(slicedCity.length > 1)
+            if(slicedCity.length > SLICED_CITY_LENGTH_ONE)
             {
-                newCity = slicedCity[0].substring(0, 1).toUpperCase() +
-                        slicedCity[0].substring(1) + " " +
-                        slicedCity[1].substring(0, 1).toUpperCase() +
-                        slicedCity[1].substring(1) ;
+                newCity = slicedCity[SLICED_CITY_POSITION_ZERO].substring(SLICED_CITY_SUBSTRING_ZERO, SLICED_CITY_SUBSTRING_ONE).toUpperCase() +
+                        slicedCity[SLICED_CITY_POSITION_ZERO].substring(SLICED_CITY_SUBSTRING_ONE) + " " +
+                        slicedCity[SLICED_CITY_POSITION_ONE].substring(SLICED_CITY_SUBSTRING_ZERO, SLICED_CITY_SUBSTRING_ONE).toUpperCase() +
+                        slicedCity[SLICED_CITY_POSITION_ONE].substring(SLICED_CITY_SUBSTRING_ONE) ;
             }
             else
             {
-                newCity = slicedCity[0].substring(0, 1).toUpperCase() +
-                        slicedCity[0].substring(1);
+                newCity = slicedCity[SLICED_CITY_POSITION_ZERO].substring(SLICED_CITY_SUBSTRING_ZERO, SLICED_CITY_SUBSTRING_ONE).toUpperCase() +
+                        slicedCity[SLICED_CITY_POSITION_ZERO].substring(SLICED_CITY_SUBSTRING_ONE);
             }
             if(properties.get(propertyId).getType().equalsIgnoreCase(propertyType))
             {
                 if (properties.get(propertyId).getAddress().getUnitNumber() != null)
                 {
-                    if (properties.get(propertyId).getNumberOfBedrooms() > 1)
+                    if (properties.get(propertyId).getNumberOfBedrooms() > NUMBER_OF_BEDROOMS_ONE)
                     {
                         if (properties.get(propertyId).hasSwimmingPool())
                         {
@@ -298,7 +308,7 @@ public class Agency
                 }
                 else
                 {
-                    if (properties.get(propertyId).getNumberOfBedrooms() > 1)
+                    if (properties.get(propertyId).getNumberOfBedrooms() > NUMBER_OF_BEDROOMS_ONE)
                     {
                         if (properties.get(propertyId).hasSwimmingPool())
                         {
@@ -362,7 +372,7 @@ public class Agency
                 counter++;
             }
         }
-        if(propertyTypes.size() < 2)
+        if(propertyTypes.size() < PROPERTY_TYPE_SIZE_TWO)
         {
             String empty = "<none found>";
             propertyTypes.add(empty);

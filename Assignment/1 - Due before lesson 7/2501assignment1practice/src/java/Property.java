@@ -20,6 +20,14 @@ public class Property
     private final String type;
     private final String propertyId;
 
+    private static final double PRICE_IN_US_DOLLARS_MINIMUM_ZERO = 0.00;
+    private static final int NUMBER_OF_BEDROOMS_ONE = 1;
+    private static final int NUMBER_OF_BEDROOMS_TWENTY = 20;
+    private static final int PROPERTY_ID_LENGTH_SIX = 6;
+    private static final int PROPERTY_ID_LENGTH_ONE = 1;
+    //propertyId.length()
+    //numberOfBedrooms
+
     /**
      * This is a Constructor for the Property Class that will check the values that are passed before assigning the
      * values
@@ -39,7 +47,7 @@ public class Property
     public Property(final double priceInUsd, final Address address, final int numberOfBedrooms,
                     final boolean swimmingPool, final String type, final String propertyId)
     {
-        if (priceInUsd >= 0.00)
+        if (priceInUsd >= PRICE_IN_US_DOLLARS_MINIMUM_ZERO)
         {
             this.priceInUsd = priceInUsd;
         }
@@ -57,7 +65,7 @@ public class Property
             this.address = address;
         }
 
-        if (numberOfBedrooms >= 1 && numberOfBedrooms <= 20)
+        if (numberOfBedrooms >= NUMBER_OF_BEDROOMS_ONE && numberOfBedrooms <= NUMBER_OF_BEDROOMS_TWENTY)
         {
             this.numberOfBedrooms = numberOfBedrooms;
         }
@@ -85,7 +93,7 @@ public class Property
         {
             throw new NullPointerException("Invalid property id: " + propertyId);
         }
-        else if(propertyId.isEmpty() || propertyId.length() > 6)
+        else if(propertyId.isEmpty() || propertyId.length() > PROPERTY_ID_LENGTH_SIX)
         {
             throw new IllegalArgumentException("Invalid property id: " + propertyId);
         }
@@ -114,7 +122,7 @@ public class Property
      */
     public double getPriceUsd()
     {
-        if (priceInUsd >= 0.00)
+        if (priceInUsd >= PRICE_IN_US_DOLLARS_MINIMUM_ZERO)
         {
             return priceInUsd;
         }
@@ -133,7 +141,7 @@ public class Property
      */
     public int getNumberOfBedrooms()
     {
-        if (numberOfBedrooms >= 1 && numberOfBedrooms <= 20)
+        if (numberOfBedrooms >= NUMBER_OF_BEDROOMS_ONE && numberOfBedrooms <= NUMBER_OF_BEDROOMS_TWENTY)
         {
             return numberOfBedrooms;
         }
@@ -177,7 +185,7 @@ public class Property
         {
             return propertyId;
         }
-        else if (propertyId.length() >= 1 && propertyId.length() <= 6)
+        else if (propertyId.length() >= PROPERTY_ID_LENGTH_ONE && propertyId.length() <= PROPERTY_ID_LENGTH_SIX)
         {
             return propertyId;
         }

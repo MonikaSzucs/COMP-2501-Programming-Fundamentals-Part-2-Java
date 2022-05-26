@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57d96245-c6ca-4ca1-b844-d6133c2f8372" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Part-b/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Part-b/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Part-b/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Part-b/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Part-b/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Part-b/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson 1/Lab1/testlab/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lesson 1/test1lab/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson 1/Lab1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lesson 1/Lab1/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson 2/Lab/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lesson 2/Lab/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lesson 4/Lab4/src/ca/bcit/comp2501/crn67139/monikaszucs/BookStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lesson 4/Lab4/src/ca/bcit/comp2501/crn67139/monikaszucs/BookStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +33,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Part-a" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../testinglabs/Lab1a" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

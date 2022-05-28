@@ -42,4 +42,10 @@ class BookTest {
         assertTrue(1996 == b1.getYearPublished());
         assertTrue(1987 == b2.getYearPublished());
     }
+
+    @Test
+    void testDataMethod() {
+        assertEquals("I am a Book!", b1.getData());
+        assertTrue(b1.getData().equals("I am a Book!"));
+    }
 }

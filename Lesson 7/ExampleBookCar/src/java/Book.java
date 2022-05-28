@@ -33,4 +33,8 @@ public class Book {
     public String getTitleCaps() {
         return title.toUpperCase();
     }
+
+    public String getData() {
+        return "I am a Book!";
+    }
 }

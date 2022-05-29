@@ -210,7 +210,7 @@ public class Agency
 
         for(String propertyId: properties.keySet())
         {
-            String newPropertyId = propertyId.toUpperCase();
+            //String newPropertyId = propertyId.toUpperCase();
             String[] slicedStreetName = properties.get(propertyId).getAddress().getStreetName().split(" ");
             String newStreeName;
             if(slicedStreetName.length > SLICED_STREET_NAME_ONE)

@@ -1,10 +1,13 @@
+import java.util.Set;
+
 public class Student {
-    private final String    firstName;
-    private final String    lastName;
-    private final String    idNumber;
-    private final int       birthYear;
-    private final double    percentageGrade;
-    private final boolean   pass;
+    private String      firstName;
+    private String      lastName;
+    private String      idNumber;
+    private int         birthYear;
+    private double      percentageGrade;
+    private boolean     pass;
+
 
     public Student(final String firstName, final String lastName, final String idNumber, final int birthYear, final double percentageGrade)
     {
@@ -22,8 +25,27 @@ public class Student {
         }
     }
 
-    public static void main(final String[] args)
-    {
+    public String getFirstName() {
+        return firstName;
+    }
 
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getIdNumber() {
+        return idNumber;
+    }
+
+    public int getBirthYear() {
+        return birthYear;
+    }
+
+    public double getPercentageGrade() {
+        return percentageGrade;
+    }
+
+    public Boolean setPass() {
+        return pass;
     }
 }

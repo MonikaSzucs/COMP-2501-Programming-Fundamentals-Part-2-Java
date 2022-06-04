@@ -1,14 +1,10 @@
 import javax.swing.plaf.IconUIResource;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Lab8Driver {
     Map<String, Student> students;
-
 
     Lab8Driver(){
         students = new HashMap<>();
@@ -16,8 +12,6 @@ public class Lab8Driver {
 
     public void readFromPrompt()
     {
-        System.out.println("DEBUG: calling readFromPrompt");
-
         Scanner scanner;
         scanner = new Scanner(System.in);
         String choice;
@@ -30,31 +24,43 @@ public class Lab8Driver {
         double gradePct;
 
         do {
-            System.out.println("Do you with to create a Student? (y/n): ");
+            System.out.println("Do you wish to create a Student? (y/n): ");
             choice = scanner.next().toLowerCase();
             if (choice.equals("y")) {
                 System.out.println("yes");
+                System.out.println("Enter first name:");
                 firstName = scanner.next().toLowerCase();
+
+                System.out.println("Enter last name:");
                 lastName = scanner.next().toLowerCase();
-                idNumber = scanner.next().toLowerCase();
+
+                System.out.println("Enter id number:");
+                idNumber = scanner.next().toUpperCase();
+
+                System.out.println("Enter birth year as a whole number:");
                 ageYears = scanner.nextInt();
+
+                System.out.println("Enter grade (percentage) as a decimal number:");
                 gradePct = scanner.nextDouble();
+
+                firstName = firstName.toUpperCase().charAt(0) + firstName.toLowerCase().substring(1);
+                lastName = lastName.toUpperCase().charAt(0) + lastName.toLowerCase().substring(1);
 
                 Student student1 = new Student(firstName, lastName,
                         idNumber, ageYears, gradePct);
                 students.put(idNumber, student1);
-
             } else if(choice.equals("n")) {
                 proceed = false;
+                System.out.println("Data entry finished!");
             }
         } while (proceed);
-
         scanner.close();
-        System.out.println("End 1");
     }
 
     public void readFromFile() throws FileNotFoundException
     {
+        System.out.println();
+        System.out.println("DEBUG: calling readFromFile");
         System.out.println("List of Students created");
 
         File myFile;
@@ -83,9 +89,6 @@ public class Lab8Driver {
                 gradePct = Double.valueOf(arrayValues[4]);
 
                 if(savedLine != null || !savedLine.isEmpty()) {
-                    //Student [firstName=Pike, lastName=Bass, idNumber=A00953177, ageYears=22, gradePct=81.5,pass=true]
-                    //System.out.println("Student [firstName=" + firstName + ", lastName=" + lastName + ", idNumber=" +
-                    //        idNumber + ", ageYears=" + ageYears + ", gradePct=" + gradePct + ", pass=" + pass + "]");
                     Student student1 = new Student(firstName, lastName,
                             idNumber, ageYears, gradePct);
                     students.put(idNumber, student1);
@@ -95,20 +98,13 @@ public class Lab8Driver {
             }
         }
         scanner.close();
-        System.out.println("End2");
     }
 
     public void showStudents() {
-        System.out.println("----");
         Set<String> keys = students.keySet();
         for(String key: keys) {
             Student student = students.get(key);
-            System.out.println("Student [firstName=" + student.getFirstName() +
-                    ", lastName=" + student.getLastName() +
-                    ", idNumber=" + student.getIdNumber() +
-                    ", ageYears=" + student.getBirthYear() +
-                    ", gradePct=" + student.getPercentageGrade() +
-                    ", pass=" + student.setPass() + "]");
+            System.out.println(student.toString());
         }
     }
 
@@ -118,7 +114,6 @@ public class Lab8Driver {
 
         b.readFromPrompt();
         b.readFromFile();
-        System.out.println("TEST");
         b.showStudents();
     }
 }

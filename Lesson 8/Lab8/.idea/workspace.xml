@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ad47de6-9dd9-494c-be6e-5ff0d5312dc8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Assignment/2 - Due before lesson 12/2501assignment1practice/src/java/Assignment2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab8/Lab8Driver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab8/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab8Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Lab8Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab8/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Lab8Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab8/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Lab8Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Lab8Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Lab8Driver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Lesson 6/Lab6" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Assignment/2 - Due before lesson 12/2501assignment1practice" />
   </component>
   <component name="RunManager" selected="Application.Lab8Driver (1)">
     <configuration name="Lab8Driver (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

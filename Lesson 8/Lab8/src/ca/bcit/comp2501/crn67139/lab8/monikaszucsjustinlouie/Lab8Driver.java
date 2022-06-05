@@ -74,6 +74,7 @@ public class Lab8Driver {
                     try {
                         System.out.println("Enter first name:");
                         firstName = scanner.next().toLowerCase();
+                        scanner.nextLine();
                         checking = false;
                     } catch(Exception e) {
                         throw new IllegalArgumentException("You must enter more than one character");
@@ -85,6 +86,7 @@ public class Lab8Driver {
                     try {
                         System.out.println("Enter last name:");
                         lastName = scanner.next().toLowerCase();
+                        scanner.nextLine();
                         checking = false;
                     } catch(Exception e) {
                         throw new IllegalArgumentException("You must enter more than one character.");
@@ -96,6 +98,7 @@ public class Lab8Driver {
                     try {
                         System.out.println("Enter id number:");
                         idNumber = scanner.next().toUpperCase();
+                        scanner.nextLine();
                         checking = false;
                     } catch(Exception e) {
                         throw new IllegalArgumentException("You must enter more than one character.");
@@ -106,6 +109,7 @@ public class Lab8Driver {
                 do {
                     System.out.println("Enter birth year as a whole number:");
                     ageYears = scanner.nextInt();
+
                     if(ageYears > 0 && ageYears <= 2022) {
                         checking = false;
                     }
@@ -115,6 +119,7 @@ public class Lab8Driver {
                 do {
                     System.out.println("Enter grade (percentage) as a decimal number:");
                     gradePct = scanner.nextDouble();
+                    scanner.nextLine();
                     if(gradePct > 0 && gradePct <= 100) {
                         checking = false;
                     }

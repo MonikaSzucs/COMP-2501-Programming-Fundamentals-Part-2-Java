@@ -34,7 +34,20 @@ public class Student {
     LocalDate now = LocalDate.now();
 
     /**
-     * Student Constructor
+     * Student Constructor without parameters
+     *
+     * This is the no-arg constructor that has default values.
+     */
+    public Student() {
+        this.firstName = null;
+        this.lastName = null;
+        this.idNumber = null;
+        this.birthYear = 0;
+        this.percentageGrade = 0.0;
+    }
+
+    /**
+     * Student Constructor with parameters
      *
      * @param firstName this is the students first name in String format
      * @param lastName this is the students last name in String format

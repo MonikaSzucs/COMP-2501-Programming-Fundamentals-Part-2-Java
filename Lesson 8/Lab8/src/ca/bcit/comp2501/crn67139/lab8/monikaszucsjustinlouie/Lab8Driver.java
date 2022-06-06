@@ -133,7 +133,7 @@ public class Lab8Driver {
                 }
 
                 while (checking) {
-                    System.out.println("Enter grade (percentage) as a decimal number:");
+                    System.out.println("Enter grade (percentage) as a double:");
                     String gradePercentageString = scanner.next();
                     gradePct = GRADE_PERCENTAGE_ZERO;
                     try {

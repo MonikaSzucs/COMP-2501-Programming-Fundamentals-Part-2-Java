@@ -25,13 +25,26 @@ import java.util.*;
 public class Lab8Driver {
     Map<String, Student> students;
 
+    public static final int     BIRTH_YEARS_ZERO = 0;
+    public static final double  BIRTH_YEARS_TWENTY_TWENTY_TWO = 2022;
+    public static final double  GRADE_PERCENTAGE_ZERO = 0.0;
+    public static final double  GRADE_PERCENTAGE_HUNDRED = 100.0;
+    public static final int     CHARACTER_POSITION_ZERO = 0;
+    public static final int     SUBSTRING_POSITION_ONE = 1;
+    public static final int     ARRAY_VALUES_POSITION_ZERO = 0;
+    public static final int     ARRAY_VALUES_POSITION_ONE = 1;
+    public static final int     ARRAY_VALUES_POSITION_TWO = 2;
+    public static final int     ARRAY_VALUES_POSITION_THREE = 3;
+    public static final int     ARRAY_VALUES_POSITION_FOUR = 4;
+
+
     /**
      * Lab8Driver() Constructor
      *
      * This is the constructor of the Lab8Driver that takes in no parameters
      *
      */
-    Lab8Driver(){
+    Lab8Driver() {
         students = new HashMap<>();
     }
 
@@ -50,8 +63,7 @@ public class Lab8Driver {
      * 5. Enter grade (percentage) as a decimal number.
      *
      */
-    public void readFromPrompt()
-    {
+    public void readFromPrompt() {
         Scanner scanner;
         scanner = new Scanner(System.in);
         String choice;
@@ -61,8 +73,8 @@ public class Lab8Driver {
         String firstName;
         String lastName;
         String idNumber;
-        int ageYears;
-        double gradePct;
+        int birthYears = BIRTH_YEARS_ZERO;
+        double gradePct = GRADE_PERCENTAGE_ZERO;
 
         do {
             System.out.println("Do you wish to create a Student? (y/n): ");
@@ -106,30 +118,41 @@ public class Lab8Driver {
                 } while(checking);
 
                 checking = true;
-                do {
+                while (checking) {
                     System.out.println("Enter birth year as a whole number:");
-                    ageYears = scanner.nextInt();
-
-                    if(ageYears > 0 && ageYears <= 2022) {
-                        checking = false;
+                    String birthYearsString = scanner.next();
+                    birthYears = BIRTH_YEARS_ZERO;
+                    try {
+                        birthYears = Integer.parseInt(birthYearsString);
+                        if(birthYears > BIRTH_YEARS_ZERO && birthYears <= BIRTH_YEARS_TWENTY_TWENTY_TWO) {
+                            break;
+                        }
+                    } catch (NumberFormatException ne) {
+                        System.out.println("This is not a number");
                     }
-                } while(checking);
+                }
 
-                checking = true;
-                do {
+                while (checking) {
                     System.out.println("Enter grade (percentage) as a decimal number:");
-                    gradePct = scanner.nextDouble();
-                    scanner.nextLine();
-                    if(gradePct > 0 && gradePct <= 100) {
-                        checking = false;
+                    String gradePercentageString = scanner.next();
+                    gradePct = GRADE_PERCENTAGE_ZERO;
+                    try {
+                        gradePct = Double.parseDouble(gradePercentageString);
+                        if(gradePct > GRADE_PERCENTAGE_ZERO && gradePct <= GRADE_PERCENTAGE_HUNDRED) {
+                            break;
+                        }
+                    } catch (NumberFormatException ne) {
+                        System.out.println("This is not a number");
                     }
-                } while(checking);
+                }
 
-                firstName = firstName.toUpperCase().charAt(0) + firstName.toLowerCase().substring(1);
-                lastName = lastName.toUpperCase().charAt(0) + lastName.toLowerCase().substring(1);
+                firstName = firstName.toUpperCase().charAt(CHARACTER_POSITION_ZERO) +
+                        firstName.toLowerCase().substring(SUBSTRING_POSITION_ONE);
+                lastName = lastName.toUpperCase().charAt(CHARACTER_POSITION_ZERO) +
+                        lastName.toLowerCase().substring(SUBSTRING_POSITION_ONE);
 
                 Student student1 = new Student(firstName, lastName,
-                        idNumber, ageYears, gradePct);
+                        idNumber, birthYears, gradePct);
                 students.put(idNumber, student1);
             } else if(choice.equals("n")) {
                 proceed = false;
@@ -147,8 +170,7 @@ public class Lab8Driver {
      * @throws FileNotFoundException will throw a file not found exception if there is no file to be found/read from
      *
      */
-    public void readFromFile() throws FileNotFoundException
-    {
+    public void readFromFile() throws FileNotFoundException {
         System.out.println();
         System.out.println("DEBUG: calling readFromFile");
         System.out.println("List of Students created");
@@ -164,7 +186,7 @@ public class Lab8Driver {
         String firstName;
         String lastName;
         String idNumber;
-        int ageYears;
+        int birthYears;
         double gradePct;
 
         while(keepReading) {
@@ -172,15 +194,15 @@ public class Lab8Driver {
                 savedLine = scanner.next();
 
                 arrayValues = savedLine.split(",");
-                firstName = String.valueOf(arrayValues[0]);
-                lastName = String.valueOf(arrayValues[1]);
-                idNumber = String.valueOf(arrayValues[2]);
-                ageYears = Integer.valueOf(arrayValues[3]);
-                gradePct = Double.valueOf(arrayValues[4]);
+                firstName = String.valueOf(arrayValues[ARRAY_VALUES_POSITION_ZERO]);
+                lastName = String.valueOf(arrayValues[ARRAY_VALUES_POSITION_ONE]);
+                idNumber = String.valueOf(arrayValues[ARRAY_VALUES_POSITION_TWO]);
+                birthYears = Integer.valueOf(arrayValues[ARRAY_VALUES_POSITION_THREE]);
+                gradePct = Double.valueOf(arrayValues[ARRAY_VALUES_POSITION_FOUR]);
 
-                if(savedLine != null || !savedLine.isEmpty()) {
+                if(savedLine != null && !savedLine.isEmpty()) {
                     Student student1 = new Student(firstName, lastName,
-                            idNumber, ageYears, gradePct);
+                            idNumber, birthYears, gradePct);
                     students.put(idNumber, student1);
                 }
             } else {

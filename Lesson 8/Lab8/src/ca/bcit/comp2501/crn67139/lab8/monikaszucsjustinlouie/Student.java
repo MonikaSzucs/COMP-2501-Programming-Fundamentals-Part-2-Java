@@ -20,12 +20,16 @@ import java.time.Year;
  *
  */
 public class Student {
-    private final String    firstName;
-    private final String    lastName;
-    private final String    idNumber;
-    private final int       birthYear;
-    private final double    percentageGrade;
-    private boolean         pass;
+    private final String        firstName;
+    private final String        lastName;
+    private final String        idNumber;
+    private final int           birthYear;
+    private final double        percentageGrade;
+    private boolean             pass;
+
+    public static final double  PERCENTAGE_GRADE_ZERO = 0.0;
+    public static final double  PERCENTAGE_GRADE_HUNDRED = 100.0;
+    public static final double  PERCENTAGE_GRADE_SIXTY = 60.0;
 
     LocalDate now = LocalDate.now();
 
@@ -41,8 +45,7 @@ public class Student {
      * Based on what the student's percentage is will determine if they have passed or failed
      *
      */
-    public Student(final String firstName, final String lastName, final String idNumber, final int birthYear, final double percentageGrade)
-    {
+    public Student(final String firstName, final String lastName, final String idNumber, final int birthYear, final double percentageGrade) {
         if(firstName == null || firstName.isEmpty()) {
             throw new IllegalArgumentException("The first name cannot be null/empty");
         }
@@ -55,7 +58,7 @@ public class Student {
         if(birthYear > now.getYear()) {
             throw new IllegalArgumentException("You cannot have the birth year larger than the current year");
         }
-        if(percentageGrade > 100 || percentageGrade < 0) {
+        if(percentageGrade > PERCENTAGE_GRADE_HUNDRED || percentageGrade < PERCENTAGE_GRADE_ZERO) {
             throw new IllegalArgumentException("The percentage cannot be larger than 100 or less than 0");
         }
 
@@ -65,10 +68,9 @@ public class Student {
         this.birthYear = now.getYear() - birthYear;
         this.percentageGrade = percentageGrade;
 
-        if(percentageGrade >= 60) {
+        if(percentageGrade >= PERCENTAGE_GRADE_SIXTY) {
             pass = true;
-        }
-        else {
+        } else {
             pass = false;
         }
     }
@@ -79,16 +81,7 @@ public class Student {
      * @return this will return the students first name
      */
     public String getFirstName() {
-        if(firstName == null || firstName.isEmpty()) {
-            throw new IllegalArgumentException("The first name cannot be null/empty");
-        }
         return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        if(firstName == null || firstName.isEmpty()) {
-            throw new IllegalArgumentException("The first name cannot be null/empty");
-        }
     }
 
     /**

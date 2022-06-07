@@ -241,4 +241,15 @@ public class Address
             throw new IllegalArgumentException("Invalid city: " + cityName);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "unitNumber='" + unitNumber + '\'' +
+                ", streetNumber=" + streetNumber +
+                ", streetName='" + streetName + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", cityName='" + cityName + '\'' +
+                '}';
+    }
 }

@@ -15,8 +15,6 @@ public class Property
 {
     private double priceInUsd;
     private final Address address;
-    private final int numberOfBedrooms;
-    private final boolean swimmingPool;
     private final String type;
     private final String propertyId;
 
@@ -32,8 +30,6 @@ public class Property
      *
      * @param priceInUsd this is the price in US dollars (double) must be position (greater than or equal to zero).
      * @param address this is the address from the Address Class.
-     * @param numberOfBedrooms This is the number of bedrooms in Integer value between and/or equal to one to 20.
-     * @param swimmingPool this is checking if the property has a swimming pool or not (Boolean).
      * @param type this is the type of property (String) that must be either residence, commercial or retail.
      * @param propertyId this is the propertyId (String) that must be one to six characters in length.
      *
@@ -42,8 +38,8 @@ public class Property
      * @throws NullPointerException this throws a null pointer exception if there is an invalid address,
      *                              property type, and/or propertyId.
      */
-    public Property(final double priceInUsd, final Address address, final int numberOfBedrooms,
-                    final boolean swimmingPool, final String type, final String propertyId)
+    public Property(final double priceInUsd, final Address address,
+                    final String type, final String propertyId)
     {
         if (priceInUsd >= PRICE_IN_US_DOLLARS_MINIMUM_ZERO)
         {
@@ -63,16 +59,6 @@ public class Property
             this.address = address;
         }
 
-        if (numberOfBedrooms >= NUMBER_OF_BEDROOMS_ONE && numberOfBedrooms <= NUMBER_OF_BEDROOMS_TWENTY)
-        {
-            this.numberOfBedrooms = numberOfBedrooms;
-        }
-        else
-        {
-            throw new IllegalArgumentException("Invalid number of bedrooms: " + numberOfBedrooms);
-        }
-
-        this.swimmingPool = swimmingPool;
 
         if(type == null)
         {
@@ -130,34 +116,6 @@ public class Property
         }
     }
 
-    /**
-     * This is the getter method that checks for the number (Integer) of bedrooms are between or equal to one to 20.
-     *
-     * @return this will return the number of bedrooms (Integer).
-     * @throws IllegalArgumentException this throws an illegal argument exception if there is an invalid number of
-     *                                  bedrooms.
-     */
-    public int getNumberOfBedrooms()
-    {
-        if (numberOfBedrooms >= NUMBER_OF_BEDROOMS_ONE && numberOfBedrooms <= NUMBER_OF_BEDROOMS_TWENTY)
-        {
-            return numberOfBedrooms;
-        }
-        else
-        {
-            throw new IllegalArgumentException("Invalid number of bedrooms: " + numberOfBedrooms);
-        }
-    }
-
-    /**
-     * This is a method that checks to see if a property has a swimming pool (Boolean).
-     *
-     * @return this will return if the property has a swimming pool in a True or False format.
-     */
-    public boolean hasSwimmingPool()
-    {
-        return swimmingPool;
-    }
 
     /**
      * This is the method that gets the type of property the home is (residence, commercial or retail) in a
@@ -201,5 +159,15 @@ public class Property
     public Address getAddress()
     {
         return address;
+    }
+
+    @Override
+    public String toString() {
+        return "Property{" +
+                "priceInUsd=" + priceInUsd +
+                ", address=" + address +
+                ", type='" + type + '\'' +
+                ", propertyId='" + propertyId + '\'' +
+                '}';
     }
 }

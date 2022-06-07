@@ -100,18 +100,18 @@ public class Agency
      */
     public ArrayList<Property> getPropertiesWithPools()
     {
-        ArrayList<Property> propertiesWithPools;
-        propertiesWithPools = new ArrayList<>();
+        ArrayList<Property> propertiesWithPools = new ArrayList<>();
 
-        Set<String> setOfPropertyIds;
-        setOfPropertyIds = properties.keySet();
+        Set<String> keys;
+        keys = properties.keySet();
 
-        for(String propertyId: setOfPropertyIds)
+        for(String propertyId: keys)
         {
-            getProperty(propertyId).hasSwimmingPool();
-            if(getProperty(propertyId).hasSwimmingPool())
-            {
-                propertiesWithPools.add(getProperty(propertyId));
+            if(properties.get(propertyId) instanceof Residence) {
+                Residence res = (Residence) properties.get(propertyId);
+                if(res.isSwimmingPool()) {
+                    propertiesWithPools.add(res);
+                }
             }
         }
         return propertiesWithPools;
@@ -177,14 +177,17 @@ public class Agency
      * @param maxBedrooms this is the maximum amount of bedrooms (int)
      * @return this will return a HashMap containing the String and Property.
      */
-    public HashMap<String, Property> getPropertiesWithBedrooms(final int minBedrooms, final int maxBedrooms)
+    public HashMap<String, Residence> getPropertiesWithBedrooms(final int minBedrooms, final int maxBedrooms)
     {
-        HashMap<String, Property> bedroomMap = new HashMap<>();
+        HashMap<String, Residence> bedroomMap = new HashMap<>();
         for(String propertyId: properties.keySet())
         {
-            if(properties.get(propertyId).getNumberOfBedrooms() >= minBedrooms && properties.get(propertyId).getNumberOfBedrooms() <= maxBedrooms)
-            {
-                bedroomMap.put(propertyId, properties.get(propertyId));
+            if(properties.get(propertyId) instanceof Residence) {
+                Residence res = (Residence) properties.get(propertyId);
+
+                if (res.getNumberOfBedrooms() >= minBedrooms && res.getNumberOfBedrooms() <= maxBedrooms) {
+                    bedroomMap.put(propertyId, res);
+                }
             }
         }
         if(bedroomMap.isEmpty())
@@ -201,183 +204,97 @@ public class Agency
      * @param propertyType this is a parameter that takes in a String property type.
      * @return this will return an ArrayList containing Strings.
      */
-    public ArrayList<String> getPropertiesOfType(final String propertyType)
+    public ArrayList<Property> getPropertiesOfType(final String propertyType)
     {
-        ArrayList<String> propertyTypes = new ArrayList<>();
-        String prop = "";
-        int counter = 1;
-        propertyTypes.add("Type: " + propertyType.toUpperCase() + "\n");
+        ArrayList<Property> propertyList = new ArrayList<>();
 
         for(String propertyId: properties.keySet())
         {
-            //String newPropertyId = propertyId.toUpperCase();
-            String[] slicedStreetName = properties.get(propertyId).getAddress().getStreetName().split(" ");
-            String newStreeName;
-            if(slicedStreetName.length > SLICED_STREET_NAME_ONE)
-                {
-                    newStreeName = slicedStreetName[SLICED_STREET_NAME_POSITION_ZERO].substring(SLICED_STREET_NAME_POSITION_SUBSTRING_ZERO, SLICED_STREET_NAME_POSITION_SUBSTRING_ONE).toUpperCase() +
-                            slicedStreetName[SLICED_STREET_NAME_POSITION_ZERO].substring(SLICED_STREET_NAME_POSITION_SUBSTRING_ONE) + " " +
-                            slicedStreetName[SLICED_STREET_NAME_POSITION_ONE].substring(SLICED_STREET_NAME_POSITION_SUBSTRING_ZERO, SLICED_STREET_NAME_POSITION_SUBSTRING_ONE).toUpperCase() +
-                            slicedStreetName[SLICED_STREET_NAME_POSITION_ONE].substring(SLICED_STREET_NAME_POSITION_SUBSTRING_ONE) ;
-                }
-                else
-                {
-                    newStreeName = slicedStreetName[SLICED_STREET_NAME_POSITION_ZERO].substring(SLICED_STREET_NAME_POSITION_SUBSTRING_ZERO, SLICED_STREET_NAME_POSITION_SUBSTRING_ONE).toUpperCase() +
-                        slicedStreetName[SLICED_STREET_NAME_POSITION_ZERO].substring(SLICED_STREET_NAME_POSITION_SUBSTRING_ONE);
-            }
-            String[] slicedCity = properties.get(propertyId).getAddress().getCity().split(" ");
-            String newCity;
-            if(slicedCity.length > SLICED_CITY_LENGTH_ONE)
-            {
-                newCity = slicedCity[SLICED_CITY_POSITION_ZERO].substring(SLICED_CITY_SUBSTRING_ZERO, SLICED_CITY_SUBSTRING_ONE).toUpperCase() +
-                        slicedCity[SLICED_CITY_POSITION_ZERO].substring(SLICED_CITY_SUBSTRING_ONE) + " " +
-                        slicedCity[SLICED_CITY_POSITION_ONE].substring(SLICED_CITY_SUBSTRING_ZERO, SLICED_CITY_SUBSTRING_ONE).toUpperCase() +
-                        slicedCity[SLICED_CITY_POSITION_ONE].substring(SLICED_CITY_SUBSTRING_ONE) ;
-            }
-            else
-            {
-                newCity = slicedCity[SLICED_CITY_POSITION_ZERO].substring(SLICED_CITY_SUBSTRING_ZERO, SLICED_CITY_SUBSTRING_ONE).toUpperCase() +
-                        slicedCity[SLICED_CITY_POSITION_ZERO].substring(SLICED_CITY_SUBSTRING_ONE);
-            }
-            if(properties.get(propertyId).getType().equalsIgnoreCase(propertyType))
-            {
-                if (properties.get(propertyId).getAddress().getUnitNumber() != null)
-                {
-                    if (properties.get(propertyId).getNumberOfBedrooms() > NUMBER_OF_BEDROOMS_ONE)
-                    {
-                        if (properties.get(propertyId).hasSwimmingPool())
-                        {
-                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms plus pool): $%.0f.\n",
-                                    counter,
-                                    propertyId.toUpperCase(),
-                                    properties.get(propertyId).getAddress().getUnitNumber(),
-                                    properties.get(propertyId).getAddress().getStreetNumber(),
-                                    newStreeName,
-                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
-                                    newCity,
-                                    properties.get(propertyId).getNumberOfBedrooms(),
-                                    properties.get(propertyId).getPriceUsd()
-                            );
-                        }
-                        else
-                        {
-                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedrooms): $%.0f.\n",
-                                    counter,
-                                    propertyId.toUpperCase(),
-                                    properties.get(propertyId).getAddress().getUnitNumber(),
-                                    properties.get(propertyId).getAddress().getStreetNumber(),
-                                    newStreeName,
-                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
-                                    newCity,
-                                    properties.get(propertyId).getNumberOfBedrooms(),
-                                    properties.get(propertyId).getPriceUsd()
-                            );
-                        }
-                    }
-                    else
-                    {
-                        if (properties.get(propertyId).hasSwimmingPool())
-                        {
-                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedroom plus pool): $%.0f.\n",
-                                    counter,
-                                    propertyId.toUpperCase(),
-                                    properties.get(propertyId).getAddress().getUnitNumber(),
-                                    properties.get(propertyId).getAddress().getStreetNumber(),
-                                    newStreeName,
-                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
-                                    newCity,
-                                    properties.get(propertyId).getNumberOfBedrooms(),
-                                    properties.get(propertyId).getPriceUsd()
-                            );
-                        }
-                        else
-                        {
-                            prop = String.format("%d) Property %s: unit #%s at %d %s %s in %s (%d bedroom): $%.0f.\n",
-                                    counter,
-                                    propertyId.toUpperCase(),
-                                    properties.get(propertyId).getAddress().getUnitNumber(),
-                                    properties.get(propertyId).getAddress().getStreetNumber(),
-                                    newStreeName,
-                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
-                                    newCity,
-                                    properties.get(propertyId).getNumberOfBedrooms(),
-                                    properties.get(propertyId).getPriceUsd()
-                            );
-                        }
-                    }
-                }
-                else
-                {
-                    if (properties.get(propertyId).getNumberOfBedrooms() > NUMBER_OF_BEDROOMS_ONE)
-                    {
-                        if (properties.get(propertyId).hasSwimmingPool())
-                        {
-                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms plus pool): $%.0f.\n",
-                                    counter,
-                                    propertyId.toUpperCase(),
-                                    properties.get(propertyId).getAddress().getStreetNumber(),
-                                    newStreeName,
-                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
-                                    newCity,
-                                    properties.get(propertyId).getNumberOfBedrooms(),
-                                    properties.get(propertyId).getPriceUsd()
-                            );
-                        }
-                        else
-                        {
-                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedrooms): $%.0f.\n",
-                                    counter,
-                                    propertyId.toUpperCase(),
-                                    properties.get(propertyId).getAddress().getStreetNumber(),
-                                    newStreeName,
-                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
-                                    newCity,
-                                    properties.get(propertyId).getNumberOfBedrooms(),
-                                    properties.get(propertyId).getPriceUsd()
-                            );
-                        }
-                    }
-                    else
-                    {
-                        if (properties.get(propertyId).hasSwimmingPool())
-                        {
-                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedroom plus pool): $%.0f.\n",
-                                    counter,
-                                    propertyId.toUpperCase(),
-                                    properties.get(propertyId).getAddress().getStreetNumber(),
-                                    newStreeName,
-                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
-                                    newCity,
-                                    properties.get(propertyId).getNumberOfBedrooms(),
-                                    properties.get(propertyId).getPriceUsd()
-                            );
-                        }
-                        else
-                        {
-                            prop = String.format("%d) Property %s: %d %s %s in %s (%d bedroom): $%.0f.\n",
-                                    counter,
-                                    propertyId.toUpperCase(),
-                                    properties.get(propertyId).getAddress().getStreetNumber(),
-                                    newStreeName,
-                                    properties.get(propertyId).getAddress().getPostalCode().toUpperCase(),
-                                    properties.get(propertyId).getAddress().getCity(),
-                                    properties.get(propertyId).getNumberOfBedrooms(),
-                                    properties.get(propertyId).getPriceUsd()
-                            );
-                        }
-                    }
-                }
-                propertyTypes.add(prop);
-                prop = "";
-                counter++;
+            if(properties.get(propertyId).getType().equalsIgnoreCase(propertyType)) {
+                propertyList.add(properties.get(propertyId));
             }
         }
-        if(propertyTypes.size() < PROPERTY_TYPE_SIZE_TWO)
-        {
-            String empty = "<none found>";
-            propertyTypes.add(empty);
-        }
-        System.out.println(propertyTypes);
-        return propertyTypes;
+
+        return propertyList;
     }
+
+    public ArrayList<Commercial> getPropertiesWithLoadingDock() {
+        ArrayList<Commercial> list = new ArrayList<>();
+
+        for(String propertyId: properties.keySet())
+        {
+            if(properties.get(propertyId) instanceof Commercial) {
+                Commercial prop = (Commercial) properties.get(propertyId);
+                if(prop.isLoadingDock()) {
+                    list.add(prop);
+                }
+            }
+        }
+
+        return list;
+    }
+
+    public ArrayList<Commercial> getPropertiesWithHighwayAccess() {
+        ArrayList<Commercial> list = new ArrayList<>();
+
+        for(String propertyId: properties.keySet())
+        {
+            if(properties.get(propertyId) instanceof Commercial) {
+                Commercial prop = (Commercial) properties.get(propertyId);
+                if(prop.isHighwayAccess()) {
+                    list.add(prop);
+                }
+            }
+        }
+
+        return list;
+    }
+
+    public ArrayList<Retail> getPropertiesWithSquareFootage(int squareFootage) {
+        ArrayList<Retail> list = new ArrayList<>();
+
+        for(String propertyId: properties.keySet()) {
+            if(properties.get(propertyId) instanceof Retail) {
+                Retail prop = (Retail) properties.get(propertyId);
+                if(prop.getSquareFootage() >= squareFootage) {
+                    list.add(prop);
+                }
+            }
+        }
+
+        return list;
+    }
+
+    public ArrayList<Retail> getPropertiesWithCustomerParking() {
+        ArrayList<Retail> list = new ArrayList<>();
+
+        for(String propertyId: properties.keySet())
+        {
+            if(properties.get(propertyId) instanceof Retail) {
+                Retail prop = (Retail) properties.get(propertyId);
+                if(prop.isCustomerParking()) {
+                    list.add(prop);
+                }
+            }
+        }
+
+        return list;
+    }
+
+    public ArrayList<Residence> getPropertiesWithStrata() {
+        ArrayList<Residence> list = new ArrayList<>();
+
+        for(String propertyId: properties.keySet())
+        {
+            if(properties.get(propertyId) instanceof Residence) {
+                Residence prop = (Residence) properties.get(propertyId);
+                if(prop.isStrata()) {
+                    list.add(prop);
+                }
+            }
+        }
+
+        return list;
+    }
+
 }

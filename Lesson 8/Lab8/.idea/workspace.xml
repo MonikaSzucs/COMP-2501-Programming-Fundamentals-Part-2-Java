@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ad47de6-9dd9-494c-be6e-5ff0d5312dc8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/ClassExample/src/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/ClassExample/src/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/ClassExample/src/Dolphin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/ClassExample/src/Mammal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/ClassExample/src/Pitbull.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/ClassExample/src/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/ClassExample/src/Zoo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4ad47de6-9dd9-494c-be6e-5ff0d5312dc8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

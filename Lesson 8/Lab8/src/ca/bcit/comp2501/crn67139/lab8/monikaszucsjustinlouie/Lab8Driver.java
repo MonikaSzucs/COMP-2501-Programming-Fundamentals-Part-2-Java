@@ -23,21 +23,21 @@ import java.util.*;
  *
  */
 public class Lab8Driver {
-    Map<String, Student> students;
+    private Map<String, Student> students;
 
-    public static final int     BIRTH_YEARS_ZERO = 0;
-    public static final double  BIRTH_YEARS_TWENTY_TWENTY_TWO = 2022;
-    public static final double  GRADE_PERCENTAGE_ZERO = 0.0;
-    public static final double  GRADE_PERCENTAGE_HUNDRED = 100.0;
-    public static final int     CHARACTER_POSITION_ZERO = 0;
-    public static final int     SUBSTRING_POSITION_ONE = 1;
-    public static final int     ARRAY_VALUES_POSITION_ZERO = 0;
-    public static final int     ARRAY_VALUES_POSITION_ONE = 1;
-    public static final int     ARRAY_VALUES_POSITION_TWO = 2;
-    public static final int     ARRAY_VALUES_POSITION_THREE = 3;
-    public static final int     ARRAY_VALUES_POSITION_FOUR = 4;
+    public static final int     EARLIEST_BIRTH_YEAR = 0;
+    public static final double  CURRENT_YEAR = 2022;
+    public static final double  LOWEST_GRADE_PERCENT = 0.0;
+    public static final double  HIGHEST_GRADE_PERCENT = 100.0;
+    public static final int     FIRST_LETTER = 0;
+    public static final int     SECOND_LETTER = 1;
+    public static final int     FIRST_NAME = 0;
+    public static final int     LAST_NAME = 1;
+    public static final int     ID_NUMBER = 2;
+    public static final int     BIRTH_YEAR = 3;
+    public static final int     GRADE_PERCENT = 4;
 
-
+    
     /**
      * Lab8Driver() Constructor
      *
@@ -65,16 +65,21 @@ public class Lab8Driver {
      */
     public void readFromPrompt() {
         Scanner scanner;
-        scanner = new Scanner(System.in);
-        String choice;
-        boolean proceed = true;
-        boolean checking = true;
+        String  choice;
+        String  firstName;
+        String  lastName;
+        String  idNumber;
+        int     birthYears;
+        double  gradePercent;
+        boolean proceed;
+        boolean checking;
 
-        String firstName;
-        String lastName;
-        String idNumber;
-        int birthYears = BIRTH_YEARS_ZERO;
-        double gradePct = GRADE_PERCENTAGE_ZERO;
+        scanner = new Scanner(System.in);
+        proceed = true;
+        checking = true;
+
+        birthYears = EARLIEST_BIRTH_YEAR;
+        gradePercent = LOWEST_GRADE_PERCENT;
 
         do {
             System.out.println("Do you wish to create a Student? (y/n): ");
@@ -121,10 +126,10 @@ public class Lab8Driver {
                 while (checking) {
                     System.out.println("Enter birth year as a whole number:");
                     String birthYearsString = scanner.next();
-                    birthYears = BIRTH_YEARS_ZERO;
+                    birthYears = EARLIEST_BIRTH_YEAR;
                     try {
                         birthYears = Integer.parseInt(birthYearsString);
-                        if(birthYears > BIRTH_YEARS_ZERO && birthYears <= BIRTH_YEARS_TWENTY_TWENTY_TWO) {
+                        if(birthYears > EARLIEST_BIRTH_YEAR && birthYears <= CURRENT_YEAR) {
                             break;
                         }
                     } catch (NumberFormatException ne) {
@@ -135,10 +140,10 @@ public class Lab8Driver {
                 while (checking) {
                     System.out.println("Enter grade (percentage) as a double:");
                     String gradePercentageString = scanner.next();
-                    gradePct = GRADE_PERCENTAGE_ZERO;
+                    gradePercent = LOWEST_GRADE_PERCENT;
                     try {
-                        gradePct = Double.parseDouble(gradePercentageString);
-                        if(gradePct > GRADE_PERCENTAGE_ZERO && gradePct <= GRADE_PERCENTAGE_HUNDRED) {
+                        gradePercent = Double.parseDouble(gradePercentageString);
+                        if(gradePercent > LOWEST_GRADE_PERCENT && gradePercent <= HIGHEST_GRADE_PERCENT) {
                             break;
                         }
                     } catch (NumberFormatException ne) {
@@ -146,13 +151,13 @@ public class Lab8Driver {
                     }
                 }
 
-                firstName = firstName.toUpperCase().charAt(CHARACTER_POSITION_ZERO) +
-                        firstName.toLowerCase().substring(SUBSTRING_POSITION_ONE);
-                lastName = lastName.toUpperCase().charAt(CHARACTER_POSITION_ZERO) +
-                        lastName.toLowerCase().substring(SUBSTRING_POSITION_ONE);
+                firstName = firstName.toUpperCase().charAt(FIRST_LETTER) +
+                        firstName.toLowerCase().substring(SECOND_LETTER);
+                lastName = lastName.toUpperCase().charAt(FIRST_LETTER) +
+                        lastName.toLowerCase().substring(SECOND_LETTER);
 
                 Student student1 = new Student(firstName, lastName,
-                        idNumber, birthYears, gradePct);
+                        idNumber, birthYears, gradePercent);
                 students.put(idNumber, student1);
             } else if(choice.equals("n")) {
                 proceed = false;
@@ -194,11 +199,11 @@ public class Lab8Driver {
                 savedLine = scanner.next();
 
                 arrayValues = savedLine.split(",");
-                firstName = String.valueOf(arrayValues[ARRAY_VALUES_POSITION_ZERO]);
-                lastName = String.valueOf(arrayValues[ARRAY_VALUES_POSITION_ONE]);
-                idNumber = String.valueOf(arrayValues[ARRAY_VALUES_POSITION_TWO]);
-                birthYears = Integer.valueOf(arrayValues[ARRAY_VALUES_POSITION_THREE]);
-                gradePct = Double.valueOf(arrayValues[ARRAY_VALUES_POSITION_FOUR]);
+                firstName = String.valueOf(arrayValues[FIRST_NAME]);
+                lastName = String.valueOf(arrayValues[LAST_NAME]);
+                idNumber = String.valueOf(arrayValues[ID_NUMBER]);
+                birthYears = Integer.valueOf(arrayValues[BIRTH_YEAR]);
+                gradePct = Double.valueOf(arrayValues[GRADE_PERCENT]);
 
                 if(savedLine != null && !savedLine.isEmpty()) {
                     Student student1 = new Student(firstName, lastName,

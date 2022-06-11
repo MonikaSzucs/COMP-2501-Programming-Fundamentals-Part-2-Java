@@ -27,11 +27,11 @@ public class Student {
     private final double        percentageGrade;
     private boolean             pass;
 
-    public static final double  PERCENTAGE_GRADE_ZERO = 0.0;
-    public static final double  PERCENTAGE_GRADE_HUNDRED = 100.0;
-    public static final double  PERCENTAGE_GRADE_SIXTY = 60.0;
+    public static final double  MIN_GRADE_PERCENT = 0.0;
+    public static final double  MAX_GRADE_PERCENT = 100.0;
+    public static final double  PASSING_PERCENT = 60.0;
 
-    LocalDate now = LocalDate.now();
+    private LocalDate now = LocalDate.now();
 
     /**
      * Student Constructor without parameters
@@ -39,11 +39,11 @@ public class Student {
      * This is the no-arg constructor that has default values.
      */
     public Student() {
-        this.firstName = null;
-        this.lastName = null;
-        this.idNumber = null;
-        this.birthYear = 0;
-        this.percentageGrade = 0.0;
+        this.firstName          = null;
+        this.lastName           = null;
+        this.idNumber           = null;
+        this.birthYear          = 0;
+        this.percentageGrade    = 0.0;
     }
 
     /**
@@ -62,30 +62,30 @@ public class Student {
         if(firstName == null || firstName.isEmpty()) {
             throw new IllegalArgumentException("The first name cannot be null/empty");
         }
+
         if(lastName == null || lastName.isEmpty()) {
             throw new IllegalArgumentException("The last name cannot be null/empty");
         }
+
         if(idNumber == null || idNumber.isEmpty()) {
             throw new IllegalArgumentException("The ID number cannot be null/empty");
         }
+
         if(birthYear > now.getYear()) {
             throw new IllegalArgumentException("You cannot have the birth year larger than the current year");
         }
-        if(percentageGrade > PERCENTAGE_GRADE_HUNDRED || percentageGrade < PERCENTAGE_GRADE_ZERO) {
+
+        if(percentageGrade > MAX_GRADE_PERCENT || percentageGrade < MIN_GRADE_PERCENT) {
             throw new IllegalArgumentException("The percentage cannot be larger than 100 or less than 0");
         }
 
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.idNumber = idNumber;
-        this.birthYear = now.getYear() - birthYear;
-        this.percentageGrade = percentageGrade;
+        this.firstName          = firstName;
+        this.lastName           = lastName;
+        this.idNumber           = idNumber;
+        this.birthYear          = now.getYear() - birthYear;
+        this.percentageGrade    = percentageGrade;
 
-        if(percentageGrade >= PERCENTAGE_GRADE_SIXTY) {
-            pass = true;
-        } else {
-            pass = false;
-        }
+        pass = percentageGrade >= PASSING_PERCENT;
     }
 
     /**
@@ -142,7 +142,7 @@ public class Student {
      *
      * @return this will return a true or false indication if the student has passed or not
      */
-    public Boolean setPass() {
+    public boolean didPass() {
         return pass;
     }
 
@@ -158,6 +158,6 @@ public class Student {
                 ", idNumber=" + getIdNumber() +
                 ", ageYears=" + birthYear +
                 ", gradePct=" + getPercentageGrade() +
-                ", pass=" + setPass() + "]";
+                ", pass=" + didPass() + "]";
     }
 }

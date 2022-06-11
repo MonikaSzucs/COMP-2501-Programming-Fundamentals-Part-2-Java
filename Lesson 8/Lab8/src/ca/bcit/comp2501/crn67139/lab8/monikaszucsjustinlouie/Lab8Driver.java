@@ -37,7 +37,13 @@ public class Lab8Driver {
     public static final int     BIRTH_YEAR = 3;
     public static final int     GRADE_PERCENT = 4;
 
-    
+    public static final int     MIN_FIRST_NAME_LENGTH = 1;
+    public static final int     MIN_LAST_NAME_LENGTH = 1;
+    public static final int     MIN_ID_LENGTH = 1;
+
+    public static final String  NO = "no";
+    public static final String  YES = "yes";
+
     /**
      * Lab8Driver() Constructor
      *
@@ -82,9 +88,9 @@ public class Lab8Driver {
         gradePercent = LOWEST_GRADE_PERCENT;
 
         do {
-            System.out.println("Do you wish to create a Student? (y/n): ");
+            System.out.println("Do you wish to create a Student? (" + YES + "/" + NO + "): ");
             choice = scanner.next().toLowerCase();
-            if (choice.equals("y")) {
+            if (choice.equals(YES)) {
                 System.out.println("yes");
 
                 do {
@@ -94,7 +100,7 @@ public class Lab8Driver {
                         scanner.nextLine();
                         checking = false;
                     } catch(Exception e) {
-                        throw new IllegalArgumentException("You must enter more than one character");
+                        throw new IllegalArgumentException("You must enter more than " + MIN_FIRST_NAME_LENGTH + " character");
                     }
                 } while (checking);
 
@@ -106,7 +112,7 @@ public class Lab8Driver {
                         scanner.nextLine();
                         checking = false;
                     } catch(Exception e) {
-                        throw new IllegalArgumentException("You must enter more than one character.");
+                        throw new IllegalArgumentException("You must enter more than " + MIN_LAST_NAME_LENGTH + " character.");
                     }
                 } while (checking);
 
@@ -118,7 +124,7 @@ public class Lab8Driver {
                         scanner.nextLine();
                         checking = false;
                     } catch(Exception e) {
-                        throw new IllegalArgumentException("You must enter more than one character.");
+                        throw new IllegalArgumentException("You must enter more than " + MIN_ID_LENGTH + " character.");
                     }
                 } while(checking);
 
@@ -159,7 +165,7 @@ public class Lab8Driver {
                 Student student1 = new Student(firstName, lastName,
                         idNumber, birthYears, gradePercent);
                 students.put(idNumber, student1);
-            } else if(choice.equals("n")) {
+            } else if(choice.equals(NO)) {
                 proceed = false;
                 System.out.println("Data entry finished!");
             }
@@ -181,18 +187,20 @@ public class Lab8Driver {
         System.out.println("List of Students created");
 
         File myFile;
-        myFile = new File("student_data.txt");
         Scanner scanner;
-        scanner = new Scanner(myFile);
-        String savedLine = null;
-        boolean keepReading = true;
-
         String[] arrayValues;
         String firstName;
         String lastName;
         String idNumber;
+        String savedLine;
         int birthYears;
-        double gradePct;
+        double gradePercentage;
+        boolean keepReading;
+
+        myFile = new File("student_data.txt");
+        scanner = new Scanner(myFile);
+        savedLine = null;
+        keepReading = true;
 
         while(keepReading) {
             if(scanner.hasNext()) {
@@ -203,11 +211,11 @@ public class Lab8Driver {
                 lastName = String.valueOf(arrayValues[LAST_NAME]);
                 idNumber = String.valueOf(arrayValues[ID_NUMBER]);
                 birthYears = Integer.valueOf(arrayValues[BIRTH_YEAR]);
-                gradePct = Double.valueOf(arrayValues[GRADE_PERCENT]);
+                gradePercentage = Double.valueOf(arrayValues[GRADE_PERCENT]);
 
                 if(savedLine != null && !savedLine.isEmpty()) {
                     Student student1 = new Student(firstName, lastName,
-                            idNumber, birthYears, gradePct);
+                            idNumber, birthYears, gradePercentage);
                     students.put(idNumber, student1);
                 }
             } else {
@@ -225,9 +233,12 @@ public class Lab8Driver {
      *
      */
     public void showStudents() {
-        Set<String> keys = students.keySet();
+        Set<String> keys;
+        keys = students.keySet();
+
         for(String key: keys) {
-            Student student = students.get(key);
+            Student student;
+            student = students.get(key);
             System.out.println(student.toString());
         }
     }

@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4ad47de6-9dd9-494c-be6e-5ff0d5312dc8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab8/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Lab8Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab8/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Lab8Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab8/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab8/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Student.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Lab8Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Lab8Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

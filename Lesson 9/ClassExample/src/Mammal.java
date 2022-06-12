@@ -12,4 +12,11 @@ class Mammal {
     public double getWeightKg() {
         return weightKg;
     }
+
+    @Override
+    public String toString() {
+        return "Mammal{" +
+                "weightKg=" + weightKg +
+                '}';
+    }
 }

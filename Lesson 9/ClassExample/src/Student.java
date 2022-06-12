@@ -1,6 +1,7 @@
-class Student {
+class Student extends Mammal {
     private final String studentNumber;
     Student(final String studentId) {
+        super(77.0);
         studentNumber = studentId;
     }
 }

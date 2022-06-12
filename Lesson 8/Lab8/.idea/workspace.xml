@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ad47de6-9dd9-494c-be6e-5ff0d5312dc8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab8/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Lab8Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab8/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Lab8Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab8/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab8/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Lab8Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Lab8Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsjustinlouie/Student.java" afterDir="false" />
-    </list>
+    <list default="true" id="4ad47de6-9dd9-494c-be6e-5ff0d5312dc8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Lesson 9/ClassExample" />
   </component>
   <component name="RunManager" selected="Application.Lab8Driver (1)">
     <configuration name="Lab8Driver (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

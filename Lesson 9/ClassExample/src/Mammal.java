@@ -1,3 +1,4 @@
+// Object is the parent for this one
 class Mammal {
     private double weightKg;
 
@@ -13,9 +14,26 @@ class Mammal {
         return weightKg;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Mammal{" +
+//                "weightKg=" + weightKg +
+//                '}';
+//    }
+
+    // This code below will print out the class names beside the values instead of the parent class only
+//    @Override
+//    public String toString() {
+//        return this.getClass().getSimpleName() + "{" +
+//                "weightKg=" + weightKg +
+//                '}';
+//    }
+
+
+// This code below will print out the class names beside the values instead of the parent class only
     @Override
     public String toString() {
-        return "Mammal{" +
+        return getClass().getSimpleName() + "{" +
                 "weightKg=" + weightKg +
                 '}';
     }

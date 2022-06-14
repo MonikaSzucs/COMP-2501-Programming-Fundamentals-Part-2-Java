@@ -177,7 +177,7 @@ public class Assignment2 {
     }
 
     public void doSearches() {
-        
+
     }
 
     public static void main(String[] args) throws FileNotFoundException {

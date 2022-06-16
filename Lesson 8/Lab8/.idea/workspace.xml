@@ -2,30 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ad47de6-9dd9-494c-be6e-5ff0d5312dc8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Cellphone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Electronic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Fan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Laptop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Printer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Speaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Assignment/2 - Due before lesson 12/2501assignment1practice/src/java/Assignment2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assignment/2 - Due before lesson 12/2501assignment1practice/src/java/Assignment2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Assignment/2 - Due before lesson 12/~$01_Assignment2.docx" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/InClass.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Bat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Dolphin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Firebase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Mammal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/MySql.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Zoo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/Driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/Quiz.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/src/Doctor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/src/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 10/Lab10/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 10/Lab10/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/MusicMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/MusicMedia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/Cellphone.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/Electronic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/Fan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/Laptop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/Printer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/Speaker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/Cellphone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/Electronic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/Fan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/Laptop.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/Printer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/src/Speaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Cellphone.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Cellphone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Fan.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Fan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Laptop.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Laptop.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +73,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Lesson 9/Lab9" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Application.Lab8Driver (1)">
     <configuration name="Lab8Driver (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

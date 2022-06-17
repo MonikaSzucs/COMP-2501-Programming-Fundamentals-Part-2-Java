@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ad47de6-9dd9-494c-be6e-5ff0d5312dc8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/InClass.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Bat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Dolphin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Firebase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Mammal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/MySql.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Zoo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/Driver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/Quiz.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/src/Doctor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Quiz/src/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 10/Lab10/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 10/Lab10/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/MusicMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/MusicMedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Cellphone.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Cellphone.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Fan.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Fan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Laptop.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 9/Lab9/out/production/Lab9/ca/bcit/comp2501/crn67139/lab8/monikaszucsdanielwart/Laptop.class" afterDir="false" />
-    </list>
+    <list default="true" id="4ad47de6-9dd9-494c-be6e-5ff0d5312dc8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

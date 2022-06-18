@@ -10,10 +10,10 @@ public class Zoo {
         mammals.add(new Dolphin());
         mammals.add(new Person());
 
-        // static   dynamic
-        // compile  runtime
-        Mammal mammal = new Dog();
-        mammal = new Dolphin();
+        // static           dynamic
+        // compile          runtime
+        // Mammal mammal    = new Dog();
+        // mammal           = new Dolphin();
 
         for(Mammal m: mammals) {
             m.move();

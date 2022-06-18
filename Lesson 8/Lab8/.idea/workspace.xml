@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ad47de6-9dd9-494c-be6e-5ff0d5312dc8" name="Changes" comment="" />
+    <list default="true" id="4ad47de6-9dd9-494c-be6e-5ff0d5312dc8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/AudioFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/CompactDisc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/MusicLibrary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assignment/2 - Due before lesson 12/2501assignment1practice/out/production/2501assignment1practice/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assignment/2 - Due before lesson 12/2501assignment1practice/out/production/2501assignment1practice/Address.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assignment/2 - Due before lesson 12/2501assignment1practice/out/production/2501assignment1practice/Agency.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assignment/2 - Due before lesson 12/2501assignment1practice/out/production/2501assignment1practice/Agency.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assignment/2 - Due before lesson 12/2501assignment1practice/out/production/2501assignment1practice/Property.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assignment/2 - Due before lesson 12/2501assignment1practice/out/production/2501assignment1practice/Property.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assignment/2 - Due before lesson 12/2501assignment1practice/out/test/2501assignment1practice/AgencyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assignment/2 - Due before lesson 12/2501assignment1practice/out/test/2501assignment1practice/PropertyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 10/InClass/out/production/InClass/Bat.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/out/production/InClass/Bat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 10/InClass/out/production/InClass/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/out/production/InClass/Dog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 10/InClass/out/production/InClass/Dolphin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/out/production/InClass/Dolphin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 10/InClass/out/production/InClass/Mammal.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/out/production/InClass/Mammal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 10/InClass/out/production/InClass/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/out/production/InClass/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 10/InClass/out/production/InClass/Zoo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/out/production/InClass/Zoo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 10/InClass/src/Zoo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/MusicMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 10/Lab10/src/MusicMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

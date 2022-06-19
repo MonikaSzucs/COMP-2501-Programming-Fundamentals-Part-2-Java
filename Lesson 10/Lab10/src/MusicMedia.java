@@ -2,16 +2,15 @@ class MusicMedia {
     private final String    musicalArtist;
     private final String    songTitle;
     private final int       totalNumberOfSongs;
-    private final int    totalRuntime;
-
+    private final int       totalRuntime;
 
     private static final int MIN_YEAR = 1900;
 
     MusicMedia(
-                final String musicalArtist,
-                final String songTitle,
-                final int totalNumberOfSongs,
-                final int totalRuntime
+            final String musicalArtist,
+            final String songTitle,
+            final int totalNumberOfSongs,
+            final int totalRuntime
     ) {
         if(musicalArtist == null || musicalArtist.isEmpty()) {
             throw new IllegalArgumentException("You must enter in a musical artist name");
@@ -52,7 +51,11 @@ class MusicMedia {
     }
 
     public void playSelection() {
-        System.out.println("Thank you for using our Music Library");
+        System.out.println("Thank you for using our Music Library \n" +
+                "You selected the record: " + songTitle + " by " + musicalArtist + "\n" +
+                "This is a Music Media that has " + totalNumberOfSongs + " with a runtime of " + totalRuntime +
+                "\n\n"
+        );
     }
 
     @Override

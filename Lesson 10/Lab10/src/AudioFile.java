@@ -13,17 +13,19 @@ public class AudioFile extends MusicMedia {
     }
 
     public void playSelection() {
-        System.out.println("AudioFile [fileType=" + fileType +
-                 ", " + toString() + "]");
+        System.out.println("Thank you for using our Music Library.");
+        System.out.println("You selected the Audio File " + getSongTitle() + " by " + getMusicalArtist() + ".");
+        System.out.println("This file is in " + fileType + " format, from the year  .\n");
     }
 
     @Override
     public String toString() {
-        return "toString()=Album [" +
-                "Artist=" + getMusicalArtist() +
-                ", title=" + getSongTitle() +
+        return "AudioFile{" +
+                "fileType='" + fileType + '\'' +
+                ", Artist='" + getMusicalArtist() + '\'' +
+                ", Title='" + getSongTitle() + '\'' +
                 ", trackCount=" + getTotalNumberOfSongs() +
                 ", totalMinutes=" + getTotalRuntime() +
-                ']';
+                '}';
     }
 }

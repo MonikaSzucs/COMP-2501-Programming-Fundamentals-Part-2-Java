@@ -3,12 +3,12 @@ public class Record extends MusicMedia {
     private final double revolutionsPerMinute;
 
     public Record(
-                final int sizeOfRecordInInches,
-                final double revolutionsPerMinute,
-                final String musicalArtist,
-                final String songTitle,
-                final int totalNumberOfSongs,
-                final int totalRuntime
+            final int sizeOfRecordInInches,
+            final double revolutionsPerMinute,
+            final String musicalArtist,
+            final String songTitle,
+            final int totalNumberOfSongs,
+            final int totalRuntime
     ) {
         super(musicalArtist, songTitle, totalNumberOfSongs, totalRuntime);
 
@@ -34,17 +34,21 @@ public class Record extends MusicMedia {
     }
 
     public void playSelection() {
-        System.out.println("Record [size=" + sizeOfRecordInInches +
-                " rpm=" +  revolutionsPerMinute + ", " + toString() + "]");
+        System.out.println("Thank you for using our Music Library.");
+        System.out.println("You selected the record " + getSongTitle() + " by " + getMusicalArtist() + ".");
+        System.out.println("This is a " + sizeOfRecordInInches + " inch record from  , playing at " +
+                revolutionsPerMinute +" rpm.\n");
     }
 
     @Override
     public String toString() {
-        return "toString()=Album [" +
-                "Artist=" + getMusicalArtist() +
-                ", title=" + getSongTitle() +
+        return "Record [" +
+                "size=" + sizeOfRecordInInches +
+                ", rpm=" +  revolutionsPerMinute +
+                ", Artist=" + getMusicalArtist() +
+                ", Title=" + getSongTitle() +
                 ", trackCount=" + getTotalNumberOfSongs() +
                 ", totalMinutes=" + getTotalRuntime() +
-                ']';
+                "]";
     }
 }

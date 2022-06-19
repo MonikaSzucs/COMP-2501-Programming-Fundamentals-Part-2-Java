@@ -14,17 +14,20 @@ public class CompactDisc extends MusicMedia {
     }
 
     public void playSelection() {
-        System.out.println("CompactDisc [bonusTracks=" + bonusTracks + " digipac=" + digipac +
-                ", " + toString() + "]");
+        System.out.println("Thank you for using our Music Library.");
+        System.out.println("You selected the CD " + getSongTitle() + " by " + getMusicalArtist() + ".");
+        System.out.println("This is a Compact Disc from the year   .\n");
     }
 
     @Override
     public String toString() {
-        return "toString()=Album [" +
-                "Artist=" + getMusicalArtist() +
-                ", title=" + getSongTitle() +
+        return "CompactDisc{" +
+                "bonusTracks=" + bonusTracks +
+                ", digipac=" + digipac +
+                ", Artist='" + getMusicalArtist() + '\'' +
+                ", Title='" + getSongTitle() + '\'' +
                 ", trackCount=" + getTotalNumberOfSongs() +
                 ", totalMinutes=" + getTotalRuntime() +
-                ']';
+                '}';
     }
 }

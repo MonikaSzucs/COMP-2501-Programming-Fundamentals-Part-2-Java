@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class AddressReader {
     public static ArrayList<Address> readAddressData(File file) throws FileNotFoundException {
         ArrayList<Address> addressList = new ArrayList<>();
-
+        System.out.println(file);
         Scanner scanner = new Scanner(file);
 
         while(scanner.hasNext()) {

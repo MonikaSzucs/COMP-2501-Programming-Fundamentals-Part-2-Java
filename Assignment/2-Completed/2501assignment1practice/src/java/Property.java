@@ -38,6 +38,7 @@ public class Property
      * @throws NullPointerException this throws a null pointer exception if there is an invalid address,
      *                              property type, and/or propertyId.
      */
+    // private Property p1 = new Property(499000.00, a1, 2, false, "residence", "abc123");
     public Property(final double priceInUsd, final Address address,
                     final String type, final String propertyId)
     {
@@ -94,6 +95,9 @@ public class Property
      */
     public void setPriceUsd(final double priceInUsd)
     {
+        if(priceInUsd < 0.0) {
+            throw new IllegalArgumentException("The price must be greater than zero");
+        }
         this.priceInUsd = priceInUsd;
     }
 

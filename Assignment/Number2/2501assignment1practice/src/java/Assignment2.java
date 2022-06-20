@@ -1,12 +1,13 @@
 import javax.naming.directory.SearchResult;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Assignment2 {
-    File addressFile = new File("/address_data.txt");
-    File propertyFile = new File("/property_data.txt");
+    File addressFile = new File("C:\\Users\\mszuc\\Desktop\\COMP-2501-Programming-Fundamentals-Part-2-Java\\Assignment\\Number2\\2501assignment1practice\\address_data.txt");
+    File propertyFile = new File(".\\property_data.txt");
     Agency agency = new Agency("agency");
 
     @SuppressWarnings("unused")
@@ -177,12 +178,39 @@ public class Assignment2 {
     }
 
     public void doSearches() {
-
+        while(true) {
+            System.out.println("Welcome to our property search \nChoose one of the following options " +
+                    "\n1.General Queries \n2.Residence Queries \n3.Commerical Quieries \n4.Retail Queries " +
+                    "\n5.Exit");
+            int userNumber = scanner.nextInt();
+            if(userNumber == 1) {
+                generalQueries();
+            } else if(userNumber == 2) {
+                residenceQueries();
+            } else if(userNumber == 3) {
+                commericalQueries();
+            } else if(userNumber == 4) {
+                retailQueries();
+            } else if(userNumber == 5) {
+                System.out.println("Exiting");
+                break;
+            } else {
+                System.out.println("Please enter a number between 1 and 5");
+            }
+        }
     }
 
     public static void main(String[] args) throws FileNotFoundException {
         Assignment2 a2 = new Assignment2();
+        File f = new File("address_data.txt");
+        try {
+            System.out.println(f.getCanonicalPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("absolute path" + new File("address_data.txt").getAbsolutePath());
         a2.init();
         a2.doSearches();
+
     }
 }

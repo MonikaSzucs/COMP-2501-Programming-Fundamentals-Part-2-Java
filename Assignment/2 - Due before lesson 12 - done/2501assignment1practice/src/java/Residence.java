@@ -1,3 +1,5 @@
+import java.util.Properties;
+
 /**
  * Residence.java
  * COMP 2501 - CRN: 67139

@@ -141,7 +141,7 @@ public class Assignment2 {
      */
     public void residenceQueries() {
         while(true) {
-            System.out.println("Residence Queries \n1.By Bedroom \n2.By Pool \n3. By Strate \n4.Back");
+            System.out.println("Residence Queries \n1.By Bedroom \n2.By Pool \n3.By Strata \n4.Back");
 
             int userNumber = scanner.nextInt();
             if(userNumber == FIRST_CHOICE) {
@@ -174,7 +174,7 @@ public class Assignment2 {
      */
     public void commericalQueries() {
         while(true) {
-            System.out.println("Commerical Queries \n1.By Loading Dock \n2. By Highway Access \n3.Back");
+            System.out.println("Commerical Queries \n1.By Loading Dock \n2.By Highway Access \n3.Back");
 
             int userNumber = scanner.nextInt();
             if(userNumber == FIRST_CHOICE) {
@@ -240,7 +240,7 @@ public class Assignment2 {
             } else if(userNumber == FOURTH_CHOICE) {
                 retailQueries();
             } else if(userNumber == FIFTH_CHOICE) {
-                System.out.println("Exiting");
+                System.out.println("Exiting. Goodbye for now.");
                 break;
             } else {
                 System.out.println("Please enter a number between 1 and 5");

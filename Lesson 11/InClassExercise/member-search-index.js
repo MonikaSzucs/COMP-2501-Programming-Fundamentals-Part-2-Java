@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"Radar","l":"isEntityAtAnglePublic(double)"},{"p":"<Unnamed>","c":"Radar","l":"Radar()","u":"%3Cinit%3E()"}];updateSearchResults();

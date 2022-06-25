@@ -13,8 +13,7 @@ import java.util.*;
  * @version 1.3
  *
  */
-public class Agency
-{
+public class Agency {
     private final String name;
     private final Map<String, Property> properties;
 
@@ -28,8 +27,7 @@ public class Agency
      *
      * @param name this contains the name of the agency (String) that is one to 30 characters long.
      */
-    public Agency(final String name)
-    {
+    public Agency(final String name) {
         this.name = name;
         properties = new HashMap<>();
     }
@@ -39,8 +37,7 @@ public class Agency
      *
      * @param property this contains the property class as the parameter
      */
-    public void addProperty(final Property property)
-    {
+    public void addProperty(final Property property) {
         properties.put(property.getPropertyId(), property);
     }
 
@@ -50,8 +47,7 @@ public class Agency
      * @param id this gets the propertyId value from the Property Object
      * @return this will return the properties that contain the propertyId (String)
      */
-    public Property getProperty(final String id)
-    {
+    public Property getProperty(final String id) {
         return properties.get(id);
     }
 
@@ -60,8 +56,7 @@ public class Agency
      *
      * @param propertyId this will remove the property based on the propertyId (String)
      */
-    public void removeProperty(final String propertyId)
-    {
+    public void removeProperty(final String propertyId) {
         properties.remove(propertyId);
     }
 
@@ -70,16 +65,14 @@ public class Agency
      *
      * @return this will return the total price USD  of all the properties combined.
      */
-    public double getTotalPropertyValues()
-    {
+    public double getTotalPropertyValues() {
         Set<String> propertiesPropertyId;
         double total;
 
         propertiesPropertyId = properties.keySet();
         total = TOTAL_PRICE_USD_MINIMUM;
 
-        for(String propertyId: propertiesPropertyId)
-        {
+        for(String propertyId: propertiesPropertyId) {
             total += getProperty(propertyId).getPriceUsd();
         }
         return total;
@@ -90,16 +83,14 @@ public class Agency
      *
      * @return this will return an ArrayList that contains properties with pools.
      */
-    public ArrayList<Property> getPropertiesWithPools()
-    {
+    public ArrayList<Property> getPropertiesWithPools() {
         ArrayList<Property> propertiesWithPools;
         Set<String> keys;
 
         propertiesWithPools = new ArrayList<>();
         keys = properties.keySet();
 
-        for(String propertyId: keys)
-        {
+        for(String propertyId: keys) {
             if(properties.get(propertyId) instanceof Residence) {
                 Residence res;
 
@@ -122,8 +113,7 @@ public class Agency
      * @return this will return the properties found between and including the minimum and maximum USD price of the
      *          properties in a Property array format.
      */
-    public Property[] getPropertiesBetween(final int minUsd, final int maxUsd)
-    {
+    public Property[] getPropertiesBetween(final int minUsd, final int maxUsd) {
         ArrayList<Property> arr;
 
         arr = new ArrayList<>();
@@ -150,23 +140,20 @@ public class Agency
      * @param streetName this is the street name the property is located at (String)
      * @return this will return an ArrayList containing the addresses of the properties.
      */
-    public ArrayList<Address> getPropertiesOn(final String streetName)
-    {
+    public ArrayList<Address> getPropertiesOn(final String streetName) {
         System.out.println(streetName);
 
         ArrayList<Address> sameStreet;
 
         sameStreet = new ArrayList<>();
 
-        for(String propertyId: properties.keySet())
-        {
-            if(properties.get(propertyId).getAddress().getStreetName().equalsIgnoreCase(streetName))
-            {
+        for(String propertyId: properties.keySet()) {
+            if(properties.get(propertyId).getAddress().getStreetName().equalsIgnoreCase(streetName)) {
                 sameStreet.add(properties.get(propertyId).getAddress());
             }
         }
-        if(sameStreet.size() == NULL_SAME_STREET_SIZE)
-        {
+
+        if(sameStreet.size() == NULL_SAME_STREET_SIZE) {
             return null;
         }
         return sameStreet;
@@ -180,14 +167,12 @@ public class Agency
      * @param maxBedrooms this is the maximum amount of bedrooms (int)
      * @return this will return a HashMap containing the String and Property.
      */
-    public HashMap<String, Residence> getPropertiesWithBedrooms(final int minBedrooms, final int maxBedrooms)
-    {
+    public HashMap<String, Residence> getPropertiesWithBedrooms(final int minBedrooms, final int maxBedrooms) {
         HashMap<String, Residence> bedroomMap;
 
         bedroomMap = new HashMap<>();
 
-        for(String propertyId: properties.keySet())
-        {
+        for(String propertyId: properties.keySet()) {
             if(properties.get(propertyId) instanceof Residence) {
                 Residence res;
 
@@ -198,8 +183,7 @@ public class Agency
                 }
             }
         }
-        if(bedroomMap.isEmpty())
-        {
+        if(bedroomMap.isEmpty()) {
             return null;
         }
         return bedroomMap;
@@ -212,19 +196,16 @@ public class Agency
      * @param propertyType this is a parameter that takes in a String property type.
      * @return this will return an ArrayList containing Strings.
      */
-    public ArrayList<Property> getPropertiesOfType(final String propertyType)
-    {
+    public ArrayList<Property> getPropertiesOfType(final String propertyType) {
         ArrayList<Property> propertyList;
 
         propertyList = new ArrayList<>();
 
-        for(String propertyId: properties.keySet())
-        {
+        for(String propertyId: properties.keySet()) {
             if(properties.get(propertyId).getType().equalsIgnoreCase(propertyType)) {
                 propertyList.add(properties.get(propertyId));
             }
         }
-
         return propertyList;
     }
 
@@ -233,8 +214,7 @@ public class Agency
 
         list = new ArrayList<>();
 
-        for(String propertyId: properties.keySet())
-        {
+        for(String propertyId: properties.keySet()) {
             if(properties.get(propertyId) instanceof Commercial) {
                 Commercial prop;
 
@@ -245,7 +225,6 @@ public class Agency
                 }
             }
         }
-
         return list;
     }
 
@@ -254,8 +233,7 @@ public class Agency
 
         list = new ArrayList<>();
 
-        for(String propertyId: properties.keySet())
-        {
+        for(String propertyId: properties.keySet()) {
             if(properties.get(propertyId) instanceof Commercial) {
                 Commercial prop;
 
@@ -266,7 +244,6 @@ public class Agency
                 }
             }
         }
-
         return list;
     }
 
@@ -286,7 +263,6 @@ public class Agency
                 }
             }
         }
-
         return list;
     }
 
@@ -295,8 +271,7 @@ public class Agency
 
         list = new ArrayList<>();
 
-        for(String propertyId: properties.keySet())
-        {
+        for(String propertyId: properties.keySet()) {
             if(properties.get(propertyId) instanceof Retail) {
                 Retail prop;
 
@@ -315,8 +290,7 @@ public class Agency
 
         list = new ArrayList<>();
 
-        for(String propertyId: properties.keySet())
-        {
+        for(String propertyId: properties.keySet()) {
             if(properties.get(propertyId) instanceof Residence) {
                 Residence prop;
 

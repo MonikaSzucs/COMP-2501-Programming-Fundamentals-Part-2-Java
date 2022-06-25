@@ -11,8 +11,7 @@
  * @version 1.3
  *
  */
-public class Property
-{
+public class Property {
     private double priceInUsd;
     private final Address address;
     private final String type;
@@ -38,50 +37,36 @@ public class Property
      *                              property type, and/or propertyId.
      */
     public Property(final double priceInUsd, final Address address,
-                    final String type, final String propertyId)
-    {
-        if (priceInUsd >= PRICE_IN_US_DOLLARS_MINIMUM_ZERO)
-        {
+                    final String type, final String propertyId) {
+        if (priceInUsd >= PRICE_IN_US_DOLLARS_MINIMUM_ZERO) {
             this.priceInUsd = priceInUsd;
-        }
-        else
-        {
+        } else {
             throw new IllegalArgumentException("Invalid price: " + priceInUsd);
         }
 
-        if(address == null)
-        {
+        if(address == null) {
             throw new NullPointerException("Invalid address: " + address);
-        }
-        else
-        {
+        } else {
             this.address = address;
         }
 
 
-        if(type == null)
-        {
+        if(type == null) {
             throw new NullPointerException("Invalid property type: " + type);
-        }
-        else if (type.equalsIgnoreCase("residence") || type.equalsIgnoreCase("commercial") || type.equalsIgnoreCase("retail"))
-        {
+        } else if ( type.equalsIgnoreCase("residence") ||
+                    type.equalsIgnoreCase("commercial") ||
+                    type.equalsIgnoreCase("retail")) {
             this.type = type;
         }
-        else
-        {
+        else {
             throw new IllegalArgumentException("Invalid property type: " + type.toLowerCase());
         }
 
-        if(propertyId == null)
-        {
+        if(propertyId == null) {
             throw new NullPointerException("Invalid property id: " + propertyId);
-        }
-        else if(propertyId.isEmpty() || propertyId.length() > PROPERTY_ID_LENGTH_SIX)
-        {
+        } else if(propertyId.isEmpty() || propertyId.length() > PROPERTY_ID_LENGTH_SIX) {
             throw new IllegalArgumentException("Invalid property id: " + propertyId);
-        }
-        else
-        {
+        } else {
             this.propertyId = propertyId;
         }
     }
@@ -91,8 +76,7 @@ public class Property
      *
      * @param priceInUsd this is the price in US dollars (Double).
      */
-    public void setPriceUsd(final double priceInUsd)
-    {
+    public void setPriceUsd(final double priceInUsd) {
         if(priceInUsd < PRICE_IN_US_DOLLARS_MINIMUM_ZERO) {
             throw new IllegalArgumentException("The price must be greater than zero");
         }
@@ -106,14 +90,10 @@ public class Property
      * @throws IllegalArgumentException This is an illegal argument exception that gets thrown if there is an
      *                                  invalid number of bedrooms
      */
-    public double getPriceUsd()
-    {
-        if (priceInUsd >= PRICE_IN_US_DOLLARS_MINIMUM_ZERO)
-        {
+    public double getPriceUsd() {
+        if (priceInUsd >= PRICE_IN_US_DOLLARS_MINIMUM_ZERO) {
             return priceInUsd;
-        }
-        else
-        {
+        } else {
             throw new IllegalArgumentException("Invalid number of bedrooms: " + propertyId);
         }
     }
@@ -125,8 +105,7 @@ public class Property
      *
      * @return this will return the type of property the home is in a String format.
      */
-    public String getType()
-    {
+    public String getType() {
         return type;
     }
 
@@ -137,18 +116,12 @@ public class Property
      * @throws IllegalArgumentException if there is an illegal argument exception then throw an invalid propertyId
      *                                  message.
      */
-    public String getPropertyId()
-    {
-        if(propertyId == null || propertyId.isEmpty())
-        {
+    public String getPropertyId() {
+        if(propertyId == null || propertyId.isEmpty()) {
             return propertyId;
-        }
-        else if (propertyId.length() >= PROPERTY_ID_LENGTH_ONE && propertyId.length() <= PROPERTY_ID_LENGTH_SIX)
-        {
+        } else if (propertyId.length() >= PROPERTY_ID_LENGTH_ONE && propertyId.length() <= PROPERTY_ID_LENGTH_SIX) {
             return propertyId;
-        }
-        else
-        {
+        } else {
             throw new IllegalArgumentException("Invalid property id: " + propertyId);
         }
     }
@@ -158,8 +131,7 @@ public class Property
      *
      * @return the address.
      */
-    public Address getAddress()
-    {
+    public Address getAddress() {
         return address;
     }
 

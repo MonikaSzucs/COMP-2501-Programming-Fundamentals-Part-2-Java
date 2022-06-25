@@ -11,7 +11,7 @@
  * @version 1.3
  *
  */
-public class Retail extends Property{
+public class Retail extends Property {
     private int squareFootage;
     private boolean customerParking;
 

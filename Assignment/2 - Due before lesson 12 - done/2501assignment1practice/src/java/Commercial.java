@@ -1,4 +1,4 @@
-public class Commercial extends Property{
+public class Commercial extends Property {
     private boolean loadingDock;
     private boolean highwayAccess;
 

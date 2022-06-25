@@ -11,8 +11,7 @@
  * @version 1.3
  *
  */
-public class Address
-{
+public class Address {
     private final String    unitNumber;
     private final int       streetNumber;
     private final String    streetName;
@@ -43,94 +42,61 @@ public class Address
      * @throws IllegalArgumentException This returns an illegal argument exception if the value is not valid.
      */
     public Address(final String unit, final int streetNumber, final String streetName, final String postalCode,
-                   final String cityName)
-    {
-        if(streetName == null)
-        {
+                   final String cityName) {
+        if(streetName == null) {
             this.postalCode = streetName;
             throw new NullPointerException("Invalid street name: " + streetName);
-        }
-        else if(streetName == null || streetName.isEmpty())
-        {
+        } else if(streetName == null || streetName.isEmpty()) {
             this.streetName = streetName;
             throw new IllegalArgumentException("Invalid street name: " + streetName);
-        }
-        else if (streetName.length() >= STREET_NAME_MIN_LENGTH && streetName.length() <= STREET_NAME_MAX_LENGTH)
-        {
+        } else if (streetName.length() >= STREET_NAME_MIN_LENGTH && streetName.length() <= STREET_NAME_MAX_LENGTH) {
             this.streetName = streetName;
-        }
-        else
-        {
+        } else {
             throw new IllegalArgumentException("Invalid street name: " + streetName);
         }
 
-        if (streetNumber >= STREET_MIN_NUMBER && streetNumber <= STREET_MAX_NUMBER)
-        {
+        if (streetNumber >= STREET_MIN_NUMBER && streetNumber <= STREET_MAX_NUMBER) {
             this.streetNumber = streetNumber;
-        }
-        else
-        {
+        } else {
             throw new IllegalArgumentException("Invalid street number: " + streetNumber);
         }
 
-        if(postalCode == null)
-        {
+        if(postalCode == null) {
             this.postalCode = postalCode;
             throw new NullPointerException("Invalid postal code: " + postalCode);
-        }
-        else if(postalCode == null || postalCode.isEmpty())
+        } else if(postalCode == null || postalCode.isEmpty()) {
+            this.postalCode = postalCode;
+            throw new IllegalArgumentException("Invalid postal code: " + postalCode);
+        } else if (postalCode.length() == POSTAL_CODE_LENGTH_FIVE || postalCode.length() == POSTAL_CODE_LENGTH_SIX) {
+            this.postalCode = postalCode;
+        } else if(postalCode.length() < POSTAL_CODE_LENGTH_FIVE || postalCode.length() > POSTAL_CODE_LENGTH_SIX)
         {
             this.postalCode = postalCode;
             throw new IllegalArgumentException("Invalid postal code: " + postalCode);
-        }
-        else if (postalCode.length() == POSTAL_CODE_LENGTH_FIVE || postalCode.length() == POSTAL_CODE_LENGTH_SIX)
-        {
-            this.postalCode = postalCode;
-        }
-        else if(postalCode.length() < POSTAL_CODE_LENGTH_FIVE || postalCode.length() > POSTAL_CODE_LENGTH_SIX)
-        {
-            this.postalCode = postalCode;
-            throw new IllegalArgumentException("Invalid postal code: " + postalCode);
-        }
-        else
-        {
+        } else {
             throw new IllegalArgumentException("Invalid postal code: " + postalCode);
         }
 
-        if(cityName == null)
-        {
+        if(cityName == null) {
             this.cityName = unit;
             throw new NullPointerException("Invalid city: " + cityName);
-        }
-        else if(cityName == null || cityName.isEmpty())
-        {
+        } else if(cityName == null || cityName.isEmpty()) {
             this.cityName = cityName;
             throw new IllegalArgumentException("Invalid city: " + cityName);
-        }
-        else if (cityName.length() >= CITY_NAME_MIN_LENGTH && cityName.length() <= CITY_NAME_MAX_LENGTH)
-        {
+        } else if (cityName.length() >= CITY_NAME_MIN_LENGTH && cityName.length() <= CITY_NAME_MAX_LENGTH) {
             this.cityName = cityName;
-        }
-        else
-        {
+        } else {
             throw new IllegalArgumentException("Invalid city: " + cityName);
         }
 
-        if(unit == null)
-        {
+        if(unit == null) {
             this.unitNumber = unit;
-        }
-        else if(unit == null || unit.isEmpty())
-        {
+        } else if(unit == null || unit.isEmpty()) {
             this.unitNumber = unit;
             throw new IllegalArgumentException("Invalid unit number: ");
-        }
-        else if (unit.length() >= UNIT_MIN_LENGTH && unit.length() <= UNIT_MAX_LENGTH)
-        {
+        } else if (unit.length() >= UNIT_MIN_LENGTH && unit.length() <= UNIT_MAX_LENGTH) {
             this.unitNumber = unit;
-        }
-        else
-        {
+        } else {
             throw new IllegalArgumentException("Invalid unit number: " + unit);
         }
     }
@@ -141,18 +107,12 @@ public class Address
      * @return the unit number (String) if it is between or equal to one to four characters.
      * @throws IllegalArgumentException This will return an illegal argument exception if the unit number is not valid.
      */
-    public String getUnitNumber()
-    {
-        if(unitNumber == null || unitNumber.isEmpty())
-        {
+    public String getUnitNumber() {
+        if(unitNumber == null || unitNumber.isEmpty()) {
             return unitNumber;
-        }
-        else if (unitNumber.length() >= UNIT_MIN_LENGTH && unitNumber.length() <= UNIT_MAX_LENGTH)
-        {
+        } else if (unitNumber.length() >= UNIT_MIN_LENGTH && unitNumber.length() <= UNIT_MAX_LENGTH) {
             return unitNumber;
-        }
-        else
-        {
+        } else {
             throw new IllegalArgumentException("Invalid unit number: " + unitNumber);
         }
     }
@@ -163,14 +123,10 @@ public class Address
      * @return this will return the street number (Integer) that is between or equal to zero to 999999.
      * @throws IllegalArgumentException this will throw an illegal argument exception if the street number is invalid.
      */
-    public int getStreetNumber()
-    {
-        if (streetNumber >= STREET_MIN_NUMBER && streetNumber <= STREET_MAX_NUMBER)
-        {
+    public int getStreetNumber() {
+        if (streetNumber >= STREET_MIN_NUMBER && streetNumber <= STREET_MAX_NUMBER) {
             return streetNumber;
-        }
-        else
-        {
+        } else {
             throw new IllegalArgumentException("Invalid street number: " + streetNumber);
         }
     }
@@ -182,18 +138,12 @@ public class Address
      * @throws IllegalArgumentException this will throw an illegal argument exception if the street name length is
      *                                  invalid.
      */
-    public String getStreetName()
-    {
-        if(streetName == null || streetName.isEmpty())
-        {
+    public String getStreetName() {
+        if(streetName == null || streetName.isEmpty()) {
             return streetName;
-        }
-        else if (streetName.length() >= STREET_NAME_MIN_LENGTH && streetName.length() <= STREET_NAME_MAX_LENGTH)
-        {
+        } else if (streetName.length() >= STREET_NAME_MIN_LENGTH && streetName.length() <= STREET_NAME_MAX_LENGTH) {
             return streetName;
-        }
-        else
-        {
+        } else {
             throw new IllegalArgumentException("Invalid street name: " + streetName);
         }
     }
@@ -204,18 +154,12 @@ public class Address
      * @return This will return the postal code (String) that is of length 5 or 6 only.
      * @throws IllegalArgumentException this will throw an illegal argument exception if the length is not 5 or 6.
      */
-    public String getPostalCode()
-    {
-        if(postalCode == null || postalCode.isEmpty())
-        {
+    public String getPostalCode() {
+        if(postalCode == null || postalCode.isEmpty()) {
             return postalCode;
-        }
-        else if (postalCode.length() == POSTAL_CODE_LENGTH_FIVE || postalCode.length() == POSTAL_CODE_LENGTH_SIX)
-        {
+        } else if (postalCode.length() == POSTAL_CODE_LENGTH_FIVE || postalCode.length() == POSTAL_CODE_LENGTH_SIX) {
             return postalCode;
-        }
-        else
-        {
+        } else {
             throw new IllegalArgumentException("Invalid postal code: " + postalCode);
         }
     }
@@ -226,18 +170,12 @@ public class Address
      * @return this will return the city name (String) which is one to 30 characters in length.
      * @throws IllegalArgumentException this will throw an illegal argument exception if there is an invalid city name.
      */
-    public String getCity()
-    {
-        if(cityName == null || cityName.isEmpty())
-        {
+    public String getCity() {
+        if(cityName == null || cityName.isEmpty()) {
             return cityName;
-        }
-        else if (cityName.length() >= CITY_NAME_MIN_LENGTH && cityName.length() <= CITY_NAME_MAX_LENGTH)
-        {
+        } else if (cityName.length() >= CITY_NAME_MIN_LENGTH && cityName.length() <= CITY_NAME_MAX_LENGTH) {
             return cityName;
-        }
-        else
-        {
+        } else {
             throw new IllegalArgumentException("Invalid city: " + cityName);
         }
     }

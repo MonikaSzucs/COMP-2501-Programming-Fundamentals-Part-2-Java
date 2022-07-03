@@ -38,7 +38,6 @@ public class PropertyReader {
             String line;
 
             line = scanner.nextLine();
-
             propertyList.add(line);
         }
 

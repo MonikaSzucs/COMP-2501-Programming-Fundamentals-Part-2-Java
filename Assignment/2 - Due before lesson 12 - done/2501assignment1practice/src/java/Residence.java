@@ -83,7 +83,10 @@ public class Residence extends Property {
         return "Residence{" +
                 "numberOfBedrooms=" + numberOfBedrooms +
                 ", swimmingPool=" + swimmingPool +
-                ", strata=" + strata +
+                ", strata=" + strata + " " +
+                super.toString() +
                 '}';
     }
+
+
 }

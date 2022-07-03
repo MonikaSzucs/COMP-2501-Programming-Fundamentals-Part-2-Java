@@ -147,6 +147,7 @@ public class Property {
                 ", address=" + address +
                 ", type='" + type + '\'' +
                 ", propertyId='" + propertyId + '\'' +
+                super.toString() +
                 '}';
     }
 }

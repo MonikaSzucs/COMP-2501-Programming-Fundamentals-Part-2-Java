@@ -49,7 +49,8 @@ public class Commercial extends Property {
     public String toString() {
         return "Commercial{" +
                 "loadingDock=" + loadingDock +
-                ", highwayAccess=" + highwayAccess +
+                ", highwayAccess=" + highwayAccess + " " +
+                super.toString() +
                 '}';
     }
 }

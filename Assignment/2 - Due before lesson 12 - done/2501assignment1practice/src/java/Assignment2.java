@@ -59,7 +59,7 @@ public class Assignment2 {
             property = propertyData.get(i).split("\\|");
 
             if(property[PROPERTY_FIRST].equalsIgnoreCase("commercial")) {
-                Commercial createProperty = new Commercial(Double.parseDouble(property[PROPERTY_INITIALIZATION]),
+                Property createProperty = new Commercial(Double.parseDouble(property[PROPERTY_INITIALIZATION]),
                                                                             addressData.get(i),
                                                                             property[PROPERTY_FIRST],
                                                                             property[PROPERTY_SECOND],
@@ -68,7 +68,7 @@ public class Assignment2 {
                 agency.addProperty(createProperty);
             }
             else if(property[PROPERTY_THIRD].equalsIgnoreCase("residence")) {
-                Residence createResidence = new Residence(Double.parseDouble(property[PROPERTY_INITIALIZATION]),
+                Property createResidence = new Residence(Double.parseDouble(property[PROPERTY_INITIALIZATION]),
                                                         addressData.get(i),
                                                         property[PROPERTY_THIRD],
                                                         property[PROPERTY_FOURTH],
@@ -78,7 +78,7 @@ public class Assignment2 {
                 agency.addProperty(createResidence);
             }
             else if(property[PROPERTY_FIRST].equalsIgnoreCase("retail")) {
-                Retail newRetail = new Retail(Double.parseDouble(property[PROPERTY_INITIALIZATION]),
+                Property newRetail = new Retail(Double.parseDouble(property[PROPERTY_INITIALIZATION]),
                                             addressData.get(i),
                                             property[PROPERTY_FIRST],
                                             property[PROPERTY_SECOND],

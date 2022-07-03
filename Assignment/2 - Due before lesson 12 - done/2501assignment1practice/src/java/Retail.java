@@ -67,7 +67,8 @@ public class Retail extends Property {
     public String toString() {
         return "Retail{" +
                 "squareFootage=" + squareFootage +
-                ", customerParking=" + customerParking +
+                ", customerParking=" + customerParking + " " +
+                super.toString() +
                 '}';
     }
 }
